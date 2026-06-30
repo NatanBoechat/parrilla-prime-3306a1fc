@@ -262,7 +262,7 @@ function Index() {
       </header>
 
       {/* HERO */}
-      <section id="top" className="relative min-h-screen flex items-center pt-32 pb-20 px-6 overflow-hidden grain">
+      <section id="top" className="relative min-h-screen h-screen flex items-center pt-28 pb-16 px-6 overflow-hidden grain">
         <div className="absolute inset-0 -z-10">
           <img src={grillAsset.url} alt="" className="w-full h-full object-cover opacity-30 animate-heat-haze" />
           <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/60 to-background" />
