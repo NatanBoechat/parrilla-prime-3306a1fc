@@ -67,24 +67,25 @@ function HeroHeadline({ play }: { play: boolean }) {
           key={li}
           className={`block overflow-hidden ${
             line.accent
-              ? "text-[20vw] md:text-[16vw] text-ember"
-              : "text-[14vw] md:text-[11vw]"
+              ? "text-[17vw] md:text-[13vw] text-ember"
+              : "text-[12vw] md:text-[9vw]"
           }`}
           style={{ lineHeight: 0.82 }}
         >
-          <span className="inline-block" style={{ transformStyle: "preserve-3d" }}>
+          <span
+            className={`inline-block ${line.accent ? "animate-glow-pulse" : ""}`}
+            style={{ transformStyle: "preserve-3d" }}
+          >
             {line.text.split("").map((ch, i) => {
               const delay = 0.15 + charIndex * 0.022 + li * 0.08;
               charIndex++;
               return (
                 <span
                   key={i}
-                  className={`inline-block ${line.accent ? "animate-glow-pulse" : ""}`}
+                  className="inline-block"
                   style={{
                     animation: play
-                      ? `char-rise 1.1s cubic-bezier(0.16, 1, 0.3, 1) ${delay}s both${
-                          line.accent ? ", glow-pulse 3.5s ease-in-out infinite 2s" : ""
-                        }`
+                      ? `char-rise 1.1s cubic-bezier(0.16, 1, 0.3, 1) ${delay}s both`
                       : "none",
                     opacity: play ? undefined : 0,
                     whiteSpace: ch === " " ? "pre" : "normal",
