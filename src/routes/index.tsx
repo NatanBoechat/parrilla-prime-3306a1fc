@@ -6,6 +6,16 @@ import porchettaAsset from "@/assets/porchetta.jpg.asset.json";
 import grillAsset from "@/assets/grill.jpg.asset.json";
 import chefAsset from "@/assets/chef.jpg.asset.json";
 import coupleAsset from "@/assets/couple.jpg.asset.json";
+import heroBgAsset from "@/assets/hero-bg.png.asset.json";
+import barBrahmaAsset from "@/assets/bar-brahma.jpg.asset.json";
+import eventMapAsset from "@/assets/event-map.jpg.asset.json";
+import mainStageAsset from "@/assets/main-stage.jpg.asset.json";
+import rodaGiganteImg from "@/assets/roda-gigante.jpg";
+import touroMecanicoImg from "@/assets/touro-mecanico.jpg";
+import roboGiganteImg from "@/assets/robo-gigante.jpg";
+import balonismoImg from "@/assets/balonismo.jpg";
+import estacoesImg from "@/assets/estacoes.jpg";
+import showSertanejoImg from "@/assets/show-sertanejo.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -34,8 +44,8 @@ function Preloader({ onDone }: { onDone: () => void }) {
       className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background transition-opacity duration-500"
       style={{ opacity: progress >= 1 ? 0 : 1, pointerEvents: progress >= 1 ? "none" : "auto" }}
     >
-      <div className="relative w-48 md:w-64 animate-flicker">
-        <img src={logoAsset.url} alt="Parrilla Day" className="w-full h-auto" style={{ filter: "brightness(0) saturate(100%) invert(38%) sepia(85%) saturate(2000%) hue-rotate(345deg) brightness(85%) contrast(95%)" }} />
+      <div className="relative w-56 md:w-72 animate-flicker">
+        <img src={logoAsset.url} alt="Parrilla Day" className="w-full h-auto" style={{ filter: "brightness(0) invert(1)" }} />
       </div>
       <div className="mt-12 w-48 h-px bg-border overflow-hidden">
         <div className="h-full bg-ember" style={{ width: `${progress * 100}%`, transition: "width 0.1s linear" }} />
@@ -48,7 +58,6 @@ function Preloader({ onDone }: { onDone: () => void }) {
 }
 
 function HeroHeadline({ play }: { play: boolean }) {
-  // Group into impactful lines for the layout
   const lines = [
     { text: "O MAIOR", accent: false },
     { text: "FESTIVAL DE", accent: false },
@@ -73,7 +82,7 @@ function HeroHeadline({ play }: { play: boolean }) {
           style={{ lineHeight: 0.82 }}
         >
           <span
-            className={`inline-block ${line.accent ? "animate-glow-pulse" : ""}`}
+            className="inline-block"
             style={{ transformStyle: "preserve-3d" }}
           >
             {line.text.split("").map((ch, i) => {
@@ -100,40 +109,6 @@ function HeroHeadline({ play }: { play: boolean }) {
         </div>
       ))}
     </h1>
-  );
-}
-
-function RevealWords({ text, className = "" }: { text: string; className?: string }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const io = new IntersectionObserver(
-      ([e]) => e.isIntersecting && setVisible(true),
-      { threshold: 0.2 }
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
-  const words = text.split(" ");
-  return (
-    <div ref={ref} className={className}>
-      {words.map((w, i) => (
-        <span key={i} className="inline-block overflow-hidden align-bottom mr-[0.25em]">
-          <span
-            className="inline-block"
-            style={{
-              transform: visible ? "translateY(0)" : "translateY(110%)",
-              opacity: visible ? 1 : 0,
-              transition: `transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) ${i * 0.08}s, opacity 0.6s ease ${i * 0.08}s`,
-            }}
-          >
-            {w}
-          </span>
-        </span>
-      ))}
-    </div>
   );
 }
 
@@ -175,7 +150,7 @@ function Countdown() {
 }
 
 function PhotoStrip() {
-  const photos = [skullAsset, porchettaAsset, grillAsset, chefAsset, coupleAsset];
+  const photos = [skullAsset.url, porchettaAsset.url, estacoesImg, chefAsset.url, coupleAsset.url];
   const captions = ["Tradição", "Fogo lento", "Estações", "Mestres", "Encontros"];
   const ref = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
@@ -218,7 +193,7 @@ function PhotoStrip() {
               className="absolute inset-0 transition-none"
               style={{ opacity, transform: `translateY(${y}px) scale(${scale})` }}
             >
-              <img src={p.url} alt={captions[i]} className="w-full h-full object-cover" />
+              <img src={p} alt={captions[i]} className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/60" />
               <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
                 <div className="text-serif-italic text-ember text-lg md:text-2xl mb-4">
@@ -236,6 +211,15 @@ function PhotoStrip() {
   );
 }
 
+const ATRACOES = [
+  { t: "Balonismo", d: "Subida de balão de ar quente sobre o litoral ao nascer do sol.", img: balonismoImg, tag: "Dia 05" },
+  { t: "Robô Gigante", d: "Performance interativa com LEDs e fumaça para todos os públicos.", img: roboGiganteImg, tag: "Dia 05" },
+  { t: "Roda Gigante", d: "Vista panorâmica do festival e da praia de Caraguatatuba.", img: rodaGiganteImg, tag: "Dias 05 / 06 / 07" },
+  { t: "Touro Mecânico", d: "O clássico desafio sertanejo — quem aguenta os 8 segundos?", img: touroMecanicoImg, tag: "Dias 05 / 06" },
+  { t: "Shows Sertanejos", d: "Atrações nacionais e locais no palco principal.", img: showSertanejoImg, tag: "Dia 05" },
+  { t: "Apresentações de Dança", d: "Coreografias e performances temáticas pelo evento.", img: chefAsset.url, tag: "Dia 05" },
+];
+
 function Index() {
   const [loaded, setLoaded] = useState(false);
 
@@ -245,14 +229,16 @@ function Index() {
 
       {/* NAV */}
       <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-background/60 border-b border-border/40">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
           <a href="#top" className="flex items-center gap-3">
-            <img src={logoAsset.url} alt="" className="h-16 md:h-20 w-auto" style={{ filter: "brightness(0) invert(1)" }} />
+            <img src={logoAsset.url} alt="Parrilla Day" className="h-24 md:h-28 w-auto" style={{ filter: "brightness(0) invert(1)" }} />
           </a>
           <nav className="hidden md:flex items-center gap-8 text-xs tracking-[0.25em] uppercase text-muted-foreground">
             <a href="#evento" className="hover:text-ember transition">O Evento</a>
             <a href="#atracoes" className="hover:text-ember transition">Atrações</a>
+            <a href="#estacoes" className="hover:text-ember transition">Estações</a>
             <a href="#programacao" className="hover:text-ember transition">Programação</a>
+            <a href="#mapa" className="hover:text-ember transition">Mapa</a>
             <a href="#ingressos" className="hover:text-ember transition">Ingressos</a>
           </nav>
           <a href="#ingressos" className="text-xs tracking-[0.2em] uppercase px-4 py-2 border border-ember text-ember hover:bg-ember hover:text-background transition">
@@ -264,8 +250,8 @@ function Index() {
       {/* HERO */}
       <section id="top" className="relative min-h-screen h-screen flex items-center pt-28 pb-16 px-6 overflow-hidden grain">
         <div className="absolute inset-0 -z-10">
-          <img src={grillAsset.url} alt="" className="w-full h-full object-cover opacity-30 animate-heat-haze" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/60 to-background" />
+          <img src={heroBgAsset.url} alt="" className="w-full h-full object-cover opacity-50 animate-heat-haze" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/55 to-background" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_20%,oklch(0.13_0.015_30/0.85)_80%)]" />
         </div>
 
@@ -344,10 +330,25 @@ function Index() {
         </div>
       </section>
 
-
+      {/* OPEN ICONS STRIP */}
+      <section className="py-12 px-6 border-y border-border/40 bg-background">
+        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          {[
+            { t: "Open Food", d: "30 estações de churrasco" },
+            { t: "Open Bar", d: "Cervejas & refrigerantes" },
+            { t: "Música ao Vivo", d: "Sertanejo & shows" },
+            { t: "Espaço Kids", d: "Diversão garantida" },
+          ].map((x) => (
+            <div key={x.t} className="flex flex-col items-center gap-2">
+              <div className="text-display text-2xl md:text-3xl text-ember tracking-wider">{x.t}</div>
+              <div className="text-xs tracking-[0.2em] uppercase text-muted-foreground">{x.d}</div>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* COUNTDOWN */}
-      <section className="py-24 px-6 border-y border-border/40 bg-card/30">
+      <section className="py-24 px-6 border-b border-border/40 bg-card/30">
         <div className="max-w-5xl mx-auto text-center">
           <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">5 de Setembro de 2026</div>
           <h2 className="text-display text-4xl md:text-6xl mb-12 text-bone">A contagem para a brasa</h2>
@@ -360,7 +361,7 @@ function Index() {
         <div className="flex gap-12 animate-marquee whitespace-nowrap text-display text-4xl md:text-6xl text-ember/70">
           {Array.from({ length: 2 }).map((_, k) => (
             <div key={k} className="flex gap-12 shrink-0">
-              {["Open Churrasco", "✦", "Open Bar", "✦", "30 Estações", "✦", "Sertanejo ao Vivo", "✦", "Roda Gigante de Carne", "✦", "Beira-Mar", "✦"].map((w, i) => (
+              {["Open Churrasco", "✦", "Open Bar", "✦", "30 Estações", "✦", "Sertanejo ao Vivo", "✦", "Roda Gigante", "✦", "Beira-Mar", "✦"].map((w, i) => (
                 <span key={i}>{w}</span>
               ))}
             </div>
@@ -386,8 +387,8 @@ function Index() {
             </p>
             <div className="grid sm:grid-cols-3 gap-6 pt-8 border-t border-border/40">
               {[
-                { n: "6.000", l: "Ingressos · Dia 1" },
-                { n: "20.000", l: "Acesso livre · Dias 2 e 3" },
+                { n: "6.000", l: "Ingressos · Dia 05" },
+                { n: "20.000", l: "Acesso livre · 06 e 07" },
                 { n: "30", l: "Estações de carne" },
               ].map((s) => (
                 <div key={s.l}>
@@ -400,18 +401,46 @@ function Index() {
         </div>
       </section>
 
+      {/* ESTAÇÕES GASTRONÔMICAS */}
+      <section id="estacoes" className="py-32 px-6 bg-card/30 border-y border-border/40 relative overflow-hidden">
+        <div className="absolute inset-0 -z-10 opacity-15">
+          <img src={estacoesImg} alt="" className="w-full h-full object-cover" loading="lazy" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-background/60 to-background" />
+        </div>
+        <div className="max-w-7xl mx-auto">
+          <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Estações Gastronômicas</div>
+          <h2 className="text-display text-5xl md:text-7xl text-bone mb-4">30 estações.<br /><span className="text-ember">Brasa sem fim.</span></h2>
+          <p className="text-serif-italic text-xl text-muted-foreground mb-16 max-w-2xl">
+            Cortes premium, fogo de chão e os melhores assadores do litoral norte trabalhando ao vivo.
+          </p>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-border">
+            {[
+              "Angus Supremo", "Costela Fogo de Chão", "Fraldinha Defumada", "Chorizo Argentino",
+              "Picanha Black Angus", "Picanha Argentina", "Linguiça Artesanal", "Pão de Alho",
+              "Mandioca na Manteiga", "Queijo Coalho", "Farofas", "Vinagrete da Casa",
+            ].map((s, i) => (
+              <div key={s} className="p-6 bg-background hover:bg-card transition group">
+                <div className="text-[10px] tracking-[0.3em] uppercase text-ember mb-2">Estação · {String(i + 1).padStart(2, "0")}</div>
+                <div className="text-display text-2xl text-bone group-hover:text-ember transition">{s}</div>
+              </div>
+            ))}
+          </div>
+          <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mt-8">+ Food Trucks: Espeticho · Caramelo Comida de Rua · Doces</p>
+        </div>
+      </section>
+
       {/* PROGRAMAÇÃO */}
-      <section id="programacao" className="py-32 px-6 bg-card/30 border-y border-border/40">
+      <section id="programacao" className="py-32 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Programação</div>
           <h2 className="text-display text-5xl md:text-7xl text-bone mb-16">Três dias na brasa</h2>
           <div className="grid md:grid-cols-3 gap-px bg-border">
             {[
-              { day: "05", month: "Setembro", time: "12h — 19h", title: "Parrilla Day", desc: "Open bar · Open churrasco · Drinks à parte. O dia principal com shows headliners.", featured: true },
+              { day: "05", month: "Setembro", time: "12h — 22h", title: "Parrilla Day", desc: "Open bar · Open churrasco · Drinks à parte. O dia principal com shows headliners, balonismo e show de fogos.", featured: true },
               { day: "06", month: "Setembro", time: "16h — 00h", title: "Estações Abertas", desc: "Entrada gratuita. Comidas e bebidas à parte. Atrações, roda gigante e touro mecânico." },
-              { day: "07", month: "Setembro", time: "12h — 22h", title: "Encerramento", desc: "Acesso liberado ao público. Churrasco e bebidas à parte. Show de fogos no encerramento." },
+              { day: "07", month: "Setembro", time: "12h — 22h", title: "Encerramento", desc: "Acesso liberado ao público. Churrasco e bebidas à parte. Atrações continuam até o fim." },
             ].map((d) => (
-              <div key={d.day} className={`p-10 bg-background ${d.featured ? "md:scale-[1.02] md:-my-2 bg-card relative" : ""}`}>
+              <div key={d.day} className={`p-10 bg-background relative ${d.featured ? "md:scale-[1.02] md:-my-2 bg-card" : ""}`}>
                 {d.featured && <div className="absolute top-4 right-4 text-[10px] tracking-[0.3em] uppercase text-ember">★ Headline</div>}
                 <div className="flex items-baseline gap-3 mb-6">
                   <div className="text-display text-8xl text-ember leading-none">{d.day}</div>
@@ -427,7 +456,11 @@ function Index() {
       </section>
 
       {/* HEADLINERS */}
-      <section className="py-32 px-6">
+      <section className="py-32 px-6 bg-card/30 border-y border-border/40 relative overflow-hidden">
+        <div className="absolute inset-0 -z-10 opacity-25">
+          <img src={showSertanejoImg} alt="" className="w-full h-full object-cover" loading="lazy" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-background/70 to-background" />
+        </div>
         <div className="max-w-7xl mx-auto">
           <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Headliners · Dia 05</div>
           <h2 className="text-display text-5xl md:text-7xl text-bone mb-16">Os shows</h2>
@@ -446,29 +479,140 @@ function Index() {
       </section>
 
       {/* ATRAÇÕES */}
-      <section id="atracoes" className="py-32 px-6 bg-card/30 border-y border-border/40">
+      <section id="atracoes" className="py-32 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Atrações</div>
           <h2 className="text-display text-5xl md:text-7xl text-bone mb-16 max-w-3xl">
             Muito além do <span className="text-ember">fogo</span>
           </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {ATRACOES.map((a) => (
+              <div key={a.t} className="group relative overflow-hidden border border-border/40 hover:border-ember transition bg-card">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img src={a.img} alt={a.t} loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition duration-[1200ms] ease-out" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+                </div>
+                <div className="absolute inset-x-0 bottom-0 p-6">
+                  <div className="text-[10px] tracking-[0.3em] uppercase text-ember mb-2">{a.tag}</div>
+                  <h3 className="text-display text-3xl text-bone mb-2 group-hover:text-ember transition">{a.t}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{a.d}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 grid sm:grid-cols-2 md:grid-cols-4 gap-px bg-border">
+            {["Salão de Beleza", "Brinquedos Kids", "Lounge Cielo", "Show de Fogos"].map((x) => (
+              <div key={x} className="p-6 bg-background text-center">
+                <div className="text-display text-xl text-bone">{x}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* MAPA DO EVENTO */}
+      <section id="mapa" className="py-32 px-6 bg-card/30 border-y border-border/40">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Mapa do Evento</div>
+          <h2 className="text-display text-5xl md:text-7xl text-bone mb-4">À beira mar.<br /><span className="text-ember">Caraguá Beach.</span></h2>
+          <p className="text-serif-italic text-xl text-muted-foreground mb-12 max-w-2xl">
+            Palco principal, parrilleras, camarotes premium, roda gigante e área kids — tudo de frente para o Atlântico.
+          </p>
+          <div className="relative overflow-hidden border border-border/40">
+            <img src={eventMapAsset.url} alt="Mapa do Parrilla Day" className="w-full h-auto" loading="lazy" />
+          </div>
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 mt-10">
+            {[
+              { t: "Palco Principal", d: "Estrutura completa de box truss e LED" },
+              { t: "Camarote Premium", d: "Vista privilegiada · Open premium" },
+              { t: "Área Kids", d: "Brinquedos e monitores" },
+              { t: "Praia", d: "Acesso direto à beira-mar" },
+            ].map((x) => (
+              <div key={x.t} className="p-5 border border-border/40">
+                <div className="text-display text-xl text-ember mb-1">{x.t}</div>
+                <div className="text-xs text-muted-foreground">{x.d}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ESTRUTURA / PALCO */}
+      <section className="py-32 px-6">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-center">
+          <div className="md:col-span-6 relative overflow-hidden">
+            <img src={mainStageAsset.url} alt="Palco principal Parrilla Day" loading="lazy" className="w-full h-auto" />
+          </div>
+          <div className="md:col-span-6">
+            <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Estrutura</div>
+            <h2 className="text-display text-5xl md:text-7xl text-bone leading-none mb-6">
+              Construída para <span className="text-ember">incendiar</span>
+            </h2>
+            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+              Cada detalhe pensado para uma experiência inesquecível — do palco LED ao corredor de entrada cinematográfico, das parrilleras aos camarotes premium.
+            </p>
+            <div className="grid grid-cols-2 gap-px bg-border">
+              {[
+                "Palco principal LED",
+                "Box Truss completo",
+                "Som & iluminação pro",
+                "30 parrilleras ativas",
+                "30 assadores ao vivo",
+                "Tendas climatizadas",
+                "Decoração temática",
+                "Corredor cinematográfico",
+              ].map((s) => (
+                <div key={s} className="p-4 bg-background text-sm tracking-wide text-bone/80">{s}</div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* BAR BRAHMA */}
+      <section className="py-32 px-6 bg-card/30 border-y border-border/40">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-center">
+          <div className="md:col-span-6 order-2 md:order-1">
+            <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Bar & Bebidas</div>
+            <h2 className="text-display text-5xl md:text-7xl text-bone leading-none mb-6">
+              Chopp gelado,<br /><span className="text-ember">copo cheio.</span>
+            </h2>
+            <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+              Bar Brahma principal + 2 bares satélites espalhados pelo evento. Open bar de cervejas e refrigerantes para os ingressos do dia 05. Drinks especiais à parte.
+            </p>
+            <div className="flex flex-wrap gap-3 text-xs tracking-[0.2em] uppercase">
+              {["Brahma", "Red Bull", "Drinks autorais", "Chopp artesanal"].map((b) => (
+                <span key={b} className="px-4 py-2 border border-border/60 text-bone/80">{b}</span>
+              ))}
+            </div>
+          </div>
+          <div className="md:col-span-6 order-1 md:order-2 relative overflow-hidden">
+            <img src={barBrahmaAsset.url} alt="Bar Brahma" loading="lazy" className="w-full h-auto" />
+          </div>
+        </div>
+      </section>
+
+      {/* DECORAÇÃO TEMÁTICA */}
+      <section className="py-32 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Ambientação</div>
+          <h2 className="text-display text-5xl md:text-7xl text-bone mb-16 max-w-3xl">
+            Decoração <span className="text-ember">cinematográfica</span>
+          </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { t: "Balonismo", d: "Subida de balão de ar quente sobre o litoral.", tag: "Dia 05" },
-              { t: "Robô Gigante", d: "Performance interativa para todos os públicos.", tag: "Dia 05" },
-              { t: "Roda Gigante", d: "Vista panorâmica da praia e do festival.", tag: "Dias 05 / 06" },
-              { t: "Touro Mecânico", d: "O clássico desafio sertanejo.", tag: "Dias 05 / 06" },
-              { t: "Salão de Beleza", d: "Retoques de cabelo e maquiagem no local.", tag: "Dia 05" },
-              { t: "Apresentações de Dança", d: "Coreografias e shows pelo evento.", tag: "Dia 05" },
-              { t: "Brinquedos Kids", d: "Espaço gratuito para as crianças.", tag: "Dia 05" },
-              { t: "Food Trucks", d: "Espeticho, Caramelo Comida de Rua, Doces.", tag: "Dias 06 / 07" },
-              { t: "Show de Fogos", d: "Encerramento à beira-mar.", tag: "Dia 05" },
-            ].map((a) => (
-              <div key={a.t} className="group p-8 border border-border/40 bg-background hover:border-ember transition relative overflow-hidden">
-                <div className="text-[10px] tracking-[0.3em] uppercase text-ember mb-6">{a.tag}</div>
-                <h3 className="text-display text-3xl text-bone mb-3 group-hover:text-ember transition">{a.t}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{a.d}</p>
-                <div className="absolute -bottom-12 -right-12 text-display text-[10rem] text-ember/5 group-hover:text-ember/15 transition">✦</div>
+              { t: "Espaço Decorado", d: "Galpão temático com elementos rurais autênticos.", img: chefAsset.url },
+              { t: "Corredor de Entrada", d: "Túnel iluminado que prepara a experiência.", img: skullAsset.url },
+              { t: "Elementos Decorativos", d: "Detalhes temáticos por todo o festival.", img: porchettaAsset.url },
+            ].map((d) => (
+              <div key={d.t} className="group relative overflow-hidden border border-border/40 hover:border-ember transition">
+                <div className="aspect-[4/5] overflow-hidden bg-blood">
+                  <img src={d.img} alt={d.t} loading="lazy" className="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition duration-[1200ms]" />
+                </div>
+                <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-background via-background/80 to-transparent">
+                  <h3 className="text-display text-2xl text-bone mb-1">{d.t}</h3>
+                  <p className="text-xs text-muted-foreground">{d.d}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -476,9 +620,9 @@ function Index() {
       </section>
 
       {/* INGRESSOS */}
-      <section id="ingressos" className="py-32 px-6 relative overflow-hidden">
+      <section id="ingressos" className="py-32 px-6 relative overflow-hidden bg-card/30 border-y border-border/40">
         <div className="absolute inset-0 -z-10 opacity-20">
-          <img src={skullAsset.url} alt="" className="w-full h-full object-cover" />
+          <img src={skullAsset.url} alt="" className="w-full h-full object-cover" loading="lazy" />
           <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background" />
         </div>
         <div className="max-w-7xl mx-auto">
@@ -508,9 +652,9 @@ function Index() {
               <div className="absolute top-6 right-6 text-[10px] tracking-[0.3em] uppercase text-ember">★ Premium</div>
               <div className="text-xs tracking-[0.3em] uppercase text-ember mb-4">Camarote · Dia 05</div>
               <div className="flex items-baseline gap-2 mb-2">
-                <span className="text-display text-7xl md:text-8xl text-bone ember-glow">R$6.290</span>
-                <span className="text-muted-foreground">+ taxa</span>
+                <span className="text-display text-7xl md:text-8xl text-bone">Premium</span>
               </div>
+              <p className="text-sm text-muted-foreground mb-2">Sob consulta</p>
               <ul className="space-y-3 mt-10 mb-12 text-sm text-bone/80">
                 <li className="flex gap-3"><span className="text-ember">▸</span> Tenda exclusiva com vista privilegiada</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Open Food · Open Bar Premium</li>
@@ -522,32 +666,9 @@ function Index() {
               </button>
             </div>
           </div>
-          <div className="mt-12 p-8 border border-border/40 text-center">
+          <div className="mt-12 p-8 border border-border/40 text-center bg-background/40">
             <div className="text-xs tracking-[0.3em] uppercase text-ember mb-2">Dias 06 e 07</div>
             <p className="text-bone text-lg">Entrada gratuita · Comidas e bebidas vendidas à parte</p>
-          </div>
-        </div>
-      </section>
-
-      {/* STRUCTURE */}
-      <section className="py-32 px-6 bg-card/30 border-y border-border/40">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12">
-          <div className="md:col-span-5">
-            <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Estrutura</div>
-            <h2 className="text-display text-5xl md:text-7xl text-bone leading-none mb-6">
-              Construída para <span className="text-ember">incendiar</span>
-            </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              Cada detalhe pensado para uma experiência inesquecível — do palco ao corredor de entrada, da roda gigante de carne aos lounges de patrocinadores.
-            </p>
-          </div>
-          <div className="md:col-span-7 grid grid-cols-2 gap-px bg-border">
-            {[
-              "Palco principal", "Box Truss", "Roda gigante de carne", "Máquina de costela",
-              "30 estações · 30 assadores", "Tendas e camarotes", "Som · Iluminação", "Decoração temática sertaneja",
-            ].map((s) => (
-              <div key={s} className="p-6 bg-background text-sm tracking-wide text-bone/80">{s}</div>
-            ))}
           </div>
         </div>
       </section>
@@ -555,7 +676,7 @@ function Index() {
       {/* FOOTER / CTA */}
       <footer className="py-24 px-6">
         <div className="max-w-7xl mx-auto text-center">
-          <img src={logoAsset.url} alt="Parrilla Day" className="h-32 mx-auto mb-8 animate-flicker" style={{ filter: "brightness(0) saturate(100%) invert(38%) sepia(85%) saturate(2000%) hue-rotate(345deg) brightness(85%) contrast(95%)" }} />
+          <img src={logoAsset.url} alt="Parrilla Day" className="h-40 mx-auto mb-8 animate-flicker" style={{ filter: "brightness(0) invert(1)" }} />
           <h2 className="text-display text-4xl md:text-6xl text-bone mb-4">Caraguatatuba te espera</h2>
           <p className="text-serif-italic text-xl text-muted-foreground mb-12">5, 6 e 7 de setembro · 2026</p>
           <div className="flex flex-wrap justify-center gap-4 mb-16">
