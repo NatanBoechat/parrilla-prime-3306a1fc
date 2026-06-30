@@ -47,6 +47,61 @@ function Preloader({ onDone }: { onDone: () => void }) {
   );
 }
 
+function HeroHeadline({ play }: { play: boolean }) {
+  // Group into impactful lines for the layout
+  const lines = [
+    { text: "O MAIOR", accent: false },
+    { text: "FESTIVAL DE", accent: false },
+    { text: "CHURRASCO", accent: true },
+    { text: "DO LITORAL NORTE", accent: false },
+  ];
+
+  let charIndex = 0;
+  return (
+    <h1
+      className="text-display leading-[0.82] text-bone select-none"
+      style={{ perspective: "1000px" }}
+    >
+      {lines.map((line, li) => (
+        <div
+          key={li}
+          className={`block overflow-hidden ${
+            line.accent
+              ? "text-[20vw] md:text-[16vw] text-ember"
+              : "text-[14vw] md:text-[11vw]"
+          }`}
+          style={{ lineHeight: 0.82 }}
+        >
+          <span className="inline-block" style={{ transformStyle: "preserve-3d" }}>
+            {line.text.split("").map((ch, i) => {
+              const delay = 0.15 + charIndex * 0.022 + li * 0.08;
+              charIndex++;
+              return (
+                <span
+                  key={i}
+                  className={`inline-block ${line.accent ? "animate-glow-pulse" : ""}`}
+                  style={{
+                    animation: play
+                      ? `char-rise 1.1s cubic-bezier(0.16, 1, 0.3, 1) ${delay}s both${
+                          line.accent ? ", glow-pulse 3.5s ease-in-out infinite 2s" : ""
+                        }`
+                      : "none",
+                    opacity: play ? undefined : 0,
+                    whiteSpace: ch === " " ? "pre" : "normal",
+                    transformOrigin: "50% 100%",
+                  }}
+                >
+                  {ch === " " ? "\u00A0" : ch}
+                </span>
+              );
+            })}
+          </span>
+        </div>
+      ))}
+    </h1>
+  );
+}
+
 function RevealWords({ text, className = "" }: { text: string; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
