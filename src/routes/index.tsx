@@ -67,24 +67,25 @@ function HeroHeadline({ play }: { play: boolean }) {
           key={li}
           className={`block overflow-hidden ${
             line.accent
-              ? "text-[20vw] md:text-[16vw] text-ember"
-              : "text-[14vw] md:text-[11vw]"
+              ? "text-[17vw] md:text-[13vw] text-ember"
+              : "text-[12vw] md:text-[9vw]"
           }`}
           style={{ lineHeight: 0.82 }}
         >
-          <span className="inline-block" style={{ transformStyle: "preserve-3d" }}>
+          <span
+            className={`inline-block ${line.accent ? "animate-glow-pulse" : ""}`}
+            style={{ transformStyle: "preserve-3d" }}
+          >
             {line.text.split("").map((ch, i) => {
               const delay = 0.15 + charIndex * 0.022 + li * 0.08;
               charIndex++;
               return (
                 <span
                   key={i}
-                  className={`inline-block ${line.accent ? "animate-glow-pulse" : ""}`}
+                  className="inline-block"
                   style={{
                     animation: play
-                      ? `char-rise 1.1s cubic-bezier(0.16, 1, 0.3, 1) ${delay}s both${
-                          line.accent ? ", glow-pulse 3.5s ease-in-out infinite 2s" : ""
-                        }`
+                      ? `char-rise 1.1s cubic-bezier(0.16, 1, 0.3, 1) ${delay}s both`
                       : "none",
                     opacity: play ? undefined : 0,
                     whiteSpace: ch === " " ? "pre" : "normal",
@@ -246,7 +247,7 @@ function Index() {
       <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-background/60 border-b border-border/40">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
           <a href="#top" className="flex items-center gap-3">
-            <img src={logoAsset.url} alt="" className="h-10 w-auto" style={{ filter: "brightness(0) saturate(100%) invert(38%) sepia(85%) saturate(2000%) hue-rotate(345deg) brightness(85%) contrast(95%)" }} />
+            <img src={logoAsset.url} alt="" className="h-16 md:h-20 w-auto" style={{ filter: "brightness(0) invert(1)" }} />
           </a>
           <nav className="hidden md:flex items-center gap-8 text-xs tracking-[0.25em] uppercase text-muted-foreground">
             <a href="#evento" className="hover:text-ember transition">O Evento</a>
@@ -261,7 +262,7 @@ function Index() {
       </header>
 
       {/* HERO */}
-      <section id="top" className="relative min-h-screen flex items-center pt-32 pb-20 px-6 overflow-hidden grain">
+      <section id="top" className="relative min-h-screen h-screen flex items-center pt-28 pb-16 px-6 overflow-hidden grain">
         <div className="absolute inset-0 -z-10">
           <img src={grillAsset.url} alt="" className="w-full h-full object-cover opacity-30 animate-heat-haze" />
           <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/60 to-background" />
@@ -310,9 +311,9 @@ function Index() {
 
           <HeroHeadline play={loaded} />
 
-          <div className="mt-14 grid md:grid-cols-[1.2fr_1fr] gap-12 items-end">
+          <div className="mt-6 md:mt-10 grid md:grid-cols-[1.2fr_1fr] gap-6 md:gap-12 items-end">
             <p
-              className="text-serif-italic text-xl md:text-3xl text-bone/80 max-w-2xl leading-snug"
+              className="text-serif-italic text-base md:text-2xl text-bone/80 max-w-2xl leading-snug"
               style={{
                 animation: loaded ? "char-rise 1s ease-out 1.6s both" : "none",
                 opacity: loaded ? undefined : 0,
@@ -327,11 +328,11 @@ function Index() {
                 opacity: loaded ? undefined : 0,
               }}
             >
-              <a href="#ingressos" className="group relative px-10 py-5 bg-ember text-background text-xs tracking-[0.3em] uppercase font-bold hover:bg-ember/90 transition overflow-hidden">
+              <a href="#ingressos" className="group relative px-6 md:px-8 py-3 md:py-4 bg-ember text-background text-[10px] md:text-xs tracking-[0.3em] uppercase font-bold hover:bg-ember/90 transition overflow-hidden">
                 <span className="relative z-10">Comprar Ingresso →</span>
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-bone/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
               </a>
-              <a href="#evento" className="px-10 py-5 border border-ember/40 text-xs tracking-[0.3em] uppercase hover:border-ember hover:text-ember transition">
+              <a href="#evento" className="px-6 md:px-8 py-3 md:py-4 border border-ember/40 text-[10px] md:text-xs tracking-[0.3em] uppercase hover:border-ember hover:text-ember transition">
                 Saber Mais
               </a>
             </div>
