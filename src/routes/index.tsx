@@ -263,36 +263,87 @@ function Index() {
       {/* HERO */}
       <section id="top" className="relative min-h-screen flex items-center pt-32 pb-20 px-6 overflow-hidden grain">
         <div className="absolute inset-0 -z-10">
-          <img src={grillAsset.url} alt="" className="w-full h-full object-cover opacity-25" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background via-background/70 to-background" />
+          <img src={grillAsset.url} alt="" className="w-full h-full object-cover opacity-30 animate-heat-haze" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/60 to-background" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_20%,oklch(0.13_0.015_30/0.85)_80%)]" />
         </div>
-        <div className="max-w-7xl mx-auto w-full">
-          <div className="flex items-center gap-4 mb-8 text-xs tracking-[0.4em] uppercase text-ember">
-            <span className="h-px w-12 bg-ember" />
-            <span>3ª Edição · Caraguatatuba · 2026</span>
+
+        {/* Rising embers */}
+        <div className="absolute inset-0 -z-[5] pointer-events-none overflow-hidden">
+          {Array.from({ length: 22 }).map((_, i) => {
+            const left = (i * 53) % 100;
+            const delay = (i * 0.37) % 8;
+            const dur = 6 + ((i * 7) % 8);
+            const size = 2 + (i % 4);
+            const drift = ((i % 5) - 2) * 30;
+            return (
+              <span
+                key={i}
+                className="absolute bottom-0 rounded-full bg-ember"
+                style={{
+                  left: `${left}%`,
+                  width: size,
+                  height: size,
+                  boxShadow: "0 0 12px 2px oklch(0.7 0.22 45 / 80%)",
+                  animation: `ember-rise ${dur}s linear ${delay}s infinite`,
+                  ["--drift" as never]: `${drift}px`,
+                }}
+              />
+            );
+          })}
+        </div>
+
+        <div className="max-w-[1600px] mx-auto w-full relative">
+          <div
+            className="flex items-center gap-4 mb-10 text-[11px] tracking-[0.5em] uppercase text-ember"
+            style={{ animation: loaded ? "char-rise 0.8s ease-out 0s both" : "none", opacity: loaded ? undefined : 0 }}
+          >
+            <span
+              className="h-px bg-ember origin-left block"
+              style={{
+                width: "5rem",
+                animation: loaded ? "slash-in 0.9s cubic-bezier(0.7,0,0.2,1) 0.1s both" : "none",
+              }}
+            />
+            <span>3ª Edição · Caraguatatuba · 05 · 06 · 07 Setembro 2026</span>
           </div>
-          <RevealWords
-            text="O MAIOR FESTIVAL DE CHURRASCO DO LITORAL NORTE"
-            className="text-display text-[14vw] md:text-[10vw] leading-[0.85] text-bone ember-glow"
-          />
-          <div className="mt-12 grid md:grid-cols-2 gap-12 items-end">
-            <p className="text-serif-italic text-xl md:text-2xl text-muted-foreground max-w-lg leading-relaxed">
-              O maior festival gastronômico sertanejo à beira-mar do litoral — unindo alta gastronomia, música e entretenimento em um feriado inesquecível.
+
+          <HeroHeadline play={loaded} />
+
+          <div className="mt-14 grid md:grid-cols-[1.2fr_1fr] gap-12 items-end">
+            <p
+              className="text-serif-italic text-xl md:text-3xl text-bone/80 max-w-2xl leading-snug"
+              style={{
+                animation: loaded ? "char-rise 1s ease-out 1.6s both" : "none",
+                opacity: loaded ? undefined : 0,
+              }}
+            >
+              Três dias de fogo, sertanejo e alta gastronomia <span className="text-ember">à beira-mar</span> — o feriado da Independência transformado em festa.
             </p>
-            <div className="flex gap-4">
-              <a href="#ingressos" className="px-8 py-4 bg-ember text-background text-sm tracking-[0.2em] uppercase font-semibold hover:bg-ember/90 transition">
-                Comprar Ingresso
+            <div
+              className="flex flex-wrap gap-4"
+              style={{
+                animation: loaded ? "char-rise 1s ease-out 1.8s both" : "none",
+                opacity: loaded ? undefined : 0,
+              }}
+            >
+              <a href="#ingressos" className="group relative px-10 py-5 bg-ember text-background text-xs tracking-[0.3em] uppercase font-bold hover:bg-ember/90 transition overflow-hidden">
+                <span className="relative z-10">Comprar Ingresso →</span>
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-bone/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
               </a>
-              <a href="#evento" className="px-8 py-4 border border-border text-sm tracking-[0.2em] uppercase hover:border-ember transition">
+              <a href="#evento" className="px-10 py-5 border border-ember/40 text-xs tracking-[0.3em] uppercase hover:border-ember hover:text-ember transition">
                 Saber Mais
               </a>
             </div>
           </div>
         </div>
+
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[10px] tracking-[0.4em] uppercase text-muted-foreground animate-pulse">
           ↓ Role para descobrir
         </div>
       </section>
+
+
 
       {/* COUNTDOWN */}
       <section className="py-24 px-6 border-y border-border/40 bg-card/30">
