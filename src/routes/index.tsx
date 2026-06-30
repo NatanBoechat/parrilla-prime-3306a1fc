@@ -328,11 +328,11 @@ function Index() {
                 opacity: loaded ? undefined : 0,
               }}
             >
-              <a href="#ingressos" className="group relative px-10 py-5 bg-ember text-background text-xs tracking-[0.3em] uppercase font-bold hover:bg-ember/90 transition overflow-hidden">
+              <a href="#ingressos" className="group relative px-6 md:px-8 py-3 md:py-4 bg-ember text-background text-[10px] md:text-xs tracking-[0.3em] uppercase font-bold hover:bg-ember/90 transition overflow-hidden">
                 <span className="relative z-10">Comprar Ingresso →</span>
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-bone/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
               </a>
-              <a href="#evento" className="px-10 py-5 border border-ember/40 text-xs tracking-[0.3em] uppercase hover:border-ember hover:text-ember transition">
+              <a href="#evento" className="px-6 md:px-8 py-3 md:py-4 border border-ember/40 text-[10px] md:text-xs tracking-[0.3em] uppercase hover:border-ember hover:text-ember transition">
                 Saber Mais
               </a>
             </div>
