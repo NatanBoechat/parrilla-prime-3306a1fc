@@ -122,3 +122,33 @@
 
 @utility animate-flicker { animation: flame-flicker 2.5s ease-in-out infinite; }
 @utility animate-marquee { animation: marquee 40s linear infinite; }
+
+@keyframes ember-rise {
+  0% { transform: translateY(0) translateX(0) scale(0.6); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateY(-120vh) translateX(var(--drift, 20px)) scale(1.2); opacity: 0; }
+}
+
+@keyframes heat-haze {
+  0%, 100% { transform: translate(0, 0) scale(1); filter: hue-rotate(0deg); }
+  50% { transform: translate(2px, -3px) scale(1.01); filter: hue-rotate(-8deg); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { text-shadow: 0 0 40px oklch(0.65 0.22 38 / 60%), 0 0 90px oklch(0.5 0.2 30 / 40%), 0 4px 0 oklch(0.2 0.05 30 / 80%); }
+  50% { text-shadow: 0 0 70px oklch(0.7 0.24 40 / 85%), 0 0 140px oklch(0.55 0.22 32 / 55%), 0 4px 0 oklch(0.2 0.05 30 / 80%); }
+}
+
+@keyframes slash-in {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes char-rise {
+  0% { transform: translateY(120%) rotateX(-60deg) scale(0.9); opacity: 0; filter: blur(12px); }
+  60% { opacity: 1; filter: blur(0); }
+  100% { transform: translateY(0) rotateX(0) scale(1); opacity: 1; filter: blur(0); }
+}
+
+@utility animate-glow-pulse { animation: glow-pulse 3.5s ease-in-out infinite; }
+@utility animate-heat-haze { animation: heat-haze 6s ease-in-out infinite; }
