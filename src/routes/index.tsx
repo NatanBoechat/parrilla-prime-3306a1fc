@@ -311,9 +311,9 @@ function Index() {
 
           <HeroHeadline play={loaded} />
 
-          <div className="mt-14 grid md:grid-cols-[1.2fr_1fr] gap-12 items-end">
+          <div className="mt-6 md:mt-10 grid md:grid-cols-[1.2fr_1fr] gap-6 md:gap-12 items-end">
             <p
-              className="text-serif-italic text-xl md:text-3xl text-bone/80 max-w-2xl leading-snug"
+              className="text-serif-italic text-base md:text-2xl text-bone/80 max-w-2xl leading-snug"
               style={{
                 animation: loaded ? "char-rise 1s ease-out 1.6s both" : "none",
                 opacity: loaded ? undefined : 0,
