@@ -24,6 +24,7 @@ import decoBarnImg from "@/assets/deco-barn.png";
 import decoCorridorImg from "@/assets/deco-corridor.png";
 import decoTouroImg from "@/assets/deco-touro.png";
 import fogosImg from "@/assets/fogos-real.png";
+import showsFlyerImg from "@/assets/shows-flyer.png";
 
 export const Route = createFileRoute("/")({
   component: Index,
