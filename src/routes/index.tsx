@@ -230,9 +230,9 @@ function Index() {
 
       {/* NAV */}
       <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-background/60 border-b border-border/40">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-2">
           <a href="#top" className="flex items-center gap-3">
-            <img src={logoAsset.url} alt="Parrilla Day" className="h-24 md:h-28 w-auto" />
+            <img src={logoAsset.url} alt="Parrilla Day" className="h-12 md:h-14 w-auto" />
           </a>
           <nav className="hidden md:flex items-center gap-8 text-xs tracking-[0.25em] uppercase text-muted-foreground">
             <a href="#evento" className="hover:text-ember transition">O Evento</a>
@@ -249,7 +249,7 @@ function Index() {
       </header>
 
       {/* HERO */}
-      <section id="top" className="relative min-h-screen h-screen flex items-center pt-40 md:pt-44 pb-16 px-6 overflow-hidden grain isolate">
+      <section id="top" className="relative min-h-screen h-screen flex items-center pt-28 md:pt-32 pb-12 md:pb-16 px-6 overflow-hidden grain isolate">
         <div className="absolute inset-0 z-0">
           <video
             src={heroVideoAsset.url}
@@ -293,7 +293,7 @@ function Index() {
 
         <div className="max-w-[1600px] mx-auto w-full relative z-10">
           <div
-            className="flex items-center gap-4 mb-10 text-[11px] tracking-[0.5em] uppercase text-ember"
+            className="flex items-center gap-4 mb-8 text-[11px] tracking-[0.5em] uppercase text-ember"
             style={{ animation: loaded ? "char-rise 0.8s ease-out 0s both" : "none", opacity: loaded ? undefined : 0 }}
           >
             <span
@@ -308,7 +308,7 @@ function Index() {
 
           <HeroHeadline play={loaded} />
 
-          <div className="mt-6 md:mt-10 grid md:grid-cols-[1.2fr_1fr] gap-6 md:gap-12 items-end">
+          <div className="mt-4 md:mt-8 grid md:grid-cols-[1.2fr_1fr] gap-6 md:gap-12 items-end">
             <p
               className="text-serif-italic text-base md:text-2xl text-bone/80 max-w-2xl leading-snug"
               style={{
@@ -336,7 +336,7 @@ function Index() {
           </div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[10px] tracking-[0.4em] uppercase text-muted-foreground animate-pulse">
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-[10px] tracking-[0.4em] uppercase text-muted-foreground animate-pulse">
           ↓ Role para descobrir
         </div>
       </section>
