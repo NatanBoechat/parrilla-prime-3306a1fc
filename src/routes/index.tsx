@@ -46,7 +46,7 @@ function Preloader({ onDone }: { onDone: () => void }) {
       style={{ opacity: progress >= 1 ? 0 : 1, pointerEvents: progress >= 1 ? "none" : "auto" }}
     >
       <div className="relative w-56 md:w-72 animate-flicker">
-        <img src={logoAsset.url} alt="Parrilla Day" className="w-full h-auto" style={{ filter: "brightness(0) invert(1)" }} />
+        <img src={logoAsset.url} alt="Parrilla Day" className="w-full h-auto" />
       </div>
       <div className="mt-12 w-48 h-px bg-border overflow-hidden">
         <div className="h-full bg-ember" style={{ width: `${progress * 100}%`, transition: "width 0.1s linear" }} />
