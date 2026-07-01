@@ -195,7 +195,7 @@ function PhotoStrip() {
           } else if (i === 0 && progress < start) {
             opacity = Math.max(0, 1 + progress * 5);
           }
-          const objPos = i === 3 || i === 4 ? "center top" : "center";
+          const objPos = i === 3 || i === 4 ? "center 20%" : "center";
           return (
             <div
               key={i}
