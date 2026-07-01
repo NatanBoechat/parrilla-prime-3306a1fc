@@ -491,17 +491,27 @@ function Index() {
             src={showsFlyerImg}
             alt="Flyer oficial dos shows do Parrilla Day 2026"
             className="w-full h-auto transition duration-[1500ms] group-hover:scale-[1.02]"
+            style={{
+              maskImage: "linear-gradient(to bottom, black 50%, transparent 100%), linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%)",
+              WebkitMaskImage: "linear-gradient(to bottom, black 50%, transparent 100%), linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%)",
+              maskComposite: "intersect",
+              WebkitMaskComposite: "source-in",
+            }}
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent pointer-events-none" />
-        </div>
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="mt-10 grid md:grid-cols-3 gap-4">
-            {["Guilherme & Vinícius", "Naessa", "Peddro Henrique & Luciano"].map((n) => (
-              <div key={n} className="p-5 border border-border/40 text-center hover:border-ember transition">
-                <h3 className="text-display text-xl md:text-2xl text-bone">{n}</h3>
-              </div>
-            ))}
+          <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col items-center justify-end pb-8 md:pb-14 px-6 bg-gradient-to-t from-background via-background/60 to-transparent">
+            <div className="w-full max-w-6xl grid md:grid-cols-3 gap-4 md:gap-8 text-center">
+              {["Guilherme & Vinícius", "Naessa", "Peddro Henrique & Luciano"].map((n) => (
+                <div key={n}>
+                  <h3
+                    className="text-display text-3xl md:text-5xl lg:text-6xl text-bone"
+                    style={{ textShadow: "0 2px 24px rgba(0,0,0,0.95), 0 0 8px rgba(0,0,0,0.8)" }}
+                  >
+                    {n}
+                  </h3>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
