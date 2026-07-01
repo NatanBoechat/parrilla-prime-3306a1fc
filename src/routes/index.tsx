@@ -465,12 +465,76 @@ function Index() {
               "Mandioca na Manteiga", "Queijo Coalho", "Farofas", "Vinagrete da Casa",
             ].map((s, i) => (
               <div key={s} className="p-6 bg-background hover:bg-card transition group">
-                <div className="text-[10px] tracking-[0.3em] uppercase text-ember mb-2">Estação · {String(i + 1).padStart(2, "0")}</div>
-                <div className="text-display text-2xl text-bone group-hover:text-ember transition">{s}</div>
+          <div className="grid md:grid-cols-2 gap-10">
+            {[
+              {
+                setor: "Camarote",
+                sub: "Exclusivo · Dia 05",
+                items: [
+                  { p: "Alcatra de Cordeiro", c: "Juninho", ig: "juninho.brasaforte" },
+                  { p: "Burger", c: "Renan Villar", ig: "renantbc" },
+                  { p: "Gnocchi & Ragu de Linguiça", c: "Jean Assador", ig: "jfgrill_heanfernandes" },
+                  { p: "Costela", c: "Elcio Henrique", ig: "direto_do_fogo_proce" },
+                  { p: "Paella de Frutos do Mar", c: "Fábio Santana", ig: "fabiosantana49" },
+                  { p: "Picanha", c: "Camila Damasceno", ig: "cami_damasceno" },
+                ],
+              },
+              {
+                setor: "Pista",
+                sub: "Aberto ao público",
+                items: [
+                  { p: "Alcatra de Cordeiro", c: "Dorfo's & Patricia", ig: "casalnabrasa_" },
+                  { p: "Ancho", c: "Willian Hory", ig: "eunoseuchurrasco" },
+                  { p: "Ancho", c: "Luiz Otavio", ig: "boivermelho.bbq" },
+                  { p: "Arroz à Mineira", c: "Tiago Palacio", ig: "palaciorangodetacho" },
+                  { p: "Brisket", c: "Henrique Gonçalves", ig: "ferroefogobbq" },
+                  { p: "Burger", c: "Fábio Henrique", ig: "geras_burger" },
+                  { p: "Burger", c: "Felipe Moika", ig: "felipemoika" },
+                  { p: "Burger", c: "Big Jhon", ig: "bigjhonhamburgueria" },
+                  { p: "Chorizo", c: "Diego Blasco", ig: "diegocblasco" },
+                  { p: "Costela", c: "Will Fernandes", ig: "chefwillassador" },
+                  { p: "Costelinha Suína", c: "Bruno Ribeiro", ig: "balaiodaroca" },
+                  { p: "Cupim", c: "Gersão Ribeiro", ig: "rango_zerodoze" },
+                  { p: "Chicken Fries", c: "O Quintal", ig: "oquintalcaragua" },
+                  { p: "Peixe", c: "Du Goiozo", ig: "dugoiozo.churrasco" },
+                  { p: "Picanha", c: "Flávio Messias", ig: "flaviobrazza" },
+                  { p: "Picanha", c: "Espeticho", ig: "espeticho" },
+                  { p: "Prime Rib", c: "Luiz Bueno", ig: "familiabueno.oficial" },
+                  { p: "Sobrecoxa", c: "Dom Roasters", ig: "domroasters" },
+                  { p: "Torresmo", c: "Maurício", ig: "tempoetemperaturagrill" },
+                ],
+              },
+            ].map((group) => (
+              <div key={group.setor} className="border border-border/40">
+                <div className="p-6 border-b border-border/40 flex items-baseline justify-between gap-4 bg-background">
+                  <div>
+                    <div className="text-[10px] tracking-[0.4em] uppercase text-ember mb-2">Setor</div>
+                    <div className="text-display text-3xl md:text-4xl text-bone">{group.setor}</div>
+                  </div>
+                  <div className="text-xs tracking-[0.2em] uppercase text-muted-foreground text-right">{group.sub}</div>
+                </div>
+                <ul className="divide-y divide-border/40">
+                  {group.items.map((it, i) => (
+                    <li key={`${group.setor}-${i}`} className="flex items-center justify-between gap-4 px-6 py-4 bg-background hover:bg-card transition group">
+                      <div className="min-w-0">
+                        <div className="text-display text-lg md:text-xl text-bone group-hover:text-ember transition truncate">{it.p}</div>
+                        <div className="text-xs text-muted-foreground tracking-wide uppercase mt-0.5">{it.c}</div>
+                      </div>
+                      <a
+                        href={`https://instagram.com/${it.ig}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="shrink-0 text-[10px] tracking-[0.2em] uppercase text-muted-foreground hover:text-ember transition"
+                      >
+                        @{it.ig}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
-          <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mt-8">+ Food Trucks: Espeticho · Caramelo Comida de Rua · Doces</p>
+          <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mt-10">+ Food Trucks: Espeticho · Caramelo Comida de Rua · Doces</p>
         </div>
       </section>
 
