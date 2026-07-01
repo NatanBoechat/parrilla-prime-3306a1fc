@@ -23,10 +23,22 @@ import decoCorridorImg from "@/assets/deco-corridor.png";
 import decoTouroImg from "@/assets/deco-touro.png";
 import fogosImg from "@/assets/fogos-real.png";
 import showsFlyerImg from "@/assets/shows-flyer.png";
-import sponsors1Img from "@/assets/sponsors-1.png";
-import sponsors2Img from "@/assets/sponsors-2.png";
 import rodaCarneImg from "@/assets/roda-carne.png";
 import barBrahmaRealImg from "@/assets/bar-brahma-real.png";
+const sponsorLogos = [
+  { src: new URL("../assets/sponsors/tnc.png", import.meta.url).href, name: "TNC" },
+  { src: new URL("../assets/sponsors/ford.png", import.meta.url).href, name: "Ford" },
+  { src: new URL("../assets/sponsors/redbull.png", import.meta.url).href, name: "Red Bull" },
+  { src: new URL("../assets/sponsors/trombini.png", import.meta.url).href, name: "Diversões Trombini" },
+  { src: new URL("../assets/sponsors/ambev.png", import.meta.url).href, name: "Ambev" },
+  { src: new URL("../assets/sponsors/realeza.png", import.meta.url).href, name: "Realeza" },
+  { src: new URL("../assets/sponsors/selva.png", import.meta.url).href, name: "Selva Zeladoria" },
+  { src: new URL("../assets/sponsors/hampton.png", import.meta.url).href, name: "Hampton by Hilton" },
+  { src: new URL("../assets/sponsors/band.png", import.meta.url).href, name: "Band" },
+  { src: new URL("../assets/sponsors/qb.png", import.meta.url).href, name: "QB Construções" },
+  { src: new URL("../assets/sponsors/caraguafm.png", import.meta.url).href, name: "Caraguá FM 89.5" },
+  { src: new URL("../assets/sponsors/bigjhon.png", import.meta.url).href, name: "Big Jhon" },
+];
 
 export const Route = createFileRoute("/")({
   component: Index,
