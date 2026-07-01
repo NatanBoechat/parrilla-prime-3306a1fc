@@ -396,7 +396,7 @@ function Index() {
       <PhotoStrip />
 
       {/* O EVENTO */}
-      <section id="evento" className="py-32 px-6">
+      <section id="evento" className="py-20 md:py-24 px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
             <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">O Evento</div>
@@ -425,7 +425,7 @@ function Index() {
       </section>
 
       {/* ESTAÇÕES GASTRONÔMICAS */}
-      <section id="estacoes" className="py-32 px-6 bg-card/30 border-y border-border/40 relative overflow-hidden">
+      <section id="estacoes" className="py-20 md:py-24 px-6 bg-card/30 border-y border-border/40 relative overflow-hidden">
         <div className="absolute inset-0 -z-10 opacity-15">
           <img src={estacoesImg} alt="" className="w-full h-full object-cover" loading="lazy" />
           <div className="absolute inset-0 bg-gradient-to-b from-background via-background/60 to-background" />
@@ -453,7 +453,7 @@ function Index() {
       </section>
 
       {/* PROGRAMAÇÃO */}
-      <section id="programacao" className="py-32 px-6">
+      <section id="programacao" className="py-20 md:py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Programação</div>
           <h2 className="text-display text-5xl md:text-7xl text-bone mb-16">Três dias na brasa</h2>
@@ -479,7 +479,7 @@ function Index() {
       </section>
 
       {/* HEADLINERS */}
-      <section className="py-32 px-6 bg-card/30 border-y border-border/40 relative overflow-hidden">
+      <section className="py-20 md:py-24 px-6 bg-card/30 border-y border-border/40 relative overflow-hidden">
         <div className="absolute inset-0 -z-10 opacity-25">
           <img src={showSertanejoImg} alt="" className="w-full h-full object-cover" loading="lazy" />
           <div className="absolute inset-0 bg-gradient-to-b from-background via-background/70 to-background" />
@@ -502,7 +502,7 @@ function Index() {
       </section>
 
       {/* ATRAÇÕES */}
-      <section id="atracoes" className="py-32 px-6">
+      <section id="atracoes" className="py-20 md:py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Atrações</div>
           <h2 className="text-display text-5xl md:text-7xl text-bone mb-16 max-w-3xl">
@@ -534,7 +534,7 @@ function Index() {
       </section>
 
       {/* MAPA DO EVENTO */}
-      <section id="mapa" className="py-32 px-6 bg-card/30 border-y border-border/40">
+      <section id="mapa" className="py-20 md:py-24 px-6 bg-card/30 border-y border-border/40">
         <div className="max-w-7xl mx-auto">
           <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Mapa do Evento</div>
           <h2 className="text-display text-5xl md:text-7xl text-bone mb-4">À beira mar.<br /><span className="text-ember">Caraguá Beach.</span></h2>
@@ -561,7 +561,7 @@ function Index() {
       </section>
 
       {/* ESTRUTURA / PALCO */}
-      <section className="py-32 px-6">
+      <section className="py-20 md:py-24 px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-6 relative overflow-hidden">
             <img src={mainStageAsset} alt="Palco principal Parrilla Day" loading="lazy" className="w-full h-auto" />
@@ -593,7 +593,7 @@ function Index() {
       </section>
 
       {/* BAR BRAHMA */}
-      <section className="py-32 px-6 bg-card/30 border-y border-border/40">
+      <section className="py-20 md:py-24 px-6 bg-card/30 border-y border-border/40">
         <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-6 order-2 md:order-1">
             <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Bar & Bebidas</div>
@@ -616,7 +616,7 @@ function Index() {
       </section>
 
       {/* DECORAÇÃO TEMÁTICA */}
-      <section className="py-32 px-6">
+      <section className="py-20 md:py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Ambientação</div>
           <h2 className="text-display text-5xl md:text-7xl text-bone mb-16 max-w-3xl">
@@ -643,7 +643,7 @@ function Index() {
       </section>
 
       {/* INGRESSOS */}
-      <section id="ingressos" className="py-32 px-6 relative overflow-hidden bg-card/30 border-y border-border/40">
+      <section id="ingressos" className="py-20 md:py-24 px-6 relative overflow-hidden bg-card/30 border-y border-border/40">
         <div className="absolute inset-0 -z-10 opacity-20">
           <img src={skullAsset} alt="" className="w-full h-full object-cover" loading="lazy" />
           <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background" />
@@ -697,7 +697,7 @@ function Index() {
       </section>
 
       {/* FOOTER / CTA */}
-      <footer className="py-32 md:py-40 px-6 bg-background">
+      <footer className="py-24 md:py-28 px-6 bg-background">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
             <div className="text-center md:text-left">
