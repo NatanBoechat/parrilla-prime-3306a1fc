@@ -7,6 +7,7 @@ import grillAsset from "@/assets/grill.jpg.asset.json";
 import chefAsset from "@/assets/chef.jpg.asset.json";
 import coupleAsset from "@/assets/couple.jpg.asset.json";
 import heroBgAsset from "@/assets/hero-bg.png.asset.json";
+import heroVideoAsset from "@/assets/hero-bg.mp4.asset.json";
 import barBrahmaAsset from "@/assets/bar-brahma.jpg.asset.json";
 import eventMapAsset from "@/assets/event-map.jpg.asset.json";
 import mainStageAsset from "@/assets/main-stage.jpg.asset.json";
@@ -250,9 +251,19 @@ function Index() {
       {/* HERO */}
       <section id="top" className="relative min-h-screen h-screen flex items-center pt-28 pb-16 px-6 overflow-hidden grain">
         <div className="absolute inset-0 -z-10">
-          <img src={heroBgAsset.url} alt="" className="w-full h-full object-cover opacity-50 animate-heat-haze" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/55 to-background" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_20%,oklch(0.13_0.015_30/0.85)_80%)]" />
+          <video
+            src={heroVideoAsset.url}
+            poster={heroBgAsset.url}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            className="w-full h-full object-cover opacity-60"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/65 to-background" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_10%,oklch(0.13_0.015_30/0.9)_85%)]" />
+          <div className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-40 animate-heat-haze bg-[radial-gradient(ellipse_at_center,oklch(0.7_0.22_45/0.15),transparent_60%)]" />
         </div>
 
         {/* Rising embers */}
