@@ -300,13 +300,17 @@ function Index() {
 
         <div className="max-w-[1600px] mx-auto w-full relative z-10">
           <div
-            className="flex items-center gap-3 mb-4 text-[10px] md:text-[11px] tracking-[0.35em] md:tracking-[0.4em] uppercase text-ember"
-            style={{ animation: loaded ? "char-rise 0.8s ease-out 0s both" : "none", opacity: loaded ? undefined : 0 }}
+            className="flex items-center gap-3 mb-6 md:mb-8 text-[11px] md:text-[12px] tracking-[0.35em] md:tracking-[0.4em] uppercase text-ember"
+            style={{
+              animation: loaded ? "char-rise 0.8s ease-out 0s both" : "none",
+              opacity: loaded ? undefined : 0,
+              textShadow: "0 2px 12px rgba(0,0,0,0.9), 0 0 4px rgba(0,0,0,0.8)",
+            }}
           >
             <span
-              className="h-px bg-ember origin-left block"
+              className="h-px bg-ember origin-left block shrink-0"
               style={{
-                width: "4rem",
+                width: "3rem",
                 animation: loaded ? "slash-in 0.9s cubic-bezier(0.7,0,0.2,1) 0.1s both" : "none",
               }}
             />
@@ -315,12 +319,13 @@ function Index() {
 
           <HeroHeadline play={loaded} />
 
-          <div className="mt-2 md:mt-4 grid md:grid-cols-[1.2fr_1fr] gap-6 md:gap-12 items-end">
+          <div className="mt-8 md:mt-10 grid md:grid-cols-[1.2fr_1fr] gap-8 md:gap-12 items-end">
             <p
-              className="text-serif-italic text-base md:text-2xl text-bone/80 max-w-2xl leading-snug"
+              className="text-serif-italic text-lg md:text-2xl text-bone max-w-2xl leading-relaxed"
               style={{
                 animation: loaded ? "char-rise 1s ease-out 1.6s both" : "none",
                 opacity: loaded ? undefined : 0,
+                textShadow: "0 2px 16px rgba(0,0,0,0.9), 0 0 6px rgba(0,0,0,0.7)",
               }}
             >
               Três dias de fogo, sertanejo e alta gastronomia <span className="text-ember">à beira-mar</span> — o feriado da Independência transformado em festa.
