@@ -249,8 +249,8 @@ function Index() {
       </header>
 
       {/* HERO */}
-      <section id="top" className="relative min-h-screen h-screen flex items-center pt-28 pb-16 px-6 overflow-hidden grain">
-        <div className="absolute inset-0 -z-10">
+      <section id="top" className="relative min-h-screen h-screen flex items-center pt-40 md:pt-44 pb-16 px-6 overflow-hidden grain isolate">
+        <div className="absolute inset-0 z-0">
           <video
             src={heroVideoAsset.url}
             poster={heroBgAsset.url}
@@ -261,7 +261,7 @@ function Index() {
             preload="auto"
             className="absolute inset-0 w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/30 to-background/90" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/35 to-background/95" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,oklch(0.13_0.015_30/0.75)_90%)]" />
           <div className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-40 animate-heat-haze bg-[radial-gradient(ellipse_at_center,oklch(0.7_0.22_45/0.15),transparent_60%)]" />
         </div>
