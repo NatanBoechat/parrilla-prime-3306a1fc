@@ -8,9 +8,7 @@ import chefAsset from "@/assets/chef.jpg";
 import coupleAsset from "@/assets/couple.jpg";
 import heroBgAsset from "@/assets/hero-bg.png";
 import heroVideoAsset from "@/assets/hero-bg.mp4";
-import barBrahmaAsset from "@/assets/bar-brahma.jpg";
 import eventMapAsset from "@/assets/event-map.jpg";
-import mainStageAsset from "@/assets/main-stage.jpg";
 import rodaGiganteImg from "@/assets/roda-gigante-real.png";
 import touroMecanicoImg from "@/assets/touro-real.png";
 import roboGiganteImg from "@/assets/robo-real.png";
@@ -25,6 +23,10 @@ import decoCorridorImg from "@/assets/deco-corridor.png";
 import decoTouroImg from "@/assets/deco-touro.png";
 import fogosImg from "@/assets/fogos-real.png";
 import showsFlyerImg from "@/assets/shows-flyer.png";
+import sponsors1Img from "@/assets/sponsors-1.png";
+import sponsors2Img from "@/assets/sponsors-2.png";
+import rodaCarneImg from "@/assets/roda-carne.png";
+import barBrahmaRealImg from "@/assets/bar-brahma-real.png";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -190,11 +192,17 @@ function PhotoStrip() {
           let y = 60;
           if (progress >= start && progress < end) {
             const local = (progress - start) / (end - start);
-            opacity = local < 0.15 ? local / 0.15 : local > 0.85 ? (1 - local) / 0.15 : 1;
+            if (i === 0) {
+              opacity = local > 0.85 ? (1 - local) / 0.15 : 1;
+            } else {
+              opacity = local < 0.15 ? local / 0.15 : local > 0.85 ? (1 - local) / 0.15 : 1;
+            }
             scale = 1.15 - local * 0.15;
             y = 60 - local * 60;
           } else if (i === 0 && progress < start) {
-            opacity = Math.max(0, 1 + progress * 5);
+            opacity = 1;
+            scale = 1;
+            y = 0;
           }
           const objPos = i === 3 || i === 4 ? "center 20%" : "center";
           return (
@@ -207,7 +215,7 @@ function PhotoStrip() {
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/60" />
               <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
                 <div className="text-serif-italic text-ember text-lg md:text-2xl mb-4">
-                  — 0{i + 1} / 0{photos.length}
+                  0{i + 1} / 0{photos.length}
                 </div>
                 <h2 className="text-display text-6xl md:text-9xl text-bone ember-glow">
                   {captions[i]}
@@ -225,7 +233,7 @@ const ATRACOES = [
   { t: "Balonismo", d: "Subida de balão de ar quente sobre o litoral ao nascer do sol.", img: balonismoImg, tag: "Dia 05" },
   { t: "Robô Gigante", d: "Performance interativa com LEDs e fumaça para todos os públicos.", img: roboGiganteImg, tag: "Dia 05" },
   { t: "Roda Gigante", d: "Vista panorâmica do festival e da praia de Caraguatatuba.", img: rodaGiganteImg, tag: "Dias 05 / 06 / 07" },
-  { t: "Touro Mecânico", d: "O clássico desafio sertanejo — quem aguenta os 8 segundos?", img: touroMecanicoImg, tag: "Dias 05 / 06" },
+  { t: "Touro Mecânico", d: "O clássico desafio sertanejo. Quem aguenta os 8 segundos?", img: touroMecanicoImg, tag: "Dias 05 / 06" },
   { t: "Shows Sertanejos", d: "Atrações nacionais e locais no palco principal.", img: showSertanejoImg, tag: "Dia 05" },
   { t: "Apresentações de Dança", d: "Coreografias e performances temáticas pelo evento.", img: danceImg, tag: "Dia 05" },
 ];
@@ -330,7 +338,7 @@ function Index() {
                 textShadow: "0 2px 16px rgba(0,0,0,0.9), 0 0 6px rgba(0,0,0,0.7)",
               }}
             >
-              Três dias de fogo, sertanejo e alta gastronomia <span className="text-ember">à beira-mar</span> — o feriado da Independência transformado em festa.
+              Três dias de fogo, sertanejo e alta gastronomia <span className="text-ember">à beira-mar</span>. O feriado da Independência transformado em festa.
             </p>
             <div
               className="flex flex-wrap gap-4"
@@ -403,12 +411,12 @@ function Index() {
           <div className="md:col-span-4">
             <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">O Evento</div>
             <h2 className="text-display text-5xl md:text-7xl text-bone leading-none">
-              Três dias.<br />Uma fogueira.<br /><span className="text-ember">26 mil pessoas.</span>
+              Três dias.<br />Fogo por toda parte.<br /><span className="text-ember">26 mil pessoas.</span>
             </h2>
           </div>
           <div className="md:col-span-8 space-y-8">
             <p className="text-serif-italic text-2xl md:text-3xl text-bone/90 leading-snug">
-              O Parrilla Day chega à sua 3ª edição com crescimento de <span className="text-ember">2000%</span> sobre as edições anteriores. Uma celebração do fogo, da carne e da brasa, à beira do mar de Caraguatatuba.
+              O Parrilla Day chega à sua 3ª edição com crescimento de <span className="text-ember">2000%</span> sobre as edições anteriores. Uma celebração do fogo, da carne e da brasa, à beira do mar em Caraguatatuba.
             </p>
             <div className="grid sm:grid-cols-3 gap-6 pt-8 border-t border-border/40">
               {[
@@ -461,9 +469,9 @@ function Index() {
           <h2 className="text-display text-5xl md:text-7xl text-bone mb-16">Três dias na brasa</h2>
           <div className="grid md:grid-cols-3 gap-px bg-border">
             {[
-              { day: "05", month: "Setembro", time: "12h — 22h", title: "Parrilla Day", desc: "Open bar · Open churrasco · Drinks à parte. O dia principal com shows headliners, balonismo e show de fogos.", featured: true },
-              { day: "06", month: "Setembro", time: "16h — 00h", title: "Estações Abertas", desc: "Entrada gratuita. Comidas e bebidas à parte. Atrações, roda gigante e touro mecânico." },
-              { day: "07", month: "Setembro", time: "12h — 22h", title: "Encerramento", desc: "Acesso liberado ao público. Churrasco e bebidas à parte. Atrações continuam até o fim." },
+              { day: "05", month: "Setembro", time: "12h às 22h", title: "Parrilla Day", desc: "Open bar · Open churrasco · Drinks à parte. O dia principal com shows headliners, balonismo e show de fogos.", featured: true },
+              { day: "06", month: "Setembro", time: "16h às 00h", title: "Estações Abertas", desc: "Entrada gratuita. Comidas e bebidas à parte. Atrações, roda gigante e touro mecânico." },
+              { day: "07", month: "Setembro", time: "12h às 22h", title: "Encerramento", desc: "Acesso liberado ao público. Churrasco e bebidas à parte. Atrações continuam até o fim." },
             ].map((d) => (
               <div key={d.day} className={`p-10 bg-background relative ${d.featured ? "md:scale-[1.02] md:-my-2 bg-card" : ""}`}>
                 {d.featured && <div className="absolute top-4 right-4 text-[10px] tracking-[0.3em] uppercase text-ember">★ Headline</div>}
@@ -559,7 +567,7 @@ function Index() {
           <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Mapa do Evento</div>
           <h2 className="text-display text-5xl md:text-7xl text-bone mb-4">À beira mar.<br /><span className="text-ember">Caraguá Beach.</span></h2>
           <p className="text-serif-italic text-xl text-muted-foreground mb-12 max-w-2xl">
-            Palco principal, parrilleras, camarotes premium, roda gigante e área kids — tudo de frente para o Atlântico.
+            Palco principal, parrilleras, camarotes premium, roda gigante e área kids. Tudo de frente para o Atlântico.
           </p>
           <div className="relative overflow-hidden border border-border/40">
             <img src={eventMapAsset} alt="Mapa do Parrilla Day" className="w-full h-auto" loading="lazy" />
@@ -582,17 +590,17 @@ function Index() {
 
       {/* ESTRUTURA / PALCO */}
       <section className="py-20 md:py-24 px-6">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-center">
-          <div className="md:col-span-6 relative overflow-hidden">
-            <img src={mainStageAsset} alt="Palco principal Parrilla Day" loading="lazy" className="w-full h-auto" />
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div className="relative overflow-hidden aspect-square">
+            <img src={rodaCarneImg} alt="Roda de carne Parrilla Day" loading="lazy" className="w-full h-full object-cover" />
           </div>
-          <div className="md:col-span-6">
+          <div>
             <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Estrutura</div>
             <h2 className="text-display text-5xl md:text-7xl text-bone leading-none mb-6">
               Construída para <span className="text-ember">incendiar</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              Cada detalhe pensado para uma experiência inesquecível — do palco LED ao corredor de entrada cinematográfico, das parrilleras aos camarotes premium.
+              Cada detalhe pensado para uma experiência inesquecível. Do palco LED ao corredor de entrada cinematográfico, das parrilleras aos camarotes premium.
             </p>
             <div className="grid grid-cols-2 gap-px bg-border">
               {[
@@ -614,8 +622,8 @@ function Index() {
 
       {/* BAR BRAHMA */}
       <section className="py-20 md:py-24 px-6 bg-card/30 border-y border-border/40">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-center">
-          <div className="md:col-span-6 order-2 md:order-1">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div className="order-2 md:order-1">
             <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Bar & Bebidas</div>
             <h2 className="text-display text-5xl md:text-7xl text-bone leading-none mb-6">
               Chopp gelado,<br /><span className="text-ember">copo cheio.</span>
@@ -629,8 +637,8 @@ function Index() {
               ))}
             </div>
           </div>
-          <div className="md:col-span-6 order-1 md:order-2 relative overflow-hidden">
-            <img src={barBrahmaAsset} alt="Bar Brahma" loading="lazy" className="w-full h-auto" />
+          <div className="order-1 md:order-2 relative overflow-hidden aspect-square">
+            <img src={barBrahmaRealImg} alt="Bar Brahma" loading="lazy" className="w-full h-full object-cover" />
           </div>
         </div>
       </section>
@@ -684,7 +692,7 @@ function Index() {
               <ul className="space-y-3 mt-10 mb-12 text-sm text-muted-foreground">
                 <li className="flex gap-3"><span className="text-ember">▸</span> Acesso completo ao Parrilla Day</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Open Bar (cervejas e refrigerantes)</li>
-                <li className="flex gap-3"><span className="text-ember">▸</span> Open Churrasco — 30 estações</li>
+                <li className="flex gap-3"><span className="text-ember">▸</span> Open Churrasco · 30 estações</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Acesso a todos os shows e atrações</li>
               </ul>
               <button className="w-full py-4 bg-ember text-background text-sm tracking-[0.2em] uppercase font-semibold hover:bg-ember/90 transition">
@@ -693,13 +701,13 @@ function Index() {
             </div>
             <div className="p-10 md:p-14 border border-ember bg-gradient-to-br from-blood/40 to-card/60 backdrop-blur relative">
               <div className="absolute top-6 right-6 text-[10px] tracking-[0.3em] uppercase text-ember">★ Premium</div>
-              <div className="text-xs tracking-[0.3em] uppercase text-ember mb-4">Camarote · Dia 05 · até 10 pessoas</div>
+              <div className="text-xs tracking-[0.3em] uppercase text-ember mb-4">Camarote · Dia 05</div>
               <div className="flex items-baseline gap-2 mb-1 flex-wrap">
                 <span className="text-display text-6xl md:text-7xl text-bone">R$629</span>
-                <span className="text-muted-foreground">+ taxa</span>
+                <span className="text-muted-foreground text-sm tracking-wide uppercase">por pessoa</span>
               </div>
-              <div className="text-sm text-muted-foreground mb-2">
-                <span className="line-through text-muted-foreground/50">R$6.290</span> valor total do camarote · até 10 pessoas
+              <div className="text-sm text-bone/70 mb-2">
+                Camarote fechado para <span className="text-ember font-semibold">10 pessoas</span> · <span className="text-muted-foreground">R$6.290 + taxa no total</span>
               </div>
               <ul className="space-y-3 mt-10 mb-12 text-sm text-bone/80">
                 <li className="flex gap-3"><span className="text-ember">▸</span> Tenda exclusiva com vista privilegiada</li>
@@ -720,6 +728,30 @@ function Index() {
             <p>* Nos dias de entrada gratuita, as atrações serão cobradas à parte.</p>
             <p>* Imagens meramente ilustrativas.</p>
             <p>* Teremos uma fila diferencial e um termo na entrada que será assinado pelo responsável. Os menores de idade receberão uma pulseira de identificação.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* PATROCINADORES */}
+      <section id="patrocinadores" className="py-20 md:py-24 px-6 border-t border-border/40">
+        <div className="max-w-7xl mx-auto text-center">
+          <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Patrocínio</div>
+          <h2 className="text-display text-5xl md:text-7xl text-bone mb-16">
+            Quem <span className="text-ember">acende</span> a brasa
+          </h2>
+          <div className="space-y-10">
+            <img
+              src={sponsors1Img}
+              alt="Patrocinadores Parrilla Day 2026"
+              loading="lazy"
+              className="w-full h-auto max-w-6xl mx-auto"
+            />
+            <img
+              src={sponsors2Img}
+              alt="Apoiadores Parrilla Day 2026"
+              loading="lazy"
+              className="w-full h-auto max-w-3xl mx-auto"
+            />
           </div>
         </div>
       </section>
