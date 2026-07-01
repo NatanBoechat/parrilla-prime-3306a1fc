@@ -225,7 +225,7 @@ const ATRACOES = [
   { t: "Roda Gigante", d: "Vista panorâmica do festival e da praia de Caraguatatuba.", img: rodaGiganteImg, tag: "Dias 05 / 06 / 07" },
   { t: "Touro Mecânico", d: "O clássico desafio sertanejo — quem aguenta os 8 segundos?", img: touroMecanicoImg, tag: "Dias 05 / 06" },
   { t: "Shows Sertanejos", d: "Atrações nacionais e locais no palco principal.", img: showSertanejoImg, tag: "Dia 05" },
-  { t: "Apresentações de Dança", d: "Coreografias e performances temáticas pelo evento.", img: chefAsset, tag: "Dia 05" },
+  { t: "Apresentações de Dança", d: "Coreografias e performances temáticas pelo evento.", img: danceImg, tag: "Dia 05" },
 ];
 
 function Index() {
