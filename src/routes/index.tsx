@@ -7,6 +7,7 @@ import grillAsset from "@/assets/grill.jpg.asset.json";
 import chefAsset from "@/assets/chef.jpg.asset.json";
 import coupleAsset from "@/assets/couple.jpg.asset.json";
 import heroBgAsset from "@/assets/hero-bg.png.asset.json";
+import heroVideoAsset from "@/assets/hero-bg.mp4.asset.json";
 import barBrahmaAsset from "@/assets/bar-brahma.jpg.asset.json";
 import eventMapAsset from "@/assets/event-map.jpg.asset.json";
 import mainStageAsset from "@/assets/main-stage.jpg.asset.json";
