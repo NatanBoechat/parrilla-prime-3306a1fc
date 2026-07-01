@@ -481,7 +481,7 @@ function Index() {
       </section>
 
       {/* HEADLINERS */}
-      <section className="py-20 md:py-24 bg-card/30 border-y border-border/40 relative overflow-hidden">
+      <section className="py-16 md:py-20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Headliners · Dia 05</div>
           <h2 className="text-display text-5xl md:text-7xl text-bone mb-8">Os shows</h2>
@@ -492,26 +492,19 @@ function Index() {
             alt="Flyer oficial dos shows do Parrilla Day 2026"
             className="w-full h-auto transition duration-[1500ms] group-hover:scale-[1.02]"
             style={{
-              maskImage: "linear-gradient(to bottom, black 50%, transparent 100%), linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%)",
-              WebkitMaskImage: "linear-gradient(to bottom, black 50%, transparent 100%), linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%)",
-              maskComposite: "intersect",
-              WebkitMaskComposite: "source-in",
+              maskImage: "linear-gradient(to bottom, black 94%, transparent 100%)",
+              WebkitMaskImage: "linear-gradient(to bottom, black 94%, transparent 100%)",
             }}
             loading="lazy"
           />
-          <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col items-center justify-end pb-8 md:pb-14 px-6 bg-gradient-to-t from-background via-background/60 to-transparent">
-            <div className="w-full max-w-6xl grid md:grid-cols-3 gap-4 md:gap-8 text-center">
-              {["Guilherme & Vinícius", "Naessa", "Peddro Henrique & Luciano"].map((n) => (
-                <div key={n}>
-                  <h3
-                    className="text-display text-3xl md:text-5xl lg:text-6xl text-bone"
-                    style={{ textShadow: "0 2px 24px rgba(0,0,0,0.95), 0 0 8px rgba(0,0,0,0.8)" }}
-                  >
-                    {n}
-                  </h3>
-                </div>
-              ))}
-            </div>
+        </div>
+        <div className="max-w-7xl mx-auto px-6 mt-6 md:mt-8">
+          <div className="grid md:grid-cols-3 gap-4">
+            {["Guilherme & Vinícius", "Naessa", "Peddro Henrique & Luciano"].map((n) => (
+              <div key={n} className="p-4 md:p-5 border border-border/40 text-center hover:border-ember transition">
+                <h3 className="text-display text-lg md:text-2xl text-bone">{n}</h3>
+              </div>
+            ))}
           </div>
         </div>
       </section>
