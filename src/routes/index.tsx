@@ -297,6 +297,37 @@ const ATRACOES = [
 function Index() {
   const [loaded, setLoaded] = useState(false);
 
+  useEffect(() => {
+    if (!loaded) return;
+    const els = document.querySelectorAll<HTMLElement>("[data-reveal]");
+    els.forEach((el) => {
+      el.style.opacity = "0";
+      el.style.transform = "translateY(28px)";
+      el.style.filter = "blur(6px)";
+      el.style.transition = "opacity 900ms cubic-bezier(.2,.7,.2,1), transform 900ms cubic-bezier(.2,.7,.2,1), filter 900ms ease";
+      el.style.willChange = "opacity, transform, filter";
+    });
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            const el = e.target as HTMLElement;
+            const delay = Number(el.dataset.revealDelay || 0);
+            el.style.transitionDelay = `${delay}ms`;
+            el.style.opacity = "1";
+            el.style.transform = "translateY(0)";
+            el.style.filter = "blur(0)";
+            io.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -60px 0px" }
+    );
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, [loaded]);
+
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {!loaded && <Preloader onDone={() => setLoaded(true)} />}
