@@ -471,9 +471,9 @@ function Index() {
           <h2 className="text-display text-5xl md:text-7xl text-bone mb-16">Três dias na brasa</h2>
           <div className="grid md:grid-cols-3 gap-px bg-border">
             {[
-              { day: "05", month: "Setembro", time: "12h — 22h", title: "Parrilla Day", desc: "Open bar · Open churrasco · Drinks à parte. O dia principal com shows headliners, balonismo e show de fogos.", featured: true },
-              { day: "06", month: "Setembro", time: "16h — 00h", title: "Estações Abertas", desc: "Entrada gratuita. Comidas e bebidas à parte. Atrações, roda gigante e touro mecânico." },
-              { day: "07", month: "Setembro", time: "12h — 22h", title: "Encerramento", desc: "Acesso liberado ao público. Churrasco e bebidas à parte. Atrações continuam até o fim." },
+              { day: "05", month: "Setembro", time: "12h às 22h", title: "Parrilla Day", desc: "Open bar · Open churrasco · Drinks à parte. O dia principal com shows headliners, balonismo e show de fogos.", featured: true },
+              { day: "06", month: "Setembro", time: "16h às 00h", title: "Estações Abertas", desc: "Entrada gratuita. Comidas e bebidas à parte. Atrações, roda gigante e touro mecânico." },
+              { day: "07", month: "Setembro", time: "12h às 22h", title: "Encerramento", desc: "Acesso liberado ao público. Churrasco e bebidas à parte. Atrações continuam até o fim." },
             ].map((d) => (
               <div key={d.day} className={`p-10 bg-background relative ${d.featured ? "md:scale-[1.02] md:-my-2 bg-card" : ""}`}>
                 {d.featured && <div className="absolute top-4 right-4 text-[10px] tracking-[0.3em] uppercase text-ember">★ Headline</div>}
@@ -569,7 +569,7 @@ function Index() {
           <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Mapa do Evento</div>
           <h2 className="text-display text-5xl md:text-7xl text-bone mb-4">À beira mar.<br /><span className="text-ember">Caraguá Beach.</span></h2>
           <p className="text-serif-italic text-xl text-muted-foreground mb-12 max-w-2xl">
-            Palco principal, parrilleras, camarotes premium, roda gigante e área kids — tudo de frente para o Atlântico.
+            Palco principal, parrilleras, camarotes premium, roda gigante e área kids. Tudo de frente para o Atlântico.
           </p>
           <div className="relative overflow-hidden border border-border/40">
             <img src={eventMapAsset} alt="Mapa do Parrilla Day" className="w-full h-auto" loading="lazy" />
@@ -694,7 +694,7 @@ function Index() {
               <ul className="space-y-3 mt-10 mb-12 text-sm text-muted-foreground">
                 <li className="flex gap-3"><span className="text-ember">▸</span> Acesso completo ao Parrilla Day</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Open Bar (cervejas e refrigerantes)</li>
-                <li className="flex gap-3"><span className="text-ember">▸</span> Open Churrasco — 30 estações</li>
+                <li className="flex gap-3"><span className="text-ember">▸</span> Open Churrasco · 30 estações</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Acesso a todos os shows e atrações</li>
               </ul>
               <button className="w-full py-4 bg-ember text-background text-sm tracking-[0.2em] uppercase font-semibold hover:bg-ember/90 transition">
