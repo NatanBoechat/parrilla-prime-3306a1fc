@@ -293,17 +293,17 @@ function Index() {
 
         <div className="max-w-[1600px] mx-auto w-full relative z-10">
           <div
-            className="flex items-center gap-4 mb-4 text-[11px] tracking-[0.5em] uppercase text-ember"
+            className="flex items-center gap-3 mb-4 text-[10px] md:text-[11px] tracking-[0.35em] md:tracking-[0.4em] uppercase text-ember"
             style={{ animation: loaded ? "char-rise 0.8s ease-out 0s both" : "none", opacity: loaded ? undefined : 0 }}
           >
             <span
               className="h-px bg-ember origin-left block"
               style={{
-                width: "5rem",
+                width: "4rem",
                 animation: loaded ? "slash-in 0.9s cubic-bezier(0.7,0,0.2,1) 0.1s both" : "none",
               }}
             />
-            <span>3ª Edição · Caraguatatuba · 05 · 06 · 07 Setembro 2026</span>
+            <span>3ª Ed. · Caraguá · 05 a 07 Set 2026</span>
           </div>
 
           <HeroHeadline play={loaded} />
