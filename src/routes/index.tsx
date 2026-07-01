@@ -1,16 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import logoAsset from "@/assets/parrilla-logo-vermelha.png.asset.json";
-import skullAsset from "@/assets/skull.jpg.asset.json";
-import porchettaAsset from "@/assets/porchetta.jpg.asset.json";
-import grillAsset from "@/assets/grill.jpg.asset.json";
-import chefAsset from "@/assets/chef.jpg.asset.json";
-import coupleAsset from "@/assets/couple.jpg.asset.json";
-import heroBgAsset from "@/assets/hero-bg.png.asset.json";
-import heroVideoAsset from "@/assets/hero-bg.mp4.asset.json";
-import barBrahmaAsset from "@/assets/bar-brahma.jpg.asset.json";
-import eventMapAsset from "@/assets/event-map.jpg.asset.json";
-import mainStageAsset from "@/assets/main-stage.jpg.asset.json";
+import logoAsset from "@/assets/parrilla-logo-vermelha.png";
+import skullAsset from "@/assets/skull.jpg";
+import porchettaAsset from "@/assets/porchetta.jpg";
+import grillAsset from "@/assets/grill.jpg";
+import chefAsset from "@/assets/chef.jpg";
+import coupleAsset from "@/assets/couple.jpg";
+import heroBgAsset from "@/assets/hero-bg.png";
+import heroVideoAsset from "@/assets/hero-bg.mp4";
+import barBrahmaAsset from "@/assets/bar-brahma.jpg";
+import eventMapAsset from "@/assets/event-map.jpg";
+import mainStageAsset from "@/assets/main-stage.jpg";
 import rodaGiganteImg from "@/assets/roda-gigante.jpg";
 import touroMecanicoImg from "@/assets/touro-mecanico.jpg";
 import roboGiganteImg from "@/assets/robo-gigante.jpg";
@@ -46,7 +46,7 @@ function Preloader({ onDone }: { onDone: () => void }) {
       style={{ opacity: progress >= 1 ? 0 : 1, pointerEvents: progress >= 1 ? "none" : "auto" }}
     >
       <div className="relative w-56 md:w-72 animate-flicker">
-        <img src={logoAsset.url} alt="Parrilla Day" className="w-full h-auto" />
+        <img src={logoAsset} alt="Parrilla Day" className="w-full h-auto" />
       </div>
       <div className="mt-12 w-48 h-px bg-border overflow-hidden">
         <div className="h-full bg-ember" style={{ width: `${progress * 100}%`, transition: "width 0.1s linear" }} />
@@ -151,7 +151,7 @@ function Countdown() {
 }
 
 function PhotoStrip() {
-  const photos = [skullAsset.url, porchettaAsset.url, estacoesImg, chefAsset.url, coupleAsset.url];
+  const photos = [skullAsset, porchettaAsset, estacoesImg, chefAsset, coupleAsset];
   const captions = ["Tradição", "Fogo lento", "Estações", "Mestres", "Encontros"];
   const ref = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
@@ -218,7 +218,7 @@ const ATRACOES = [
   { t: "Roda Gigante", d: "Vista panorâmica do festival e da praia de Caraguatatuba.", img: rodaGiganteImg, tag: "Dias 05 / 06 / 07" },
   { t: "Touro Mecânico", d: "O clássico desafio sertanejo — quem aguenta os 8 segundos?", img: touroMecanicoImg, tag: "Dias 05 / 06" },
   { t: "Shows Sertanejos", d: "Atrações nacionais e locais no palco principal.", img: showSertanejoImg, tag: "Dia 05" },
-  { t: "Apresentações de Dança", d: "Coreografias e performances temáticas pelo evento.", img: chefAsset.url, tag: "Dia 05" },
+  { t: "Apresentações de Dança", d: "Coreografias e performances temáticas pelo evento.", img: chefAsset, tag: "Dia 05" },
 ];
 
 function Index() {
@@ -232,7 +232,7 @@ function Index() {
       <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-background/60 border-b border-border/40">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-2">
           <a href="#top" className="flex items-center gap-3">
-            <img src={logoAsset.url} alt="Parrilla Day" className="h-12 md:h-14 w-auto" />
+            <img src={logoAsset} alt="Parrilla Day" className="h-12 md:h-14 w-auto" />
           </a>
           <nav className="hidden md:flex items-center gap-8 text-xs tracking-[0.25em] uppercase text-muted-foreground">
             <a href="#evento" className="hover:text-ember transition">O Evento</a>
@@ -252,8 +252,8 @@ function Index() {
       <section id="top" className="relative min-h-screen h-screen flex items-center pt-16 md:pt-20 pb-20 md:pb-24 px-6 overflow-hidden grain isolate">
         <div className="absolute inset-0 z-0">
           <video
-            src={heroVideoAsset.url}
-            poster={heroBgAsset.url}
+            src={heroVideoAsset}
+            poster={heroBgAsset}
             autoPlay
             muted
             loop
@@ -530,7 +530,7 @@ function Index() {
             Palco principal, parrilleras, camarotes premium, roda gigante e área kids — tudo de frente para o Atlântico.
           </p>
           <div className="relative overflow-hidden border border-border/40">
-            <img src={eventMapAsset.url} alt="Mapa do Parrilla Day" className="w-full h-auto" loading="lazy" />
+            <img src={eventMapAsset} alt="Mapa do Parrilla Day" className="w-full h-auto" loading="lazy" />
           </div>
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 mt-10">
             {[
@@ -552,7 +552,7 @@ function Index() {
       <section className="py-32 px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-6 relative overflow-hidden">
-            <img src={mainStageAsset.url} alt="Palco principal Parrilla Day" loading="lazy" className="w-full h-auto" />
+            <img src={mainStageAsset} alt="Palco principal Parrilla Day" loading="lazy" className="w-full h-auto" />
           </div>
           <div className="md:col-span-6">
             <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Estrutura</div>
@@ -598,7 +598,7 @@ function Index() {
             </div>
           </div>
           <div className="md:col-span-6 order-1 md:order-2 relative overflow-hidden">
-            <img src={barBrahmaAsset.url} alt="Bar Brahma" loading="lazy" className="w-full h-auto" />
+            <img src={barBrahmaAsset} alt="Bar Brahma" loading="lazy" className="w-full h-auto" />
           </div>
         </div>
       </section>
@@ -612,9 +612,9 @@ function Index() {
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { t: "Espaço Decorado", d: "Galpão temático com elementos rurais autênticos.", img: chefAsset.url },
-              { t: "Corredor de Entrada", d: "Túnel iluminado que prepara a experiência.", img: skullAsset.url },
-              { t: "Elementos Decorativos", d: "Detalhes temáticos por todo o festival.", img: porchettaAsset.url },
+              { t: "Espaço Decorado", d: "Galpão temático com elementos rurais autênticos.", img: chefAsset },
+              { t: "Corredor de Entrada", d: "Túnel iluminado que prepara a experiência.", img: skullAsset },
+              { t: "Elementos Decorativos", d: "Detalhes temáticos por todo o festival.", img: porchettaAsset },
             ].map((d) => (
               <div key={d.t} className="group relative overflow-hidden border border-border/40 hover:border-ember transition">
                 <div className="aspect-[4/5] overflow-hidden bg-blood">
@@ -633,7 +633,7 @@ function Index() {
       {/* INGRESSOS */}
       <section id="ingressos" className="py-32 px-6 relative overflow-hidden bg-card/30 border-y border-border/40">
         <div className="absolute inset-0 -z-10 opacity-20">
-          <img src={skullAsset.url} alt="" className="w-full h-full object-cover" loading="lazy" />
+          <img src={skullAsset} alt="" className="w-full h-full object-cover" loading="lazy" />
           <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background" />
         </div>
         <div className="max-w-7xl mx-auto">
@@ -689,7 +689,7 @@ function Index() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
             <div className="text-center md:text-left">
-              <img src={logoAsset.url} alt="Parrilla Day" className="h-32 md:h-40 mx-auto md:mx-0 mb-10 animate-flicker" />
+              <img src={logoAsset} alt="Parrilla Day" className="h-32 md:h-40 mx-auto md:mx-0 mb-10 animate-flicker" />
               <h2 className="text-display text-4xl md:text-6xl text-bone mb-4">Caraguatatuba te espera</h2>
               <p className="text-serif-italic text-xl text-muted-foreground">5, 6 e 7 de setembro · 2026</p>
             </div>
