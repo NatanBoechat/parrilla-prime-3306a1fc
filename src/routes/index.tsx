@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import logoAsset from "@/assets/logo.png.asset.json";
+import logoAsset from "@/assets/parrilla-logo-vermelha.png.asset.json";
 import skullAsset from "@/assets/skull.jpg.asset.json";
 import porchettaAsset from "@/assets/porchetta.jpg.asset.json";
 import grillAsset from "@/assets/grill.jpg.asset.json";
@@ -232,7 +232,7 @@ function Index() {
       <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-background/60 border-b border-border/40">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
           <a href="#top" className="flex items-center gap-3">
-            <img src={logoAsset.url} alt="Parrilla Day" className="h-24 md:h-28 w-auto" style={{ filter: "brightness(0) invert(1)" }} />
+            <img src={logoAsset.url} alt="Parrilla Day" className="h-24 md:h-28 w-auto" />
           </a>
           <nav className="hidden md:flex items-center gap-8 text-xs tracking-[0.25em] uppercase text-muted-foreground">
             <a href="#evento" className="hover:text-ember transition">O Evento</a>
