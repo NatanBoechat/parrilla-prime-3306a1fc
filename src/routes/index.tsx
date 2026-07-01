@@ -13,7 +13,7 @@ import eventMapAsset from "@/assets/event-map.jpg";
 import mainStageAsset from "@/assets/main-stage.jpg";
 import rodaGiganteImg from "@/assets/roda-gigante-real.png";
 import touroMecanicoImg from "@/assets/touro-real.png";
-import roboGiganteImg from "@/assets/robo-gigante.jpg";
+import roboGiganteImg from "@/assets/robo-real.png";
 import balonismoImg from "@/assets/balonismo-real.png";
 import estacoesImg from "@/assets/estacoes.jpg";
 import showSertanejoImg from "@/assets/shows-real.png";
@@ -23,7 +23,7 @@ import kidsZoneImg from "@/assets/kids-zone.png";
 import decoBarnImg from "@/assets/deco-barn.png";
 import decoCorridorImg from "@/assets/deco-corridor.png";
 import decoTouroImg from "@/assets/deco-touro.png";
-import fogosImg from "@/assets/fogos.jpg";
+import fogosImg from "@/assets/fogos-real.png";
 
 export const Route = createFileRoute("/")({
   component: Index,
