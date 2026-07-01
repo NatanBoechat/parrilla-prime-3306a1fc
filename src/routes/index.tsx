@@ -427,21 +427,20 @@ function Index() {
       {/* O EVENTO */}
       <section id="evento" className="py-20 md:py-24 px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12">
-          <div className="md:col-span-4">
+          <Reveal className="md:col-span-5">
             <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">O Evento</div>
-            <h2 className="text-display text-4xl md:text-6xl text-bone leading-[0.95]">
+            <h2 className="text-display text-4xl md:text-5xl lg:text-6xl text-bone leading-[0.95]">
               Três dias.<br />Fogo em toda parte.<br /><span className="text-ember">26 mil pessoas.</span>
             </h2>
-          </div>
-          <div className="md:col-span-8 space-y-8">
+          </Reveal>
+          <Reveal className="md:col-span-7 space-y-8" delay={120}>
             <p className="text-serif-italic text-2xl md:text-3xl text-bone/90 leading-snug">
               O Parrilla Day chega à sua 3ª edição com crescimento de <span className="text-ember">2000%</span> sobre as edições anteriores. Uma celebração do fogo, da carne e da brasa, à beira do mar em Caraguatatuba.
             </p>
-            <div className="grid sm:grid-cols-3 gap-6 pt-8 border-t border-border/40">
+            <div className="grid sm:grid-cols-2 gap-6 pt-8 border-t border-border/40">
               {[
                 { n: "6.000", l: "Ingressos · Dia 05" },
                 { n: "20.000", l: "Acesso livre · 06 e 07" },
-                { n: "30", l: "Estações de carne" },
               ].map((s) => (
                 <div key={s.l}>
                   <div className="text-display text-5xl text-ember">{s.n}</div>
@@ -449,7 +448,7 @@ function Index() {
                 </div>
               ))}
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
