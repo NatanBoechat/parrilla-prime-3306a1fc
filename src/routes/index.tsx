@@ -497,7 +497,7 @@ function Index() {
         </div>
         <div className="max-w-7xl mx-auto">
           <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Estações Gastronômicas</div>
-          <h2 className="text-display text-5xl md:text-7xl text-bone mb-4">30 estações.<br /><span className="text-ember">Brasa sem fim.</span></h2>
+          <h2 className="text-display text-5xl md:text-7xl text-bone mb-4">Estações de carne.<br /><span className="text-ember">Brasa sem fim.</span></h2>
           <p className="text-serif-italic text-xl text-muted-foreground mb-16 max-w-2xl">
             Cortes premium, fogo de chão e os melhores assadores do litoral norte trabalhando ao vivo.
           </p>
