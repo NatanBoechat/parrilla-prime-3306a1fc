@@ -23,10 +23,22 @@ import decoCorridorImg from "@/assets/deco-corridor.png";
 import decoTouroImg from "@/assets/deco-touro.png";
 import fogosImg from "@/assets/fogos-real.png";
 import showsFlyerImg from "@/assets/shows-flyer.png";
-import sponsors1Img from "@/assets/sponsors-1.png";
-import sponsors2Img from "@/assets/sponsors-2.png";
 import rodaCarneImg from "@/assets/roda-carne.png";
 import barBrahmaRealImg from "@/assets/bar-brahma-real.png";
+const sponsorLogos = [
+  { src: new URL("../assets/sponsors/tnc.png", import.meta.url).href, name: "TNC" },
+  { src: new URL("../assets/sponsors/ford.png", import.meta.url).href, name: "Ford" },
+  { src: new URL("../assets/sponsors/redbull.png", import.meta.url).href, name: "Red Bull" },
+  { src: new URL("../assets/sponsors/trombini.png", import.meta.url).href, name: "Diversões Trombini" },
+  { src: new URL("../assets/sponsors/ambev.png", import.meta.url).href, name: "Ambev" },
+  { src: new URL("../assets/sponsors/realeza.png", import.meta.url).href, name: "Realeza" },
+  { src: new URL("../assets/sponsors/selva.png", import.meta.url).href, name: "Selva Zeladoria" },
+  { src: new URL("../assets/sponsors/hampton.png", import.meta.url).href, name: "Hampton by Hilton" },
+  { src: new URL("../assets/sponsors/band.png", import.meta.url).href, name: "Band" },
+  { src: new URL("../assets/sponsors/qb.png", import.meta.url).href, name: "QB Construções" },
+  { src: new URL("../assets/sponsors/caraguafm.png", import.meta.url).href, name: "Caraguá FM 89.5" },
+  { src: new URL("../assets/sponsors/bigjhon.png", import.meta.url).href, name: "Big Jhon" },
+];
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -410,8 +422,8 @@ function Index() {
         <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
             <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">O Evento</div>
-            <h2 className="text-display text-5xl md:text-7xl text-bone leading-none">
-              Três dias.<br />Fogo por toda parte.<br /><span className="text-ember">26 mil pessoas.</span>
+            <h2 className="text-display text-5xl md:text-7xl text-bone leading-[0.95]">
+              Três dias.<br />Fogo em toda parte.<br /><span className="text-ember">26 mil pessoas.</span>
             </h2>
           </div>
           <div className="md:col-span-8 space-y-8">
@@ -446,19 +458,76 @@ function Index() {
           <p className="text-serif-italic text-xl text-muted-foreground mb-16 max-w-2xl">
             Cortes premium, fogo de chão e os melhores assadores do litoral norte trabalhando ao vivo.
           </p>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-border">
+          <div className="grid md:grid-cols-2 gap-10">
             {[
-              "Angus Supremo", "Costela Fogo de Chão", "Fraldinha Defumada", "Chorizo Argentino",
-              "Picanha Black Angus", "Picanha Argentina", "Linguiça Artesanal", "Pão de Alho",
-              "Mandioca na Manteiga", "Queijo Coalho", "Farofas", "Vinagrete da Casa",
-            ].map((s, i) => (
-              <div key={s} className="p-6 bg-background hover:bg-card transition group">
-                <div className="text-[10px] tracking-[0.3em] uppercase text-ember mb-2">Estação · {String(i + 1).padStart(2, "0")}</div>
-                <div className="text-display text-2xl text-bone group-hover:text-ember transition">{s}</div>
+              {
+                setor: "Camarote",
+                sub: "Exclusivo · Dia 05",
+                items: [
+                  { p: "Alcatra de Cordeiro", c: "Juninho", ig: "juninho.brasaforte" },
+                  { p: "Burger", c: "Renan Villar", ig: "renantbc" },
+                  { p: "Gnocchi & Ragu de Linguiça", c: "Jean Assador", ig: "jfgrill_heanfernandes" },
+                  { p: "Costela", c: "Elcio Henrique", ig: "direto_do_fogo_proce" },
+                  { p: "Paella de Frutos do Mar", c: "Fábio Santana", ig: "fabiosantana49" },
+                  { p: "Picanha", c: "Camila Damasceno", ig: "cami_damasceno" },
+                ],
+              },
+              {
+                setor: "Pista",
+                sub: "Aberto ao público",
+                items: [
+                  { p: "Alcatra de Cordeiro", c: "Dorfo's & Patricia", ig: "casalnabrasa_" },
+                  { p: "Ancho", c: "Willian Hory", ig: "eunoseuchurrasco" },
+                  { p: "Ancho", c: "Luiz Otavio", ig: "boivermelho.bbq" },
+                  { p: "Arroz à Mineira", c: "Tiago Palacio", ig: "palaciorangodetacho" },
+                  { p: "Brisket", c: "Henrique Gonçalves", ig: "ferroefogobbq" },
+                  { p: "Burger", c: "Fábio Henrique", ig: "geras_burger" },
+                  { p: "Burger", c: "Felipe Moika", ig: "felipemoika" },
+                  { p: "Burger", c: "Big Jhon", ig: "bigjhonhamburgueria" },
+                  { p: "Chorizo", c: "Diego Blasco", ig: "diegocblasco" },
+                  { p: "Costela", c: "Will Fernandes", ig: "chefwillassador" },
+                  { p: "Costelinha Suína", c: "Bruno Ribeiro", ig: "balaiodaroca" },
+                  { p: "Cupim", c: "Gersão Ribeiro", ig: "rango_zerodoze" },
+                  { p: "Chicken Fries", c: "O Quintal", ig: "oquintalcaragua" },
+                  { p: "Peixe", c: "Du Goiozo", ig: "dugoiozo.churrasco" },
+                  { p: "Picanha", c: "Flávio Messias", ig: "flaviobrazza" },
+                  { p: "Picanha", c: "Espeticho", ig: "espeticho" },
+                  { p: "Prime Rib", c: "Luiz Bueno", ig: "familiabueno.oficial" },
+                  { p: "Sobrecoxa", c: "Dom Roasters", ig: "domroasters" },
+                  { p: "Torresmo", c: "Maurício", ig: "tempoetemperaturagrill" },
+                ],
+              },
+            ].map((group) => (
+              <div key={group.setor} className="border border-border/40">
+                <div className="p-6 border-b border-border/40 flex items-baseline justify-between gap-4 bg-background">
+                  <div>
+                    <div className="text-[10px] tracking-[0.4em] uppercase text-ember mb-2">Setor</div>
+                    <div className="text-display text-3xl md:text-4xl text-bone">{group.setor}</div>
+                  </div>
+                  <div className="text-xs tracking-[0.2em] uppercase text-muted-foreground text-right">{group.sub}</div>
+                </div>
+                <ul className="divide-y divide-border/40">
+                  {group.items.map((it, i) => (
+                    <li key={`${group.setor}-${i}`} className="flex items-center justify-between gap-4 px-6 py-4 bg-background hover:bg-card transition group">
+                      <div className="min-w-0">
+                        <div className="text-display text-lg md:text-xl text-bone group-hover:text-ember transition truncate">{it.p}</div>
+                        <div className="text-xs text-muted-foreground tracking-wide uppercase mt-0.5">{it.c}</div>
+                      </div>
+                      <a
+                        href={`https://instagram.com/${it.ig}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="shrink-0 text-[10px] tracking-[0.2em] uppercase text-muted-foreground hover:text-ember transition"
+                      >
+                        @{it.ig}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
-          <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mt-8">+ Food Trucks: Espeticho · Caramelo Comida de Rua · Doces</p>
+          <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mt-10">+ Food Trucks: Espeticho · Caramelo Comida de Rua · Doces</p>
         </div>
       </section>
 
@@ -589,12 +658,12 @@ function Index() {
       </section>
 
       {/* ESTRUTURA / PALCO */}
-      <section className="py-20 md:py-24 px-6">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <div className="relative overflow-hidden aspect-square">
+      <section className="py-20 md:py-24">
+        <div className="grid md:grid-cols-2 gap-0 items-stretch">
+          <div className="relative overflow-hidden aspect-square w-full">
             <img src={rodaCarneImg} alt="Roda de carne Parrilla Day" loading="lazy" className="w-full h-full object-cover" />
           </div>
-          <div>
+          <div className="px-6 md:px-16 flex flex-col justify-center py-12">
             <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Estrutura</div>
             <h2 className="text-display text-5xl md:text-7xl text-bone leading-none mb-6">
               Construída para <span className="text-ember">incendiar</span>
@@ -621,9 +690,9 @@ function Index() {
       </section>
 
       {/* BAR BRAHMA */}
-      <section className="py-20 md:py-24 px-6 bg-card/30 border-y border-border/40">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <div className="order-2 md:order-1">
+      <section className="py-20 md:py-24 bg-card/30 border-y border-border/40">
+        <div className="grid md:grid-cols-2 gap-0 items-stretch">
+          <div className="order-2 md:order-1 px-6 md:px-16 flex flex-col justify-center py-12">
             <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Bar & Bebidas</div>
             <h2 className="text-display text-5xl md:text-7xl text-bone leading-none mb-6">
               Chopp gelado,<br /><span className="text-ember">copo cheio.</span>
@@ -637,7 +706,7 @@ function Index() {
               ))}
             </div>
           </div>
-          <div className="order-1 md:order-2 relative overflow-hidden aspect-square">
+          <div className="order-1 md:order-2 relative overflow-hidden aspect-square w-full">
             <img src={barBrahmaRealImg} alt="Bar Brahma" loading="lazy" className="w-full h-full object-cover" />
           </div>
         </div>
@@ -682,8 +751,8 @@ function Index() {
           <p className="text-serif-italic text-xl text-muted-foreground mb-16 max-w-2xl">
             05 de setembro · Open bar · Open churrasco · Drinks vendidos à parte
           </p>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="p-10 md:p-14 border border-border/60 bg-card/60 backdrop-blur">
+          <div className="grid md:grid-cols-2 gap-6 items-stretch">
+            <div className="p-10 md:p-14 border border-border/60 bg-card/60 backdrop-blur flex flex-col">
               <div className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">Ingresso · Dia 05</div>
               <div className="flex items-baseline gap-2 mb-2 flex-wrap">
                 <span className="text-display text-7xl md:text-8xl text-bone">R$349</span>
@@ -695,11 +764,11 @@ function Index() {
                 <li className="flex gap-3"><span className="text-ember">▸</span> Open Churrasco · 30 estações</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Acesso a todos os shows e atrações</li>
               </ul>
-              <button className="w-full py-4 bg-ember text-background text-sm tracking-[0.2em] uppercase font-semibold hover:bg-ember/90 transition">
+              <button className="w-full py-4 bg-ember text-background text-sm tracking-[0.2em] uppercase font-semibold hover:bg-ember/90 transition mt-auto">
                 Comprar Ingresso
               </button>
             </div>
-            <div className="p-10 md:p-14 border border-ember bg-gradient-to-br from-blood/40 to-card/60 backdrop-blur relative">
+            <div className="p-10 md:p-14 border border-ember bg-gradient-to-br from-blood/40 to-card/60 backdrop-blur relative flex flex-col">
               <div className="absolute top-6 right-6 text-[10px] tracking-[0.3em] uppercase text-ember">★ Premium</div>
               <div className="text-xs tracking-[0.3em] uppercase text-ember mb-4">Camarote · Dia 05</div>
               <div className="flex items-baseline gap-2 mb-1 flex-wrap">
@@ -715,7 +784,7 @@ function Index() {
                 <li className="flex gap-3"><span className="text-ember">▸</span> Estações de chopp · Garçons exclusivos</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Banheiros e móveis diferenciados</li>
               </ul>
-              <button className="w-full py-4 bg-ember text-background text-sm tracking-[0.2em] uppercase font-semibold hover:bg-ember/90 transition">
+              <button className="w-full py-4 bg-ember text-background text-sm tracking-[0.2em] uppercase font-semibold hover:bg-ember/90 transition mt-auto">
                 Reservar Camarote
               </button>
             </div>
@@ -739,19 +808,17 @@ function Index() {
           <h2 className="text-display text-5xl md:text-7xl text-bone mb-16">
             Quem <span className="text-ember">acende</span> a brasa
           </h2>
-          <div className="space-y-10">
-            <img
-              src={sponsors1Img}
-              alt="Patrocinadores Parrilla Day 2026"
-              loading="lazy"
-              className="w-full h-auto max-w-6xl mx-auto"
-            />
-            <img
-              src={sponsors2Img}
-              alt="Apoiadores Parrilla Day 2026"
-              loading="lazy"
-              className="w-full h-auto max-w-3xl mx-auto"
-            />
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 md:gap-10 items-center">
+            {sponsorLogos.map((l) => (
+              <div key={l.name} className="flex items-center justify-center aspect-square p-2">
+                <img
+                  src={l.src}
+                  alt={l.name}
+                  loading="lazy"
+                  className="w-full h-full object-contain rounded-full transition duration-300 hover:scale-105"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
