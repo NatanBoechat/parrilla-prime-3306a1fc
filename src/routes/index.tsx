@@ -454,8 +454,8 @@ function Index() {
       </section>
 
       {/* ESTAÇÕES GASTRONÔMICAS */}
-      <section id="estacoes" className="py-20 md:py-24 px-6 bg-card/30 border-y border-border/40 relative overflow-hidden">
-        <div className="absolute inset-0 -z-10 opacity-15">
+      <section id="estacoes" className="py-20 md:py-24 px-6 bg-card/30 border-y border-border/40 relative">
+        <div className="absolute inset-0 -z-10 opacity-15 overflow-hidden pointer-events-none">
           <img src={estacoesImg} alt="" className="w-full h-full object-cover" loading="lazy" />
           <div className="absolute inset-0 bg-gradient-to-b from-background via-background/60 to-background" />
         </div>
