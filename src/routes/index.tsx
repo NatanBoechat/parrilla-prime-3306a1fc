@@ -202,16 +202,23 @@ function PhotoStrip() {
           let opacity = 0;
           let scale = 1.15;
           let y = 60;
+          const isLast = i === photos.length - 1;
           if (progress >= start && progress < end) {
             const local = (progress - start) / (end - start);
             if (i === 0) {
               opacity = local > 0.85 ? (1 - local) / 0.15 : 1;
+            } else if (isLast) {
+              opacity = local < 0.15 ? local / 0.15 : 1;
             } else {
               opacity = local < 0.15 ? local / 0.15 : local > 0.85 ? (1 - local) / 0.15 : 1;
             }
             scale = 1.15 - local * 0.15;
             y = 60 - local * 60;
           } else if (i === 0 && progress < start) {
+            opacity = 1;
+            scale = 1;
+            y = 0;
+          } else if (isLast && progress >= end) {
             opacity = 1;
             scale = 1;
             y = 0;
@@ -423,7 +430,7 @@ function Index() {
           <div className="md:col-span-4">
             <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">O Evento</div>
             <h2 className="text-display text-5xl md:text-7xl text-bone leading-[0.95]">
-              Três dias.<br />Fogo em toda parte.<br /><span className="text-ember">26 mil pessoas.</span>
+              Três dias.<br /><span className="whitespace-nowrap">Fogo em toda parte.</span><br /><span className="text-ember">26 mil pessoas.</span>
             </h2>
           </div>
           <div className="md:col-span-8 space-y-8">
@@ -458,47 +465,51 @@ function Index() {
           <p className="text-serif-italic text-xl text-muted-foreground mb-16 max-w-2xl">
             Cortes premium, fogo de chão e os melhores assadores do litoral norte trabalhando ao vivo.
           </p>
-          <div className="grid md:grid-cols-2 gap-10">
+          <div className="grid md:grid-cols-2 gap-10 items-start">
             {[
               {
                 setor: "Camarote",
                 sub: "Exclusivo · Dia 05",
+                note: "Camarote inclui tudo da Pista + os cortes exclusivos abaixo",
                 items: [
-                  { p: "Alcatra de Cordeiro", c: "Juninho", ig: "juninho.brasaforte" },
-                  { p: "Burger", c: "Renan Villar", ig: "renantbc" },
-                  { p: "Gnocchi & Ragu de Linguiça", c: "Jean Assador", ig: "jfgrill_heanfernandes" },
-                  { p: "Costela", c: "Elcio Henrique", ig: "direto_do_fogo_proce" },
-                  { p: "Paella de Frutos do Mar", c: "Fábio Santana", ig: "fabiosantana49" },
-                  { p: "Picanha", c: "Camila Damasceno", ig: "cami_damasceno" },
+                  { p: "Alcatra de Cordeiro", c: "Juninho" },
+                  { p: "Burger", c: "Renan Villar" },
+                  { p: "Gnocchi & Ragu de Linguiça", c: "Jean Assador" },
+                  { p: "Costela", c: "Elcio Henrique" },
+                  { p: "Paella de Frutos do Mar", c: "Fábio Santana" },
+                  { p: "Picanha", c: "Camila Damasceno" },
                 ],
               },
               {
                 setor: "Pista",
                 sub: "Aberto ao público",
                 items: [
-                  { p: "Alcatra de Cordeiro", c: "Dorfo's & Patricia", ig: "casalnabrasa_" },
-                  { p: "Ancho", c: "Willian Hory", ig: "eunoseuchurrasco" },
-                  { p: "Ancho", c: "Luiz Otavio", ig: "boivermelho.bbq" },
-                  { p: "Arroz à Mineira", c: "Tiago Palacio", ig: "palaciorangodetacho" },
-                  { p: "Brisket", c: "Henrique Gonçalves", ig: "ferroefogobbq" },
-                  { p: "Burger", c: "Fábio Henrique", ig: "geras_burger" },
-                  { p: "Burger", c: "Felipe Moika", ig: "felipemoika" },
-                  { p: "Burger", c: "Big Jhon", ig: "bigjhonhamburgueria" },
-                  { p: "Chorizo", c: "Diego Blasco", ig: "diegocblasco" },
-                  { p: "Costela", c: "Will Fernandes", ig: "chefwillassador" },
-                  { p: "Costelinha Suína", c: "Bruno Ribeiro", ig: "balaiodaroca" },
-                  { p: "Cupim", c: "Gersão Ribeiro", ig: "rango_zerodoze" },
-                  { p: "Chicken Fries", c: "O Quintal", ig: "oquintalcaragua" },
-                  { p: "Peixe", c: "Du Goiozo", ig: "dugoiozo.churrasco" },
-                  { p: "Picanha", c: "Flávio Messias", ig: "flaviobrazza" },
-                  { p: "Picanha", c: "Espeticho", ig: "espeticho" },
-                  { p: "Prime Rib", c: "Luiz Bueno", ig: "familiabueno.oficial" },
-                  { p: "Sobrecoxa", c: "Dom Roasters", ig: "domroasters" },
-                  { p: "Torresmo", c: "Maurício", ig: "tempoetemperaturagrill" },
+                  { p: "Alcatra de Cordeiro", c: "Dorfo's & Patricia" },
+                  { p: "Ancho", c: "Willian Hory" },
+                  { p: "Ancho", c: "Luiz Otavio" },
+                  { p: "Arroz à Mineira", c: "Tiago Palacio" },
+                  { p: "Brisket", c: "Henrique Gonçalves" },
+                  { p: "Burger", c: "Fábio Henrique" },
+                  { p: "Burger", c: "Felipe Moika" },
+                  { p: "Burger", c: "Big Jhon" },
+                  { p: "Chorizo", c: "Diego Blasco" },
+                  { p: "Costela", c: "Will Fernandes" },
+                  { p: "Costelinha Suína", c: "Bruno Ribeiro" },
+                  { p: "Cupim", c: "Gersão Ribeiro" },
+                  { p: "Chicken Fries", c: "O Quintal" },
+                  { p: "Peixe", c: "Du Goiozo" },
+                  { p: "Picanha", c: "Flávio Messias" },
+                  { p: "Picanha", c: "Espeticho" },
+                  { p: "Prime Rib", c: "Luiz Bueno" },
+                  { p: "Sobrecoxa", c: "Dom Roasters" },
+                  { p: "Torresmo", c: "Maurício" },
                 ],
               },
-            ].map((group) => (
-              <div key={group.setor} className="border border-border/40">
+            ].map((group, gi) => (
+              <div
+                key={group.setor}
+                className={`border border-border/40 ${gi === 0 ? "md:sticky md:top-24" : ""}`}
+              >
                 <div className="p-6 border-b border-border/40 flex items-baseline justify-between gap-4 bg-background">
                   <div>
                     <div className="text-[10px] tracking-[0.4em] uppercase text-ember mb-2">Setor</div>
@@ -506,6 +517,11 @@ function Index() {
                   </div>
                   <div className="text-xs tracking-[0.2em] uppercase text-muted-foreground text-right">{group.sub}</div>
                 </div>
+                {group.note && (
+                  <div className="px-6 py-3 bg-ember/10 border-b border-ember/30 text-[11px] tracking-[0.15em] uppercase text-ember">
+                    {group.note}
+                  </div>
+                )}
                 <ul className="divide-y divide-border/40">
                   {group.items.map((it, i) => (
                     <li key={`${group.setor}-${i}`} className="flex items-center justify-between gap-4 px-6 py-4 bg-background hover:bg-card transition group">
@@ -513,14 +529,6 @@ function Index() {
                         <div className="text-display text-lg md:text-xl text-bone group-hover:text-ember transition truncate">{it.p}</div>
                         <div className="text-xs text-muted-foreground tracking-wide uppercase mt-0.5">{it.c}</div>
                       </div>
-                      <a
-                        href={`https://instagram.com/${it.ig}`}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="shrink-0 text-[10px] tracking-[0.2em] uppercase text-muted-foreground hover:text-ember transition"
-                      >
-                        @{it.ig}
-                      </a>
                     </li>
                   ))}
                 </ul>
@@ -793,11 +801,6 @@ function Index() {
             <div className="text-xs tracking-[0.3em] uppercase text-ember mb-2">Dias 06 e 07</div>
             <p className="text-bone text-lg">Entrada gratuita · Comidas e bebidas vendidas à parte</p>
           </div>
-          <div className="mt-8 space-y-2 text-xs text-muted-foreground/80 leading-relaxed max-w-3xl">
-            <p>* Nos dias de entrada gratuita, as atrações serão cobradas à parte.</p>
-            <p>* Imagens meramente ilustrativas.</p>
-            <p>* Teremos uma fila diferencial e um termo na entrada que será assinado pelo responsável. Os menores de idade receberão uma pulseira de identificação.</p>
-          </div>
         </div>
       </section>
 
@@ -810,18 +813,28 @@ function Index() {
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 md:gap-10 items-center">
             {sponsorLogos.map((l) => (
-              <div key={l.name} className="flex items-center justify-center aspect-square p-2">
+              <div key={l.name} className="flex items-center justify-center aspect-square p-2 overflow-visible">
                 <img
                   src={l.src}
                   alt={l.name}
                   loading="lazy"
-                  className="w-full h-full object-contain rounded-full transition duration-300 hover:scale-105"
+                  className="w-full h-full object-contain transition duration-300 hover:scale-105"
                 />
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* DISCLAIMERS */}
+      <section className="px-6 pt-12 pb-6 border-t border-border/40">
+        <div className="max-w-4xl mx-auto space-y-2 text-xs text-muted-foreground/80 leading-relaxed text-center">
+          <p>* Nos dias de entrada gratuita, as atrações serão cobradas à parte.</p>
+          <p>* Imagens meramente ilustrativas.</p>
+          <p>* Teremos uma fila diferencial e um termo na entrada que será assinado pelo responsável. Os menores de idade receberão uma pulseira de identificação.</p>
+        </div>
+      </section>
+
 
       {/* FOOTER / CTA */}
       <footer className="py-24 md:py-28 px-6 bg-background">
