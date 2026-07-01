@@ -291,7 +291,7 @@ function Index() {
           })}
         </div>
 
-        <div className="max-w-[1600px] mx-auto w-full relative">
+        <div className="max-w-[1600px] mx-auto w-full relative z-10">
           <div
             className="flex items-center gap-4 mb-10 text-[11px] tracking-[0.5em] uppercase text-ember"
             style={{ animation: loaded ? "char-rise 0.8s ease-out 0s both" : "none", opacity: loaded ? undefined : 0 }}
