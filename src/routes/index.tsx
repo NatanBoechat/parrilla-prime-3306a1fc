@@ -641,7 +641,7 @@ function Index() {
             ].map((d) => (
               <div key={d.t} className="group relative overflow-hidden border border-border/40 hover:border-ember transition">
                 <div className="aspect-[4/5] overflow-hidden bg-blood">
-                  <img src={d.img} alt={d.t} loading="lazy" className="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition duration-[1200ms]" />
+                  <img src={d.img} alt={d.t} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition duration-[1200ms]" />
                 </div>
                 <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-background via-background/80 to-transparent">
                   <h3 className="text-display text-2xl text-bone mb-1">{d.t}</h3>
