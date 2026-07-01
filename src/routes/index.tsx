@@ -496,7 +496,7 @@ function Index() {
                   { p: "Costela", c: "Will Fernandes" },
                   { p: "Costelinha Suína", c: "Bruno Ribeiro" },
                   { p: "Cupim", c: "Gersão Ribeiro" },
-                  { p: "Chicken Fries", c: "O Quintal" },
+                  { p: "Chicken Fries", c: "Caraguá Beach" },
                   { p: "Peixe", c: "Du Goiozo" },
                   { p: "Picanha", c: "Flávio Messias" },
                   { p: "Picanha", c: "Espeticho" },
