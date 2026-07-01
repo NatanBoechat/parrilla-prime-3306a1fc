@@ -46,7 +46,7 @@ function Preloader({ onDone }: { onDone: () => void }) {
       style={{ opacity: progress >= 1 ? 0 : 1, pointerEvents: progress >= 1 ? "none" : "auto" }}
     >
       <div className="relative w-56 md:w-72 animate-flicker">
-        <img src={logoAsset.url} alt="Parrilla Day" className="w-full h-auto" style={{ filter: "brightness(0) invert(1)" }} />
+        <img src={logoAsset.url} alt="Parrilla Day" className="w-full h-auto" />
       </div>
       <div className="mt-12 w-48 h-px bg-border overflow-hidden">
         <div className="h-full bg-ember" style={{ width: `${progress * 100}%`, transition: "width 0.1s linear" }} />
@@ -685,21 +685,31 @@ function Index() {
       </section>
 
       {/* FOOTER / CTA */}
-      <footer className="py-24 px-6">
-        <div className="max-w-7xl mx-auto text-center">
-          <img src={logoAsset.url} alt="Parrilla Day" className="h-40 mx-auto mb-8 animate-flicker" style={{ filter: "brightness(0) invert(1)" }} />
-          <h2 className="text-display text-4xl md:text-6xl text-bone mb-4">Caraguatatuba te espera</h2>
-          <p className="text-serif-italic text-xl text-muted-foreground mb-12">5, 6 e 7 de setembro · 2026</p>
-          <div className="flex flex-wrap justify-center gap-4 mb-16">
-            <a href="#ingressos" className="px-8 py-4 bg-ember text-background text-sm tracking-[0.2em] uppercase font-semibold hover:bg-ember/90 transition">
-              Garantir Presença
-            </a>
-            <a href="https://instagram.com/parrilladaycaragua" target="_blank" rel="noreferrer" className="px-8 py-4 border border-border text-sm tracking-[0.2em] uppercase hover:border-ember transition">
-              @parrilladaycaragua
-            </a>
+      <footer className="py-32 md:py-40 px-6 bg-background">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
+            <div className="text-center md:text-left">
+              <img src={logoAsset.url} alt="Parrilla Day" className="h-32 md:h-40 mx-auto md:mx-0 mb-10 animate-flicker" />
+              <h2 className="text-display text-4xl md:text-6xl text-bone mb-4">Caraguatatuba te espera</h2>
+              <p className="text-serif-italic text-xl text-muted-foreground">5, 6 e 7 de setembro · 2026</p>
+            </div>
+            <div className="flex flex-col items-center md:items-end gap-8">
+              <p className="text-sm text-muted-foreground text-center md:text-right max-w-sm leading-relaxed">
+                Garanta sua presença no maior festival de churrasco do litoral norte. Ingressos limitados para o dia 05.
+              </p>
+              <div className="flex flex-wrap justify-center md:justify-end gap-4">
+                <a href="#ingressos" className="px-8 py-4 bg-ember text-background text-sm tracking-[0.2em] uppercase font-semibold hover:bg-ember/90 transition">
+                  Garantir Presença
+                </a>
+                <a href="https://instagram.com/parrilladaycaragua" target="_blank" rel="noreferrer" className="px-8 py-4 border border-border text-sm tracking-[0.2em] uppercase hover:border-ember transition">
+                  @parrilladaycaragua
+                </a>
+              </div>
+            </div>
           </div>
-          <div className="pt-8 border-t border-border/40 text-xs tracking-[0.2em] uppercase text-muted-foreground">
-            © 2026 Parrilla Day · O Quintal · Caraguatatuba/SP
+          <div className="mt-24 pt-10 border-t border-border/40 flex flex-col md:flex-row items-center justify-between gap-4 text-xs tracking-[0.2em] uppercase text-muted-foreground">
+            <span>© 2026 Parrilla Day · O Quintal · Caraguatatuba/SP</span>
+            <span>3ª Edição · O maior festival de churrasco do litoral norte</span>
           </div>
         </div>
       </footer>
