@@ -202,16 +202,23 @@ function PhotoStrip() {
           let opacity = 0;
           let scale = 1.15;
           let y = 60;
+          const isLast = i === photos.length - 1;
           if (progress >= start && progress < end) {
             const local = (progress - start) / (end - start);
             if (i === 0) {
               opacity = local > 0.85 ? (1 - local) / 0.15 : 1;
+            } else if (isLast) {
+              opacity = local < 0.15 ? local / 0.15 : 1;
             } else {
               opacity = local < 0.15 ? local / 0.15 : local > 0.85 ? (1 - local) / 0.15 : 1;
             }
             scale = 1.15 - local * 0.15;
             y = 60 - local * 60;
           } else if (i === 0 && progress < start) {
+            opacity = 1;
+            scale = 1;
+            y = 0;
+          } else if (isLast && progress >= end) {
             opacity = 1;
             scale = 1;
             y = 0;
