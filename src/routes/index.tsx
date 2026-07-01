@@ -458,13 +458,6 @@ function Index() {
           <p className="text-serif-italic text-xl text-muted-foreground mb-16 max-w-2xl">
             Cortes premium, fogo de chão e os melhores assadores do litoral norte trabalhando ao vivo.
           </p>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-border">
-            {[
-              "Angus Supremo", "Costela Fogo de Chão", "Fraldinha Defumada", "Chorizo Argentino",
-              "Picanha Black Angus", "Picanha Argentina", "Linguiça Artesanal", "Pão de Alho",
-              "Mandioca na Manteiga", "Queijo Coalho", "Farofas", "Vinagrete da Casa",
-            ].map((s, i) => (
-              <div key={s} className="p-6 bg-background hover:bg-card transition group">
           <div className="grid md:grid-cols-2 gap-10">
             {[
               {
