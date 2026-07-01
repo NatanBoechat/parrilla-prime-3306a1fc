@@ -256,7 +256,8 @@ function Index() {
       </header>
 
       {/* HERO */}
-      <section id="top" className="relative min-h-screen h-screen flex items-center pt-16 md:pt-20 pb-20 md:pb-24 px-6 overflow-hidden grain isolate">
+      <section id="top" className="relative min-h-screen h-screen flex flex-col justify-between pt-20 md:pt-24 pb-16 md:pb-20 px-6 overflow-hidden grain isolate">
+        <div className="flex-1 flex items-center w-full">
         <div className="absolute inset-0 z-0">
           <video
             src={heroVideoAsset}
