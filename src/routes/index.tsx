@@ -429,8 +429,8 @@ function Index() {
         <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
             <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">O Evento</div>
-            <h2 className="text-display text-5xl md:text-7xl text-bone leading-[0.95]">
-              Três dias.<br /><span className="whitespace-nowrap">Fogo em toda parte.</span><br /><span className="text-ember">26 mil pessoas.</span>
+            <h2 className="text-display text-4xl md:text-6xl text-bone leading-[0.95]">
+              Três dias.<br />Fogo em toda parte.<br /><span className="text-ember">26 mil pessoas.</span>
             </h2>
           </div>
           <div className="md:col-span-8 space-y-8">
@@ -454,8 +454,8 @@ function Index() {
       </section>
 
       {/* ESTAÇÕES GASTRONÔMICAS */}
-      <section id="estacoes" className="py-20 md:py-24 px-6 bg-card/30 border-y border-border/40 relative overflow-hidden">
-        <div className="absolute inset-0 -z-10 opacity-15">
+      <section id="estacoes" className="py-20 md:py-24 px-6 bg-card/30 border-y border-border/40 relative">
+        <div className="absolute inset-0 -z-10 opacity-15 overflow-hidden pointer-events-none">
           <img src={estacoesImg} alt="" className="w-full h-full object-cover" loading="lazy" />
           <div className="absolute inset-0 bg-gradient-to-b from-background via-background/60 to-background" />
         </div>
@@ -496,7 +496,7 @@ function Index() {
                   { p: "Costela", c: "Will Fernandes" },
                   { p: "Costelinha Suína", c: "Bruno Ribeiro" },
                   { p: "Cupim", c: "Gersão Ribeiro" },
-                  { p: "Chicken Fries", c: "O Quintal" },
+                  { p: "Chicken Fries", c: "Caraguá Beach" },
                   { p: "Peixe", c: "Du Goiozo" },
                   { p: "Picanha", c: "Flávio Messias" },
                   { p: "Picanha", c: "Espeticho" },
@@ -860,7 +860,7 @@ function Index() {
             </div>
           </div>
           <div className="mt-24 pt-10 border-t border-border/40 flex flex-col md:flex-row items-center justify-between gap-4 text-xs tracking-[0.2em] uppercase text-muted-foreground">
-            <span>© 2026 Parrilla Day · O Quintal · Caraguatatuba/SP</span>
+            <span>© 2026 Parrilla Day · Caraguá Beach · Caraguatatuba/SP</span>
             <span>3ª Edição · O maior festival de churrasco do litoral norte</span>
           </div>
         </div>
