@@ -24,6 +24,7 @@ import decoBarnImg from "@/assets/deco-barn.png";
 import decoCorridorImg from "@/assets/deco-corridor.png";
 import decoTouroImg from "@/assets/deco-touro.png";
 import fogosImg from "@/assets/fogos-real.png";
+import showsFlyerImg from "@/assets/shows-flyer.png";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -481,21 +482,23 @@ function Index() {
 
       {/* HEADLINERS */}
       <section className="py-20 md:py-24 px-6 bg-card/30 border-y border-border/40 relative overflow-hidden">
-        <div className="absolute inset-0 -z-10 opacity-25">
-          <img src={showSertanejoImg} alt="" className="w-full h-full object-cover" loading="lazy" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background via-background/70 to-background" />
-        </div>
         <div className="max-w-7xl mx-auto">
           <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Headliners · Dia 05</div>
-          <h2 className="text-display text-5xl md:text-7xl text-bone mb-16">Os shows</h2>
-          <div className="space-y-2">
-            {["Guilherme & Vinícius", "Naessa", "Peddro Henrique & Luciano"].map((n, i) => (
-              <div key={n} className="group border-b border-border/40 py-8 flex items-baseline justify-between hover:bg-card/40 transition px-4 cursor-default">
-                <div className="flex items-baseline gap-8">
-                  <span className="text-display text-2xl text-ember">0{i + 1}</span>
-                  <h3 className="text-display text-4xl md:text-7xl text-bone group-hover:text-ember transition">{n}</h3>
-                </div>
-                <span className="text-serif-italic text-muted-foreground hidden md:block">sertanejo</span>
+          <h2 className="text-display text-5xl md:text-7xl text-bone mb-8">Os shows</h2>
+          <div className="relative overflow-hidden border border-border/40 group">
+            <img
+              src={showsFlyerImg}
+              alt="Flyer oficial dos shows do Parrilla Day 2026"
+              className="w-full h-auto transition duration-[1500ms] group-hover:scale-[1.02]"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent pointer-events-none" />
+          </div>
+          <div className="mt-10 grid md:grid-cols-3 gap-4">
+            {["Guilherme & Vinícius", "Naessa", "Peddro Henrique & Luciano"].map((n) => (
+              <div key={n} className="p-5 border border-border/40 text-center hover:border-ember transition">
+                <h3 className="text-display text-xl md:text-2xl text-bone">{n}</h3>
+                <span className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground">sertanejo</span>
               </div>
             ))}
           </div>
