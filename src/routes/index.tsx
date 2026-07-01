@@ -589,12 +589,12 @@ function Index() {
       </section>
 
       {/* ESTRUTURA / PALCO */}
-      <section className="py-20 md:py-24 px-6">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <div className="relative overflow-hidden aspect-square">
+      <section className="py-20 md:py-24">
+        <div className="grid md:grid-cols-2 gap-0 items-stretch">
+          <div className="relative overflow-hidden aspect-square w-full">
             <img src={rodaCarneImg} alt="Roda de carne Parrilla Day" loading="lazy" className="w-full h-full object-cover" />
           </div>
-          <div>
+          <div className="px-6 md:px-16 flex flex-col justify-center py-12">
             <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Estrutura</div>
             <h2 className="text-display text-5xl md:text-7xl text-bone leading-none mb-6">
               Construída para <span className="text-ember">incendiar</span>
@@ -621,9 +621,9 @@ function Index() {
       </section>
 
       {/* BAR BRAHMA */}
-      <section className="py-20 md:py-24 px-6 bg-card/30 border-y border-border/40">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <div className="order-2 md:order-1">
+      <section className="py-20 md:py-24 bg-card/30 border-y border-border/40">
+        <div className="grid md:grid-cols-2 gap-0 items-stretch">
+          <div className="order-2 md:order-1 px-6 md:px-16 flex flex-col justify-center py-12">
             <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Bar & Bebidas</div>
             <h2 className="text-display text-5xl md:text-7xl text-bone leading-none mb-6">
               Chopp gelado,<br /><span className="text-ember">copo cheio.</span>
@@ -637,7 +637,7 @@ function Index() {
               ))}
             </div>
           </div>
-          <div className="order-1 md:order-2 relative overflow-hidden aspect-square">
+          <div className="order-1 md:order-2 relative overflow-hidden aspect-square w-full">
             <img src={barBrahmaRealImg} alt="Bar Brahma" loading="lazy" className="w-full h-full object-cover" />
           </div>
         </div>
