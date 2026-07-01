@@ -801,11 +801,6 @@ function Index() {
             <div className="text-xs tracking-[0.3em] uppercase text-ember mb-2">Dias 06 e 07</div>
             <p className="text-bone text-lg">Entrada gratuita · Comidas e bebidas vendidas à parte</p>
           </div>
-          <div className="mt-8 space-y-2 text-xs text-muted-foreground/80 leading-relaxed max-w-3xl">
-            <p>* Nos dias de entrada gratuita, as atrações serão cobradas à parte.</p>
-            <p>* Imagens meramente ilustrativas.</p>
-            <p>* Teremos uma fila diferencial e um termo na entrada que será assinado pelo responsável. Os menores de idade receberão uma pulseira de identificação.</p>
-          </div>
         </div>
       </section>
 
@@ -818,18 +813,28 @@ function Index() {
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 md:gap-10 items-center">
             {sponsorLogos.map((l) => (
-              <div key={l.name} className="flex items-center justify-center aspect-square p-2">
+              <div key={l.name} className="flex items-center justify-center aspect-square p-2 overflow-visible">
                 <img
                   src={l.src}
                   alt={l.name}
                   loading="lazy"
-                  className="w-full h-full object-contain rounded-full transition duration-300 hover:scale-105"
+                  className="w-full h-full object-contain transition duration-300 hover:scale-105"
                 />
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* DISCLAIMERS */}
+      <section className="px-6 pt-12 pb-6 border-t border-border/40">
+        <div className="max-w-4xl mx-auto space-y-2 text-xs text-muted-foreground/80 leading-relaxed text-center">
+          <p>* Nos dias de entrada gratuita, as atrações serão cobradas à parte.</p>
+          <p>* Imagens meramente ilustrativas.</p>
+          <p>* Teremos uma fila diferencial e um termo na entrada que será assinado pelo responsável. Os menores de idade receberão uma pulseira de identificação.</p>
+        </div>
+      </section>
+
 
       {/* FOOTER / CTA */}
       <footer className="py-24 md:py-28 px-6 bg-background">
