@@ -429,8 +429,8 @@ function Index() {
         <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
             <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">O Evento</div>
-            <h2 className="text-display text-5xl md:text-7xl text-bone leading-[0.95]">
-              Três dias.<br /><span className="whitespace-nowrap">Fogo em toda parte.</span><br /><span className="text-ember">26 mil pessoas.</span>
+            <h2 className="text-display text-4xl md:text-6xl text-bone leading-[0.95]">
+              Três dias.<br />Fogo em toda parte.<br /><span className="text-ember">26 mil pessoas.</span>
             </h2>
           </div>
           <div className="md:col-span-8 space-y-8">
