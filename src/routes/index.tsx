@@ -46,6 +46,43 @@ export const Route = createFileRoute("/")({
 
 const EVENT_DATE = new Date("2026-09-05T12:00:00-03:00").getTime();
 
+function Reveal({ children, className = "", delay = 0, as: Tag = "div" }: { children: React.ReactNode; className?: string; delay?: number; as?: any }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            setVisible(true);
+            io.disconnect();
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -80px 0px" }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  return (
+    <Tag
+      ref={ref}
+      className={className}
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateY(0)" : "translateY(28px)",
+        filter: visible ? "blur(0)" : "blur(6px)",
+        transition: `opacity 900ms cubic-bezier(.2,.7,.2,1) ${delay}ms, transform 900ms cubic-bezier(.2,.7,.2,1) ${delay}ms, filter 900ms ease ${delay}ms`,
+        willChange: "opacity, transform, filter",
+      }}
+    >
+      {children}
+    </Tag>
+  );
+}
+
 function Preloader({ onDone }: { onDone: () => void }) {
   const [progress, setProgress] = useState(0);
   useEffect(() => {
@@ -236,7 +273,7 @@ function PhotoStrip() {
                 <div className="text-serif-italic text-ember text-lg md:text-2xl mb-4">
                   0{i + 1} / 0{photos.length}
                 </div>
-                <h2 className="text-display text-6xl md:text-9xl text-bone ember-glow">
+                <h2 data-reveal className="text-display text-6xl md:text-9xl text-bone ember-glow">
                   {captions[i]}
                 </h2>
               </div>
@@ -259,6 +296,37 @@ const ATRACOES = [
 
 function Index() {
   const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    if (!loaded) return;
+    const els = document.querySelectorAll<HTMLElement>("[data-reveal]");
+    els.forEach((el) => {
+      el.style.opacity = "0";
+      el.style.transform = "translateY(28px)";
+      el.style.filter = "blur(6px)";
+      el.style.transition = "opacity 900ms cubic-bezier(.2,.7,.2,1), transform 900ms cubic-bezier(.2,.7,.2,1), filter 900ms ease";
+      el.style.willChange = "opacity, transform, filter";
+    });
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            const el = e.target as HTMLElement;
+            const delay = Number(el.dataset.revealDelay || 0);
+            el.style.transitionDelay = `${delay}ms`;
+            el.style.opacity = "1";
+            el.style.transform = "translateY(0)";
+            el.style.filter = "blur(0)";
+            io.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -60px 0px" }
+    );
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, [loaded]);
+
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -403,7 +471,7 @@ function Index() {
       <section className="py-24 px-6 border-b border-border/40 bg-card/30">
         <div className="max-w-5xl mx-auto text-center">
           <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">5 de Setembro de 2026</div>
-          <h2 className="text-display text-4xl md:text-6xl mb-12 text-bone">A contagem para a brasa</h2>
+          <h2 data-reveal className="text-display text-4xl md:text-6xl mb-12 text-bone">A contagem para a brasa</h2>
           <Countdown />
         </div>
       </section>
@@ -413,7 +481,7 @@ function Index() {
         <div className="flex gap-12 animate-marquee whitespace-nowrap text-display text-4xl md:text-6xl text-ember/70">
           {Array.from({ length: 2 }).map((_, k) => (
             <div key={k} className="flex gap-12 shrink-0">
-              {["Open Churrasco", "✦", "Open Bar", "✦", "30 Estações", "✦", "Sertanejo ao Vivo", "✦", "Roda Gigante", "✦", "Beira-Mar", "✦"].map((w, i) => (
+              {["Open Churrasco", "✦", "Open Bar", "✦", "Estações de Carne", "✦", "Sertanejo ao Vivo", "✦", "Roda Gigante", "✦", "Beira-Mar", "✦"].map((w, i) => (
                 <span key={i}>{w}</span>
               ))}
             </div>
@@ -427,21 +495,20 @@ function Index() {
       {/* O EVENTO */}
       <section id="evento" className="py-20 md:py-24 px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12">
-          <div className="md:col-span-4">
+          <Reveal className="md:col-span-5">
             <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">O Evento</div>
-            <h2 className="text-display text-4xl md:text-6xl text-bone leading-[0.95]">
+            <h2 data-reveal className="text-display text-4xl md:text-5xl lg:text-6xl text-bone leading-[0.95]">
               Três dias.<br />Fogo em toda parte.<br /><span className="text-ember">26 mil pessoas.</span>
             </h2>
-          </div>
-          <div className="md:col-span-8 space-y-8">
-            <p className="text-serif-italic text-2xl md:text-3xl text-bone/90 leading-snug">
+          </Reveal>
+          <Reveal className="md:col-span-7 space-y-8" delay={120}>
+            <p data-reveal data-reveal-delay="150" className="text-serif-italic text-2xl md:text-3xl text-bone/90 leading-snug">
               O Parrilla Day chega à sua 3ª edição com crescimento de <span className="text-ember">2000%</span> sobre as edições anteriores. Uma celebração do fogo, da carne e da brasa, à beira do mar em Caraguatatuba.
             </p>
-            <div className="grid sm:grid-cols-3 gap-6 pt-8 border-t border-border/40">
+            <div className="grid sm:grid-cols-2 gap-6 pt-8 border-t border-border/40">
               {[
                 { n: "6.000", l: "Ingressos · Dia 05" },
                 { n: "20.000", l: "Acesso livre · 06 e 07" },
-                { n: "30", l: "Estações de carne" },
               ].map((s) => (
                 <div key={s.l}>
                   <div className="text-display text-5xl text-ember">{s.n}</div>
@@ -449,7 +516,7 @@ function Index() {
                 </div>
               ))}
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -461,8 +528,8 @@ function Index() {
         </div>
         <div className="max-w-7xl mx-auto">
           <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Estações Gastronômicas</div>
-          <h2 className="text-display text-5xl md:text-7xl text-bone mb-4">30 estações.<br /><span className="text-ember">Brasa sem fim.</span></h2>
-          <p className="text-serif-italic text-xl text-muted-foreground mb-16 max-w-2xl">
+          <h2 data-reveal className="text-display text-5xl md:text-7xl text-bone mb-4">Estações de carne.<br /><span className="text-ember">Brasa sem fim.</span></h2>
+          <p data-reveal data-reveal-delay="150" className="text-serif-italic text-xl text-muted-foreground mb-16 max-w-2xl">
             Cortes premium, fogo de chão e os melhores assadores do litoral norte trabalhando ao vivo.
           </p>
           <div className="grid md:grid-cols-2 gap-10 items-start">
@@ -543,7 +610,7 @@ function Index() {
       <section id="programacao" className="py-20 md:py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Programação</div>
-          <h2 className="text-display text-5xl md:text-7xl text-bone mb-16">Três dias na brasa</h2>
+          <h2 data-reveal className="text-display text-5xl md:text-7xl text-bone mb-16">Três dias na brasa</h2>
           <div className="grid md:grid-cols-3 gap-px bg-border">
             {[
               { day: "05", month: "Setembro", time: "12h às 22h", title: "Parrilla Day", desc: "Open bar · Open churrasco · Drinks à parte. O dia principal com shows headliners, balonismo e show de fogos.", featured: true },
@@ -569,7 +636,7 @@ function Index() {
       <section className="py-16 md:py-20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Headliners · Dia 05</div>
-          <h2 className="text-display text-5xl md:text-7xl text-bone mb-8">Os shows</h2>
+          <h2 data-reveal className="text-display text-5xl md:text-7xl text-bone mb-8">Os shows</h2>
         </div>
         <div className="relative overflow-hidden group">
           <img
@@ -598,7 +665,7 @@ function Index() {
       <section id="atracoes" className="py-20 md:py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Atrações</div>
-          <h2 className="text-display text-5xl md:text-7xl text-bone mb-16 max-w-3xl">
+          <h2 data-reveal className="text-display text-5xl md:text-7xl text-bone mb-16 max-w-3xl">
             Muito além do <span className="text-ember">fogo</span>
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -642,8 +709,8 @@ function Index() {
       <section id="mapa" className="py-20 md:py-24 px-6 bg-card/30 border-y border-border/40">
         <div className="max-w-7xl mx-auto">
           <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Mapa do Evento</div>
-          <h2 className="text-display text-5xl md:text-7xl text-bone mb-4">À beira mar.<br /><span className="text-ember">Caraguá Beach.</span></h2>
-          <p className="text-serif-italic text-xl text-muted-foreground mb-12 max-w-2xl">
+          <h2 data-reveal className="text-display text-5xl md:text-7xl text-bone mb-4">À beira mar.<br /><span className="text-ember">Caraguá Beach.</span></h2>
+          <p data-reveal data-reveal-delay="150" className="text-serif-italic text-xl text-muted-foreground mb-12 max-w-2xl">
             Palco principal, parrilleras, camarotes premium, roda gigante e área kids. Tudo de frente para o Atlântico.
           </p>
           <div className="relative overflow-hidden border border-border/40">
@@ -673,7 +740,7 @@ function Index() {
           </div>
           <div className="px-6 md:px-16 flex flex-col justify-center py-12">
             <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Estrutura</div>
-            <h2 className="text-display text-5xl md:text-7xl text-bone leading-none mb-6">
+            <h2 data-reveal className="text-display text-5xl md:text-7xl text-bone leading-none mb-6">
               Construída para <span className="text-ember">incendiar</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
@@ -702,7 +769,7 @@ function Index() {
         <div className="grid md:grid-cols-2 gap-0 items-stretch">
           <div className="order-2 md:order-1 px-6 md:px-16 flex flex-col justify-center py-12">
             <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Bar & Bebidas</div>
-            <h2 className="text-display text-5xl md:text-7xl text-bone leading-none mb-6">
+            <h2 data-reveal className="text-display text-5xl md:text-7xl text-bone leading-none mb-6">
               Chopp gelado,<br /><span className="text-ember">copo cheio.</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
@@ -724,7 +791,7 @@ function Index() {
       <section className="py-20 md:py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Ambientação</div>
-          <h2 className="text-display text-5xl md:text-7xl text-bone mb-16 max-w-3xl">
+          <h2 data-reveal className="text-display text-5xl md:text-7xl text-bone mb-16 max-w-3xl">
             Decoração <span className="text-ember">cinematográfica</span>
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
@@ -755,8 +822,8 @@ function Index() {
         </div>
         <div className="max-w-7xl mx-auto">
           <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Ingressos</div>
-          <h2 className="text-display text-5xl md:text-7xl text-bone mb-4">Sua entrada na brasa</h2>
-          <p className="text-serif-italic text-xl text-muted-foreground mb-16 max-w-2xl">
+          <h2 data-reveal className="text-display text-5xl md:text-7xl text-bone mb-4">Sua entrada na brasa</h2>
+          <p data-reveal data-reveal-delay="150" className="text-serif-italic text-xl text-muted-foreground mb-16 max-w-2xl">
             05 de setembro · Open bar · Open churrasco · Drinks vendidos à parte
           </p>
           <div className="grid md:grid-cols-2 gap-6 items-stretch">
@@ -808,7 +875,7 @@ function Index() {
       <section id="patrocinadores" className="py-20 md:py-24 px-6 border-t border-border/40">
         <div className="max-w-7xl mx-auto text-center">
           <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Patrocínio</div>
-          <h2 className="text-display text-5xl md:text-7xl text-bone mb-16">
+          <h2 data-reveal className="text-display text-5xl md:text-7xl text-bone mb-16">
             Quem <span className="text-ember">acende</span> a brasa
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 md:gap-10 items-center">
@@ -842,8 +909,8 @@ function Index() {
           <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
             <div className="text-center md:text-left">
               <img src={logoAsset} alt="Parrilla Day" className="h-32 md:h-40 mx-auto md:mx-0 mb-10 animate-flicker" />
-              <h2 className="text-display text-4xl md:text-6xl text-bone mb-4">Caraguatatuba te espera</h2>
-              <p className="text-serif-italic text-xl text-muted-foreground">5, 6 e 7 de setembro · 2026</p>
+              <h2 data-reveal className="text-display text-4xl md:text-6xl text-bone mb-4">Caraguatatuba te espera</h2>
+              <p data-reveal data-reveal-delay="150" className="text-serif-italic text-xl text-muted-foreground">5, 6 e 7 de setembro · 2026</p>
             </div>
             <div className="flex flex-col items-center md:items-end gap-8">
               <p className="text-sm text-muted-foreground text-center md:text-right max-w-sm leading-relaxed">
