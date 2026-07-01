@@ -523,10 +523,21 @@ function Index() {
               </div>
             ))}
           </div>
-          <div className="mt-10 grid sm:grid-cols-2 md:grid-cols-4 gap-px bg-border">
-            {["Salão de Beleza", "Brinquedos Kids", "Lounge Cielo", "Show de Fogos"].map((x) => (
-              <div key={x} className="p-6 bg-background text-center">
-                <div className="text-display text-xl text-bone">{x}</div>
+          <div className="mt-10 grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {[
+              { t: "Salão de Beleza", d: "Para retoques de cabelo e maquiagem", img: salaoKidsImg, pos: "left center" },
+              { t: "Brinquedos Kids", d: "Entrada gratuita para as crianças", img: salaoKidsImg, pos: "right center" },
+              { t: "Show de Fogos", d: "Encerramento cinematográfico no céu de Caraguá", img: fogosImg, pos: "center" },
+            ].map((x) => (
+              <div key={x.t} className="group relative overflow-hidden border border-border/40 hover:border-ember transition bg-card">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img src={x.img} alt={x.t} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition duration-[1200ms]" style={{ objectPosition: x.pos }} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+                </div>
+                <div className="absolute inset-x-0 bottom-0 p-6">
+                  <h3 className="text-display text-2xl text-bone mb-1 group-hover:text-ember transition">{x.t}</h3>
+                  <p className="text-xs text-muted-foreground">{x.d}</p>
+                </div>
               </div>
             ))}
           </div>
