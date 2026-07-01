@@ -77,8 +77,8 @@ function HeroHeadline({ play }: { play: boolean }) {
           key={li}
           className={`block overflow-hidden ${
             line.accent
-              ? "text-[17vw] md:text-[13vw] text-ember"
-              : "text-[12vw] md:text-[9vw]"
+              ? "text-[16vw] md:text-[12vw] text-ember"
+              : "text-[11vw] md:text-[8vw]"
           }`}
           style={{ lineHeight: 0.82 }}
         >
