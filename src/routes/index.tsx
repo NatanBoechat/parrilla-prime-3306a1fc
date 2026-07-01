@@ -732,6 +732,30 @@ function Index() {
         </div>
       </section>
 
+      {/* PATROCINADORES */}
+      <section id="patrocinadores" className="py-20 md:py-24 px-6 border-t border-border/40">
+        <div className="max-w-7xl mx-auto text-center">
+          <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Patrocínio</div>
+          <h2 className="text-display text-5xl md:text-7xl text-bone mb-16">
+            Quem <span className="text-ember">acende</span> a brasa
+          </h2>
+          <div className="space-y-10">
+            <img
+              src={sponsors1Img}
+              alt="Patrocinadores Parrilla Day 2026"
+              loading="lazy"
+              className="w-full h-auto max-w-6xl mx-auto"
+            />
+            <img
+              src={sponsors2Img}
+              alt="Apoiadores Parrilla Day 2026"
+              loading="lazy"
+              className="w-full h-auto max-w-3xl mx-auto"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* FOOTER / CTA */}
       <footer className="py-24 md:py-28 px-6 bg-background">
         <div className="max-w-7xl mx-auto">
