@@ -178,7 +178,7 @@ function PhotoStrip() {
   }, []);
 
   return (
-    <section ref={ref} className="relative" style={{ height: `${photos.length * 100}vh` }}>
+    <section ref={ref} className="relative" style={{ height: `${photos.length * 55}vh` }}>
       <div className="sticky top-0 h-screen overflow-hidden">
         {photos.map((p, i) => {
           const start = i / photos.length;
@@ -194,13 +194,14 @@ function PhotoStrip() {
           } else if (i === 0 && progress < start) {
             opacity = Math.max(0, 1 + progress * 5);
           }
+          const objPos = i === 3 || i === 4 ? "center top" : "center";
           return (
             <div
               key={i}
               className="absolute inset-0 transition-none"
               style={{ opacity, transform: `translateY(${y}px) scale(${scale})` }}
             >
-              <img src={p} alt={captions[i]} className="w-full h-full object-cover" />
+              <img src={p} alt={captions[i]} className="w-full h-full object-cover" style={{ objectPosition: objPos }} />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/60" />
               <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
                 <div className="text-serif-italic text-ember text-lg md:text-2xl mb-4">
