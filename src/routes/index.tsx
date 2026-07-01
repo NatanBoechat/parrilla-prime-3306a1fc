@@ -267,7 +267,7 @@ function Index() {
         </div>
 
         {/* Rising embers */}
-        <div className="absolute inset-0 -z-[5] pointer-events-none overflow-hidden">
+        <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
           {Array.from({ length: 22 }).map((_, i) => {
             const left = (i * 53) % 100;
             const delay = (i * 0.37) % 8;
