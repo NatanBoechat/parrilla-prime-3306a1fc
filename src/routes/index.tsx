@@ -17,6 +17,12 @@ import roboGiganteImg from "@/assets/robo-gigante.jpg";
 import balonismoImg from "@/assets/balonismo.jpg";
 import estacoesImg from "@/assets/estacoes.jpg";
 import showSertanejoImg from "@/assets/show-sertanejo.jpg";
+import danceImg from "@/assets/dance.png";
+import salaoKidsImg from "@/assets/salao-kids.png";
+import decoBarnImg from "@/assets/deco-barn.png";
+import decoCorridorImg from "@/assets/deco-corridor.png";
+import decoTouroImg from "@/assets/deco-touro.png";
+import fogosImg from "@/assets/fogos.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -172,7 +178,7 @@ function PhotoStrip() {
   }, []);
 
   return (
-    <section ref={ref} className="relative" style={{ height: `${photos.length * 100}vh` }}>
+    <section ref={ref} className="relative" style={{ height: `${photos.length * 55}vh` }}>
       <div className="sticky top-0 h-screen overflow-hidden">
         {photos.map((p, i) => {
           const start = i / photos.length;
@@ -188,13 +194,14 @@ function PhotoStrip() {
           } else if (i === 0 && progress < start) {
             opacity = Math.max(0, 1 + progress * 5);
           }
+          const objPos = i === 3 || i === 4 ? "center top" : "center";
           return (
             <div
               key={i}
               className="absolute inset-0 transition-none"
               style={{ opacity, transform: `translateY(${y}px) scale(${scale})` }}
             >
-              <img src={p} alt={captions[i]} className="w-full h-full object-cover" />
+              <img src={p} alt={captions[i]} className="w-full h-full object-cover" style={{ objectPosition: objPos }} />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/60" />
               <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
                 <div className="text-serif-italic text-ember text-lg md:text-2xl mb-4">
@@ -218,7 +225,7 @@ const ATRACOES = [
   { t: "Roda Gigante", d: "Vista panorâmica do festival e da praia de Caraguatatuba.", img: rodaGiganteImg, tag: "Dias 05 / 06 / 07" },
   { t: "Touro Mecânico", d: "O clássico desafio sertanejo — quem aguenta os 8 segundos?", img: touroMecanicoImg, tag: "Dias 05 / 06" },
   { t: "Shows Sertanejos", d: "Atrações nacionais e locais no palco principal.", img: showSertanejoImg, tag: "Dia 05" },
-  { t: "Apresentações de Dança", d: "Coreografias e performances temáticas pelo evento.", img: chefAsset, tag: "Dia 05" },
+  { t: "Apresentações de Dança", d: "Coreografias e performances temáticas pelo evento.", img: danceImg, tag: "Dia 05" },
 ];
 
 function Index() {
@@ -249,7 +256,7 @@ function Index() {
       </header>
 
       {/* HERO */}
-      <section id="top" className="relative min-h-screen h-screen flex items-center pt-16 md:pt-20 pb-20 md:pb-24 px-6 overflow-hidden grain isolate">
+      <section id="top" className="relative min-h-screen h-screen flex items-center pt-24 md:pt-24 pb-24 md:pb-24 px-6 overflow-hidden grain isolate">
         <div className="absolute inset-0 z-0">
           <video
             src={heroVideoAsset}
@@ -293,13 +300,17 @@ function Index() {
 
         <div className="max-w-[1600px] mx-auto w-full relative z-10">
           <div
-            className="flex items-center gap-3 mb-4 text-[10px] md:text-[11px] tracking-[0.35em] md:tracking-[0.4em] uppercase text-ember"
-            style={{ animation: loaded ? "char-rise 0.8s ease-out 0s both" : "none", opacity: loaded ? undefined : 0 }}
+            className="flex items-center gap-3 mb-6 md:mb-8 text-[11px] md:text-[12px] tracking-[0.35em] md:tracking-[0.4em] uppercase text-ember"
+            style={{
+              animation: loaded ? "char-rise 0.8s ease-out 0s both" : "none",
+              opacity: loaded ? undefined : 0,
+              textShadow: "0 2px 12px rgba(0,0,0,0.9), 0 0 4px rgba(0,0,0,0.8)",
+            }}
           >
             <span
-              className="h-px bg-ember origin-left block"
+              className="h-px bg-ember origin-left block shrink-0"
               style={{
-                width: "4rem",
+                width: "3rem",
                 animation: loaded ? "slash-in 0.9s cubic-bezier(0.7,0,0.2,1) 0.1s both" : "none",
               }}
             />
@@ -308,12 +319,13 @@ function Index() {
 
           <HeroHeadline play={loaded} />
 
-          <div className="mt-2 md:mt-4 grid md:grid-cols-[1.2fr_1fr] gap-6 md:gap-12 items-end">
+          <div className="mt-8 md:mt-10 grid md:grid-cols-[1.2fr_1fr] gap-8 md:gap-12 items-end">
             <p
-              className="text-serif-italic text-base md:text-2xl text-bone/80 max-w-2xl leading-snug"
+              className="text-serif-italic text-lg md:text-2xl text-bone max-w-2xl leading-relaxed"
               style={{
                 animation: loaded ? "char-rise 1s ease-out 1.6s both" : "none",
                 opacity: loaded ? undefined : 0,
+                textShadow: "0 2px 16px rgba(0,0,0,0.9), 0 0 6px rgba(0,0,0,0.7)",
               }}
             >
               Três dias de fogo, sertanejo e alta gastronomia <span className="text-ember">à beira-mar</span> — o feriado da Independência transformado em festa.
@@ -384,7 +396,7 @@ function Index() {
       <PhotoStrip />
 
       {/* O EVENTO */}
-      <section id="evento" className="py-32 px-6">
+      <section id="evento" className="py-20 md:py-24 px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
             <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">O Evento</div>
@@ -413,7 +425,7 @@ function Index() {
       </section>
 
       {/* ESTAÇÕES GASTRONÔMICAS */}
-      <section id="estacoes" className="py-32 px-6 bg-card/30 border-y border-border/40 relative overflow-hidden">
+      <section id="estacoes" className="py-20 md:py-24 px-6 bg-card/30 border-y border-border/40 relative overflow-hidden">
         <div className="absolute inset-0 -z-10 opacity-15">
           <img src={estacoesImg} alt="" className="w-full h-full object-cover" loading="lazy" />
           <div className="absolute inset-0 bg-gradient-to-b from-background via-background/60 to-background" />
@@ -441,7 +453,7 @@ function Index() {
       </section>
 
       {/* PROGRAMAÇÃO */}
-      <section id="programacao" className="py-32 px-6">
+      <section id="programacao" className="py-20 md:py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Programação</div>
           <h2 className="text-display text-5xl md:text-7xl text-bone mb-16">Três dias na brasa</h2>
@@ -467,7 +479,7 @@ function Index() {
       </section>
 
       {/* HEADLINERS */}
-      <section className="py-32 px-6 bg-card/30 border-y border-border/40 relative overflow-hidden">
+      <section className="py-20 md:py-24 px-6 bg-card/30 border-y border-border/40 relative overflow-hidden">
         <div className="absolute inset-0 -z-10 opacity-25">
           <img src={showSertanejoImg} alt="" className="w-full h-full object-cover" loading="lazy" />
           <div className="absolute inset-0 bg-gradient-to-b from-background via-background/70 to-background" />
@@ -490,7 +502,7 @@ function Index() {
       </section>
 
       {/* ATRAÇÕES */}
-      <section id="atracoes" className="py-32 px-6">
+      <section id="atracoes" className="py-20 md:py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Atrações</div>
           <h2 className="text-display text-5xl md:text-7xl text-bone mb-16 max-w-3xl">
@@ -511,10 +523,21 @@ function Index() {
               </div>
             ))}
           </div>
-          <div className="mt-10 grid sm:grid-cols-2 md:grid-cols-4 gap-px bg-border">
-            {["Salão de Beleza", "Brinquedos Kids", "Lounge Cielo", "Show de Fogos"].map((x) => (
-              <div key={x} className="p-6 bg-background text-center">
-                <div className="text-display text-xl text-bone">{x}</div>
+          <div className="mt-10 grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {[
+              { t: "Salão de Beleza", d: "Para retoques de cabelo e maquiagem", img: salaoKidsImg, pos: "left center" },
+              { t: "Brinquedos Kids", d: "Entrada gratuita para as crianças", img: salaoKidsImg, pos: "right center" },
+              { t: "Show de Fogos", d: "Encerramento cinematográfico no céu de Caraguá", img: fogosImg, pos: "center" },
+            ].map((x) => (
+              <div key={x.t} className="group relative overflow-hidden border border-border/40 hover:border-ember transition bg-card">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img src={x.img} alt={x.t} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition duration-[1200ms]" style={{ objectPosition: x.pos }} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+                </div>
+                <div className="absolute inset-x-0 bottom-0 p-6">
+                  <h3 className="text-display text-2xl text-bone mb-1 group-hover:text-ember transition">{x.t}</h3>
+                  <p className="text-xs text-muted-foreground">{x.d}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -522,7 +545,7 @@ function Index() {
       </section>
 
       {/* MAPA DO EVENTO */}
-      <section id="mapa" className="py-32 px-6 bg-card/30 border-y border-border/40">
+      <section id="mapa" className="py-20 md:py-24 px-6 bg-card/30 border-y border-border/40">
         <div className="max-w-7xl mx-auto">
           <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Mapa do Evento</div>
           <h2 className="text-display text-5xl md:text-7xl text-bone mb-4">À beira mar.<br /><span className="text-ember">Caraguá Beach.</span></h2>
@@ -549,7 +572,7 @@ function Index() {
       </section>
 
       {/* ESTRUTURA / PALCO */}
-      <section className="py-32 px-6">
+      <section className="py-20 md:py-24 px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-6 relative overflow-hidden">
             <img src={mainStageAsset} alt="Palco principal Parrilla Day" loading="lazy" className="w-full h-auto" />
@@ -581,7 +604,7 @@ function Index() {
       </section>
 
       {/* BAR BRAHMA */}
-      <section className="py-32 px-6 bg-card/30 border-y border-border/40">
+      <section className="py-20 md:py-24 px-6 bg-card/30 border-y border-border/40">
         <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-6 order-2 md:order-1">
             <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Bar & Bebidas</div>
@@ -604,7 +627,7 @@ function Index() {
       </section>
 
       {/* DECORAÇÃO TEMÁTICA */}
-      <section className="py-32 px-6">
+      <section className="py-20 md:py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Ambientação</div>
           <h2 className="text-display text-5xl md:text-7xl text-bone mb-16 max-w-3xl">
@@ -612,13 +635,13 @@ function Index() {
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { t: "Espaço Decorado", d: "Galpão temático com elementos rurais autênticos.", img: chefAsset },
-              { t: "Corredor de Entrada", d: "Túnel iluminado que prepara a experiência.", img: skullAsset },
-              { t: "Elementos Decorativos", d: "Detalhes temáticos por todo o festival.", img: porchettaAsset },
+              { t: "Cenário Rústico", d: "Galpão temático com elementos rurais autênticos.", img: decoBarnImg },
+              { t: "Corredor Cinematográfico", d: "Túnel iluminado que prepara a experiência.", img: decoCorridorImg },
+              { t: "Painéis Temáticos", d: "Instalações fotogênicas espalhadas pelo festival.", img: decoTouroImg },
             ].map((d) => (
               <div key={d.t} className="group relative overflow-hidden border border-border/40 hover:border-ember transition">
                 <div className="aspect-[4/5] overflow-hidden bg-blood">
-                  <img src={d.img} alt={d.t} loading="lazy" className="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-105 transition duration-[1200ms]" />
+                  <img src={d.img} alt={d.t} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition duration-[1200ms]" />
                 </div>
                 <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-background via-background/80 to-transparent">
                   <h3 className="text-display text-2xl text-bone mb-1">{d.t}</h3>
@@ -631,7 +654,7 @@ function Index() {
       </section>
 
       {/* INGRESSOS */}
-      <section id="ingressos" className="py-32 px-6 relative overflow-hidden bg-card/30 border-y border-border/40">
+      <section id="ingressos" className="py-20 md:py-24 px-6 relative overflow-hidden bg-card/30 border-y border-border/40">
         <div className="absolute inset-0 -z-10 opacity-20">
           <img src={skullAsset} alt="" className="w-full h-full object-cover" loading="lazy" />
           <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background" />
@@ -645,9 +668,9 @@ function Index() {
           <div className="grid md:grid-cols-2 gap-6">
             <div className="p-10 md:p-14 border border-border/60 bg-card/60 backdrop-blur">
               <div className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">Ingresso · Dia 05</div>
-              <div className="flex items-baseline gap-2 mb-2">
+              <div className="flex items-baseline gap-2 mb-2 flex-wrap">
                 <span className="text-display text-7xl md:text-8xl text-bone">R$349</span>
-                <span className="text-muted-foreground">+ R$34,90 taxa</span>
+                <span className="text-muted-foreground">+ taxa</span>
               </div>
               <ul className="space-y-3 mt-10 mb-12 text-sm text-muted-foreground">
                 <li className="flex gap-3"><span className="text-ember">▸</span> Acesso completo ao Parrilla Day</li>
@@ -661,11 +684,12 @@ function Index() {
             </div>
             <div className="p-10 md:p-14 border border-ember bg-gradient-to-br from-blood/40 to-card/60 backdrop-blur relative">
               <div className="absolute top-6 right-6 text-[10px] tracking-[0.3em] uppercase text-ember">★ Premium</div>
-              <div className="text-xs tracking-[0.3em] uppercase text-ember mb-4">Camarote · Dia 05</div>
-              <div className="flex items-baseline gap-2 mb-2">
-                <span className="text-display text-7xl md:text-8xl text-bone">Premium</span>
+              <div className="text-xs tracking-[0.3em] uppercase text-ember mb-4">Camarote · Dia 05 · até 10 pessoas</div>
+              <div className="flex items-baseline gap-2 mb-2 flex-wrap">
+                <span className="text-display text-6xl md:text-7xl text-bone">R$6.290</span>
+                <span className="text-muted-foreground">+ taxa</span>
               </div>
-              <p className="text-sm text-muted-foreground mb-2">Sob consulta</p>
+              <p className="text-sm text-muted-foreground mb-2">Valor total do camarote (até 10 pessoas)</p>
               <ul className="space-y-3 mt-10 mb-12 text-sm text-bone/80">
                 <li className="flex gap-3"><span className="text-ember">▸</span> Tenda exclusiva com vista privilegiada</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Open Food · Open Bar Premium</li>
@@ -681,11 +705,16 @@ function Index() {
             <div className="text-xs tracking-[0.3em] uppercase text-ember mb-2">Dias 06 e 07</div>
             <p className="text-bone text-lg">Entrada gratuita · Comidas e bebidas vendidas à parte</p>
           </div>
+          <div className="mt-8 space-y-2 text-xs text-muted-foreground/80 leading-relaxed max-w-3xl">
+            <p>* Nos dias de entrada gratuita, as atrações serão cobradas à parte.</p>
+            <p>* Imagens meramente ilustrativas.</p>
+            <p>* Teremos uma fila diferencial e um termo na entrada que será assinado pelo responsável. Os menores de idade receberão uma pulseira de identificação.</p>
+          </div>
         </div>
       </section>
 
       {/* FOOTER / CTA */}
-      <footer className="py-32 md:py-40 px-6 bg-background">
+      <footer className="py-24 md:py-28 px-6 bg-background">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
             <div className="text-center md:text-left">
