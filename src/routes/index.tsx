@@ -481,24 +481,25 @@ function Index() {
       </section>
 
       {/* HEADLINERS */}
-      <section className="py-20 md:py-24 px-6 bg-card/30 border-y border-border/40 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-20 md:py-24 bg-card/30 border-y border-border/40 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Headliners · Dia 05</div>
           <h2 className="text-display text-5xl md:text-7xl text-bone mb-8">Os shows</h2>
-          <div className="relative overflow-hidden border border-border/40 group">
-            <img
-              src={showsFlyerImg}
-              alt="Flyer oficial dos shows do Parrilla Day 2026"
-              className="w-full h-auto transition duration-[1500ms] group-hover:scale-[1.02]"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent pointer-events-none" />
-          </div>
+        </div>
+        <div className="relative overflow-hidden group">
+          <img
+            src={showsFlyerImg}
+            alt="Flyer oficial dos shows do Parrilla Day 2026"
+            className="w-full h-auto transition duration-[1500ms] group-hover:scale-[1.02]"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent pointer-events-none" />
+        </div>
+        <div className="max-w-7xl mx-auto px-6">
           <div className="mt-10 grid md:grid-cols-3 gap-4">
             {["Guilherme & Vinícius", "Naessa", "Peddro Henrique & Luciano"].map((n) => (
               <div key={n} className="p-5 border border-border/40 text-center hover:border-ember transition">
                 <h3 className="text-display text-xl md:text-2xl text-bone">{n}</h3>
-                <span className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground">sertanejo</span>
               </div>
             ))}
           </div>
