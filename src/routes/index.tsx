@@ -526,8 +526,8 @@ function Index() {
           </div>
           <div className="mt-10 grid sm:grid-cols-2 md:grid-cols-3 gap-6">
             {[
-              { t: "Salão de Beleza", d: "Para retoques de cabelo e maquiagem", img: salaoKidsImg, pos: "left center" },
-              { t: "Brinquedos Kids", d: "Entrada gratuita para as crianças", img: salaoKidsImg, pos: "right center" },
+              { t: "Salão de Beleza", d: "Para retoques de cabelo e maquiagem", img: beautyImg, pos: "center" },
+              { t: "Brinquedos Kids", d: "Entrada gratuita para as crianças", img: kidsZoneImg, pos: "center" },
               { t: "Show de Fogos", d: "Encerramento cinematográfico no céu de Caraguá", img: fogosImg, pos: "center" },
             ].map((x) => (
               <div key={x.t} className="group relative overflow-hidden border border-border/40 hover:border-ember transition bg-card">
