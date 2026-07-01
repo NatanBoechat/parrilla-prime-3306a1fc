@@ -465,47 +465,51 @@ function Index() {
           <p className="text-serif-italic text-xl text-muted-foreground mb-16 max-w-2xl">
             Cortes premium, fogo de chão e os melhores assadores do litoral norte trabalhando ao vivo.
           </p>
-          <div className="grid md:grid-cols-2 gap-10">
+          <div className="grid md:grid-cols-2 gap-10 items-start">
             {[
               {
                 setor: "Camarote",
                 sub: "Exclusivo · Dia 05",
+                note: "Camarote inclui tudo da Pista + os cortes exclusivos abaixo",
                 items: [
-                  { p: "Alcatra de Cordeiro", c: "Juninho", ig: "juninho.brasaforte" },
-                  { p: "Burger", c: "Renan Villar", ig: "renantbc" },
-                  { p: "Gnocchi & Ragu de Linguiça", c: "Jean Assador", ig: "jfgrill_heanfernandes" },
-                  { p: "Costela", c: "Elcio Henrique", ig: "direto_do_fogo_proce" },
-                  { p: "Paella de Frutos do Mar", c: "Fábio Santana", ig: "fabiosantana49" },
-                  { p: "Picanha", c: "Camila Damasceno", ig: "cami_damasceno" },
+                  { p: "Alcatra de Cordeiro", c: "Juninho" },
+                  { p: "Burger", c: "Renan Villar" },
+                  { p: "Gnocchi & Ragu de Linguiça", c: "Jean Assador" },
+                  { p: "Costela", c: "Elcio Henrique" },
+                  { p: "Paella de Frutos do Mar", c: "Fábio Santana" },
+                  { p: "Picanha", c: "Camila Damasceno" },
                 ],
               },
               {
                 setor: "Pista",
                 sub: "Aberto ao público",
                 items: [
-                  { p: "Alcatra de Cordeiro", c: "Dorfo's & Patricia", ig: "casalnabrasa_" },
-                  { p: "Ancho", c: "Willian Hory", ig: "eunoseuchurrasco" },
-                  { p: "Ancho", c: "Luiz Otavio", ig: "boivermelho.bbq" },
-                  { p: "Arroz à Mineira", c: "Tiago Palacio", ig: "palaciorangodetacho" },
-                  { p: "Brisket", c: "Henrique Gonçalves", ig: "ferroefogobbq" },
-                  { p: "Burger", c: "Fábio Henrique", ig: "geras_burger" },
-                  { p: "Burger", c: "Felipe Moika", ig: "felipemoika" },
-                  { p: "Burger", c: "Big Jhon", ig: "bigjhonhamburgueria" },
-                  { p: "Chorizo", c: "Diego Blasco", ig: "diegocblasco" },
-                  { p: "Costela", c: "Will Fernandes", ig: "chefwillassador" },
-                  { p: "Costelinha Suína", c: "Bruno Ribeiro", ig: "balaiodaroca" },
-                  { p: "Cupim", c: "Gersão Ribeiro", ig: "rango_zerodoze" },
-                  { p: "Chicken Fries", c: "O Quintal", ig: "oquintalcaragua" },
-                  { p: "Peixe", c: "Du Goiozo", ig: "dugoiozo.churrasco" },
-                  { p: "Picanha", c: "Flávio Messias", ig: "flaviobrazza" },
-                  { p: "Picanha", c: "Espeticho", ig: "espeticho" },
-                  { p: "Prime Rib", c: "Luiz Bueno", ig: "familiabueno.oficial" },
-                  { p: "Sobrecoxa", c: "Dom Roasters", ig: "domroasters" },
-                  { p: "Torresmo", c: "Maurício", ig: "tempoetemperaturagrill" },
+                  { p: "Alcatra de Cordeiro", c: "Dorfo's & Patricia" },
+                  { p: "Ancho", c: "Willian Hory" },
+                  { p: "Ancho", c: "Luiz Otavio" },
+                  { p: "Arroz à Mineira", c: "Tiago Palacio" },
+                  { p: "Brisket", c: "Henrique Gonçalves" },
+                  { p: "Burger", c: "Fábio Henrique" },
+                  { p: "Burger", c: "Felipe Moika" },
+                  { p: "Burger", c: "Big Jhon" },
+                  { p: "Chorizo", c: "Diego Blasco" },
+                  { p: "Costela", c: "Will Fernandes" },
+                  { p: "Costelinha Suína", c: "Bruno Ribeiro" },
+                  { p: "Cupim", c: "Gersão Ribeiro" },
+                  { p: "Chicken Fries", c: "O Quintal" },
+                  { p: "Peixe", c: "Du Goiozo" },
+                  { p: "Picanha", c: "Flávio Messias" },
+                  { p: "Picanha", c: "Espeticho" },
+                  { p: "Prime Rib", c: "Luiz Bueno" },
+                  { p: "Sobrecoxa", c: "Dom Roasters" },
+                  { p: "Torresmo", c: "Maurício" },
                 ],
               },
-            ].map((group) => (
-              <div key={group.setor} className="border border-border/40">
+            ].map((group, gi) => (
+              <div
+                key={group.setor}
+                className={`border border-border/40 ${gi === 0 ? "md:sticky md:top-24" : ""}`}
+              >
                 <div className="p-6 border-b border-border/40 flex items-baseline justify-between gap-4 bg-background">
                   <div>
                     <div className="text-[10px] tracking-[0.4em] uppercase text-ember mb-2">Setor</div>
@@ -513,6 +517,11 @@ function Index() {
                   </div>
                   <div className="text-xs tracking-[0.2em] uppercase text-muted-foreground text-right">{group.sub}</div>
                 </div>
+                {group.note && (
+                  <div className="px-6 py-3 bg-ember/10 border-b border-ember/30 text-[11px] tracking-[0.15em] uppercase text-ember">
+                    {group.note}
+                  </div>
+                )}
                 <ul className="divide-y divide-border/40">
                   {group.items.map((it, i) => (
                     <li key={`${group.setor}-${i}`} className="flex items-center justify-between gap-4 px-6 py-4 bg-background hover:bg-card transition group">
@@ -520,14 +529,6 @@ function Index() {
                         <div className="text-display text-lg md:text-xl text-bone group-hover:text-ember transition truncate">{it.p}</div>
                         <div className="text-xs text-muted-foreground tracking-wide uppercase mt-0.5">{it.c}</div>
                       </div>
-                      <a
-                        href={`https://instagram.com/${it.ig}`}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="shrink-0 text-[10px] tracking-[0.2em] uppercase text-muted-foreground hover:text-ember transition"
-                      >
-                        @{it.ig}
-                      </a>
                     </li>
                   ))}
                 </ul>
