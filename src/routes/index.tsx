@@ -764,11 +764,11 @@ function Index() {
                 <li className="flex gap-3"><span className="text-ember">▸</span> Open Churrasco · 30 estações</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Acesso a todos os shows e atrações</li>
               </ul>
-              <button className="w-full py-4 bg-ember text-background text-sm tracking-[0.2em] uppercase font-semibold hover:bg-ember/90 transition">
+              <button className="w-full py-4 bg-ember text-background text-sm tracking-[0.2em] uppercase font-semibold hover:bg-ember/90 transition mt-auto">
                 Comprar Ingresso
               </button>
             </div>
-            <div className="p-10 md:p-14 border border-ember bg-gradient-to-br from-blood/40 to-card/60 backdrop-blur relative">
+            <div className="p-10 md:p-14 border border-ember bg-gradient-to-br from-blood/40 to-card/60 backdrop-blur relative flex flex-col">
               <div className="absolute top-6 right-6 text-[10px] tracking-[0.3em] uppercase text-ember">★ Premium</div>
               <div className="text-xs tracking-[0.3em] uppercase text-ember mb-4">Camarote · Dia 05</div>
               <div className="flex items-baseline gap-2 mb-1 flex-wrap">
