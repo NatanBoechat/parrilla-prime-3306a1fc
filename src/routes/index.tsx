@@ -668,9 +668,9 @@ function Index() {
           <div className="grid md:grid-cols-2 gap-6">
             <div className="p-10 md:p-14 border border-border/60 bg-card/60 backdrop-blur">
               <div className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">Ingresso · Dia 05</div>
-              <div className="flex items-baseline gap-2 mb-2">
+              <div className="flex items-baseline gap-2 mb-2 flex-wrap">
                 <span className="text-display text-7xl md:text-8xl text-bone">R$349</span>
-                <span className="text-muted-foreground">+ R$34,90 taxa</span>
+                <span className="text-muted-foreground">+ taxa</span>
               </div>
               <ul className="space-y-3 mt-10 mb-12 text-sm text-muted-foreground">
                 <li className="flex gap-3"><span className="text-ember">▸</span> Acesso completo ao Parrilla Day</li>
@@ -684,11 +684,12 @@ function Index() {
             </div>
             <div className="p-10 md:p-14 border border-ember bg-gradient-to-br from-blood/40 to-card/60 backdrop-blur relative">
               <div className="absolute top-6 right-6 text-[10px] tracking-[0.3em] uppercase text-ember">★ Premium</div>
-              <div className="text-xs tracking-[0.3em] uppercase text-ember mb-4">Camarote · Dia 05</div>
-              <div className="flex items-baseline gap-2 mb-2">
-                <span className="text-display text-7xl md:text-8xl text-bone">Premium</span>
+              <div className="text-xs tracking-[0.3em] uppercase text-ember mb-4">Camarote · Dia 05 · até 10 pessoas</div>
+              <div className="flex items-baseline gap-2 mb-2 flex-wrap">
+                <span className="text-display text-6xl md:text-7xl text-bone">R$6.290</span>
+                <span className="text-muted-foreground">+ taxa</span>
               </div>
-              <p className="text-sm text-muted-foreground mb-2">Sob consulta</p>
+              <p className="text-sm text-muted-foreground mb-2">Valor total do camarote (até 10 pessoas)</p>
               <ul className="space-y-3 mt-10 mb-12 text-sm text-bone/80">
                 <li className="flex gap-3"><span className="text-ember">▸</span> Tenda exclusiva com vista privilegiada</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Open Food · Open Bar Premium</li>
@@ -703,6 +704,11 @@ function Index() {
           <div className="mt-12 p-8 border border-border/40 text-center bg-background/40">
             <div className="text-xs tracking-[0.3em] uppercase text-ember mb-2">Dias 06 e 07</div>
             <p className="text-bone text-lg">Entrada gratuita · Comidas e bebidas vendidas à parte</p>
+          </div>
+          <div className="mt-8 space-y-2 text-xs text-muted-foreground/80 leading-relaxed max-w-3xl">
+            <p>* Nos dias de entrada gratuita, as atrações serão cobradas à parte.</p>
+            <p>* Imagens meramente ilustrativas.</p>
+            <p>* Teremos uma fila diferencial e um termo na entrada que será assinado pelo responsável. Os menores de idade receberão uma pulseira de identificação.</p>
           </div>
         </div>
       </section>
