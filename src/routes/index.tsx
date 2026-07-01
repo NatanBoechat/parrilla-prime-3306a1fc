@@ -751,19 +751,17 @@ function Index() {
           <h2 className="text-display text-5xl md:text-7xl text-bone mb-16">
             Quem <span className="text-ember">acende</span> a brasa
           </h2>
-          <div className="space-y-10">
-            <img
-              src={sponsors1Img}
-              alt="Patrocinadores Parrilla Day 2026"
-              loading="lazy"
-              className="w-full h-auto max-w-6xl mx-auto"
-            />
-            <img
-              src={sponsors2Img}
-              alt="Apoiadores Parrilla Day 2026"
-              loading="lazy"
-              className="w-full h-auto max-w-3xl mx-auto"
-            />
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 md:gap-10 items-center">
+            {sponsorLogos.map((l) => (
+              <div key={l.name} className="flex items-center justify-center aspect-square p-2">
+                <img
+                  src={l.src}
+                  alt={l.name}
+                  loading="lazy"
+                  className="w-full h-full object-contain rounded-full transition duration-300 hover:scale-105"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
