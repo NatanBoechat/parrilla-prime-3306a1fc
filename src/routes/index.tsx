@@ -635,9 +635,9 @@ function Index() {
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { t: "Espaço Decorado", d: "Galpão temático com elementos rurais autênticos.", img: chefAsset },
-              { t: "Corredor de Entrada", d: "Túnel iluminado que prepara a experiência.", img: skullAsset },
-              { t: "Elementos Decorativos", d: "Detalhes temáticos por todo o festival.", img: porchettaAsset },
+              { t: "Cenário Rústico", d: "Galpão temático com elementos rurais autênticos.", img: decoBarnImg },
+              { t: "Corredor Cinematográfico", d: "Túnel iluminado que prepara a experiência.", img: decoCorridorImg },
+              { t: "Painéis Temáticos", d: "Instalações fotogênicas espalhadas pelo festival.", img: decoTouroImg },
             ].map((d) => (
               <div key={d.t} className="group relative overflow-hidden border border-border/40 hover:border-ember transition">
                 <div className="aspect-[4/5] overflow-hidden bg-blood">
