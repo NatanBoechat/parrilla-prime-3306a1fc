@@ -687,11 +687,13 @@ function Index() {
             <div className="p-10 md:p-14 border border-ember bg-gradient-to-br from-blood/40 to-card/60 backdrop-blur relative">
               <div className="absolute top-6 right-6 text-[10px] tracking-[0.3em] uppercase text-ember">★ Premium</div>
               <div className="text-xs tracking-[0.3em] uppercase text-ember mb-4">Camarote · Dia 05 · até 10 pessoas</div>
-              <div className="flex items-baseline gap-2 mb-2 flex-wrap">
-                <span className="text-display text-6xl md:text-7xl text-bone">R$6.290</span>
+              <div className="flex items-baseline gap-2 mb-1 flex-wrap">
+                <span className="text-display text-6xl md:text-7xl text-bone">R$629</span>
                 <span className="text-muted-foreground">+ taxa</span>
               </div>
-              <p className="text-sm text-muted-foreground mb-2">Valor total do camarote (até 10 pessoas)</p>
+              <div className="text-sm text-muted-foreground mb-2">
+                <span className="line-through text-muted-foreground/50">R$6.290</span> valor total do camarote · até 10 pessoas
+              </div>
               <ul className="space-y-3 mt-10 mb-12 text-sm text-bone/80">
                 <li className="flex gap-3"><span className="text-ember">▸</span> Tenda exclusiva com vista privilegiada</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Open Food · Open Bar Premium</li>
