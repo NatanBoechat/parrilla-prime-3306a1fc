@@ -17,6 +17,12 @@ import roboGiganteImg from "@/assets/robo-gigante.jpg";
 import balonismoImg from "@/assets/balonismo.jpg";
 import estacoesImg from "@/assets/estacoes.jpg";
 import showSertanejoImg from "@/assets/show-sertanejo.jpg";
+import danceImg from "@/assets/dance.png";
+import salaoKidsImg from "@/assets/salao-kids.png";
+import decoBarnImg from "@/assets/deco-barn.png";
+import decoCorridorImg from "@/assets/deco-corridor.png";
+import decoTouroImg from "@/assets/deco-touro.png";
+import fogosImg from "@/assets/fogos.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
