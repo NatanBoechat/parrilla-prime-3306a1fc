@@ -751,8 +751,8 @@ function Index() {
           <p className="text-serif-italic text-xl text-muted-foreground mb-16 max-w-2xl">
             05 de setembro · Open bar · Open churrasco · Drinks vendidos à parte
           </p>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="p-10 md:p-14 border border-border/60 bg-card/60 backdrop-blur">
+          <div className="grid md:grid-cols-2 gap-6 items-stretch">
+            <div className="p-10 md:p-14 border border-border/60 bg-card/60 backdrop-blur flex flex-col">
               <div className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">Ingresso · Dia 05</div>
               <div className="flex items-baseline gap-2 mb-2 flex-wrap">
                 <span className="text-display text-7xl md:text-8xl text-bone">R$349</span>
