@@ -152,7 +152,6 @@ function HeroHeadline({ play }: { play: boolean }) {
               : "text-[13.5vw] md:text-[8vw]"
           } leading-[0.92] md:leading-[0.82]`}
         >
-        >
           <span
             className="inline-block"
             style={{ transformStyle: "preserve-3d" }}
