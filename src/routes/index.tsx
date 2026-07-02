@@ -26,19 +26,30 @@ import showsFlyerImg from "@/assets/shows-flyer.png";
 import rodaCarneImg from "@/assets/roda-carne.png";
 import barBrahmaRealImg from "@/assets/bar-brahma-real.png";
 import caraguafmAsset from "@/assets/sponsors/caraguafm.jpg.asset.json";
+import tncLogo from "@/assets/sponsors/tnc.png";
+import fordLogo from "@/assets/sponsors/ford.png";
+import redbullLogo from "@/assets/sponsors/redbull.png";
+import trombiniLogo from "@/assets/sponsors/trombini.png";
+import ambevLogo from "@/assets/sponsors/ambev.png";
+import realezaLogo from "@/assets/sponsors/realeza.png";
+import selvaLogo from "@/assets/sponsors/selva.png";
+import hamptonLogo from "@/assets/sponsors/hampton.png";
+import bandLogo from "@/assets/sponsors/band.png";
+import qbLogo from "@/assets/sponsors/qb.png";
+import bigjhonLogo from "@/assets/sponsors/bigjhon.png";
 const sponsorLogos = [
-  { src: new URL("../assets/sponsors/tnc.png", import.meta.url).href, name: "TNC" },
-  { src: new URL("../assets/sponsors/ford.png", import.meta.url).href, name: "Ford" },
-  { src: new URL("../assets/sponsors/redbull.png", import.meta.url).href, name: "Red Bull" },
-  { src: new URL("../assets/sponsors/trombini.png", import.meta.url).href, name: "Diversões Trombini" },
-  { src: new URL("../assets/sponsors/ambev.png", import.meta.url).href, name: "Ambev" },
-  { src: new URL("../assets/sponsors/realeza.png", import.meta.url).href, name: "Realeza" },
-  { src: new URL("../assets/sponsors/selva.png", import.meta.url).href, name: "Selva Zeladoria" },
-  { src: new URL("../assets/sponsors/hampton.png", import.meta.url).href, name: "Hampton by Hilton" },
-  { src: new URL("../assets/sponsors/band.png", import.meta.url).href, name: "Band" },
-  { src: new URL("../assets/sponsors/qb.png", import.meta.url).href, name: "QB Construções" },
+  { src: tncLogo, name: "TNC" },
+  { src: fordLogo, name: "Ford" },
+  { src: redbullLogo, name: "Red Bull" },
+  { src: trombiniLogo, name: "Diversões Trombini" },
+  { src: ambevLogo, name: "Ambev" },
+  { src: realezaLogo, name: "Realeza" },
+  { src: selvaLogo, name: "Selva Zeladoria" },
+  { src: hamptonLogo, name: "Hampton by Hilton" },
+  { src: bandLogo, name: "Band" },
+  { src: qbLogo, name: "QB Construções" },
   { src: caraguafmAsset.url, name: "Caraguá FM 89.5" },
-  { src: new URL("../assets/sponsors/bigjhon.png", import.meta.url).href, name: "Big Jhon" },
+  { src: bigjhonLogo, name: "Big Jhon" },
 ];
 
 export const Route = createFileRoute("/")({
@@ -129,7 +140,7 @@ function HeroHeadline({ play }: { play: boolean }) {
   let charIndex = 0;
   return (
     <h1
-      className="text-display leading-[0.82] text-bone select-none"
+      className="text-display leading-[0.92] md:leading-[0.82] text-bone select-none"
       style={{ perspective: "1000px" }}
     >
       {lines.map((line, li) => (
@@ -137,10 +148,9 @@ function HeroHeadline({ play }: { play: boolean }) {
           key={li}
           className={`block overflow-hidden ${
             line.accent
-              ? "text-[16vw] md:text-[12vw] text-ember"
-              : "text-[11vw] md:text-[8vw]"
-          }`}
-          style={{ lineHeight: 0.82 }}
+              ? "text-[19vw] md:text-[12vw] text-ember"
+              : "text-[13.5vw] md:text-[8vw]"
+          } leading-[0.92] md:leading-[0.82]`}
         >
           <span
             className="inline-block"
@@ -395,7 +405,7 @@ function Index() {
 
         <div className="max-w-[1600px] mx-auto w-full relative z-10">
           <div
-            className="flex items-center gap-3 mb-6 md:mb-8 text-[11px] md:text-[12px] tracking-[0.35em] md:tracking-[0.4em] uppercase text-ember"
+            className="flex items-center gap-2 md:gap-3 mb-4 md:mb-8 text-[8px] md:text-[12px] tracking-[0.28em] md:tracking-[0.4em] uppercase text-ember"
             style={{
               animation: loaded ? "char-rise 0.8s ease-out 0s both" : "none",
               opacity: loaded ? undefined : 0,
@@ -405,11 +415,11 @@ function Index() {
             <span
               className="h-px bg-ember origin-left block shrink-0"
               style={{
-                width: "3rem",
+                width: "1.5rem",
                 animation: loaded ? "slash-in 0.9s cubic-bezier(0.7,0,0.2,1) 0.1s both" : "none",
               }}
             />
-            <span>3ª Ed. · Caraguá · 05 a 07 Set 2026</span>
+            <span className="whitespace-nowrap">3ª Ed. · Caraguá · 05 a 07 Set 2026</span>
           </div>
 
           <HeroHeadline play={loaded} />
@@ -683,9 +693,9 @@ function Index() {
           </div>
           <div className="mt-10 grid sm:grid-cols-2 md:grid-cols-3 gap-6">
             {[
-              { t: "Salão de Beleza", d: "Para retoques de cabelo e maquiagem", img: beautyImg, pos: "center" },
-              { t: "Brinquedos Kids", d: "Entrada gratuita para as crianças", img: kidsZoneImg, pos: "center", darkOverlay: true },
-              { t: "Show de Fogos", d: "Encerramento cinematográfico no céu de Caraguá", img: fogosImg, pos: "center" },
+              { t: "Salão de Beleza", d: "Para retoques de cabelo e maquiagem", img: beautyImg, pos: "center", tag: "Dia 05" },
+              { t: "Brinquedos Kids", d: "Entrada gratuita para as crianças", img: kidsZoneImg, pos: "center", darkOverlay: true, tag: "Dia 05" },
+              { t: "Show de Fogos", d: "Encerramento cinematográfico no céu de Caraguá", img: fogosImg, pos: "center", tag: "Dia 05" },
             ].map((x) => (
               <div key={x.t} className="group relative overflow-hidden border border-border/40 hover:border-ember transition bg-card">
                 <div className="aspect-[4/3] overflow-hidden">
@@ -694,6 +704,7 @@ function Index() {
                   {x.darkOverlay && <div className="absolute inset-0 bg-background/40 mix-blend-multiply" />}
                 </div>
                 <div className="absolute inset-x-0 bottom-0 p-6">
+                  <div className="text-[10px] tracking-[0.3em] uppercase text-ember mb-2">{x.tag}</div>
                   <h3 className="text-display text-2xl text-bone mb-1 group-hover:text-ember transition">{x.t}</h3>
                   <p className="text-xs text-muted-foreground">{x.d}</p>
                 </div>
