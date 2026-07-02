@@ -271,9 +271,6 @@ function PhotoStrip() {
               <img src={p} alt={captions[i]} className="w-full h-full object-cover" style={{ objectPosition: objPos }} />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/60" />
               <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
-                <div className="text-serif-italic text-ember text-lg md:text-2xl mb-4">
-                  0{i + 1} / 0{photos.length}
-                </div>
                 <h2 data-reveal className="text-display text-6xl md:text-9xl text-bone ember-glow">
                   {captions[i]}
                 </h2>
