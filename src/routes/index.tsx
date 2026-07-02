@@ -150,8 +150,8 @@ function HeroHeadline({ play }: { play: boolean }) {
             line.accent
               ? "text-[19vw] md:text-[12vw] text-ember"
               : "text-[13.5vw] md:text-[8vw]"
-          }`}
-          style={{ lineHeight: 0.92 }}
+          } leading-[0.92] md:leading-[0.82]`}
+        >
         >
           <span
             className="inline-block"
