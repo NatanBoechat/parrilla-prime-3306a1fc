@@ -550,7 +550,7 @@ function Index() {
               },
               {
                 setor: "Pista",
-                sub: "Aberto ao público",
+                sub: "Dia 05 · Pista",
                 items: [
                   { p: "Alcatra de Cordeiro", c: "Dorfo's & Patricia" },
                   { p: "Ancho", c: "Willian Hory" },
