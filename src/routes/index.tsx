@@ -25,6 +25,7 @@ import fogosImg from "@/assets/fogos-real.png";
 import showsFlyerImg from "@/assets/shows-flyer.png";
 import rodaCarneImg from "@/assets/roda-carne.png";
 import barBrahmaRealImg from "@/assets/bar-brahma-real.png";
+import caraguafmAsset from "@/assets/sponsors/caraguafm.jpg.asset.json";
 const sponsorLogos = [
   { src: new URL("../assets/sponsors/tnc.png", import.meta.url).href, name: "TNC" },
   { src: new URL("../assets/sponsors/ford.png", import.meta.url).href, name: "Ford" },
@@ -36,7 +37,7 @@ const sponsorLogos = [
   { src: new URL("../assets/sponsors/hampton.png", import.meta.url).href, name: "Hampton by Hilton" },
   { src: new URL("../assets/sponsors/band.png", import.meta.url).href, name: "Band" },
   { src: new URL("../assets/sponsors/qb.png", import.meta.url).href, name: "QB Construções" },
-  { src: new URL("../assets/sponsors/caraguafm.png", import.meta.url).href, name: "Caraguá FM 89.5" },
+  { src: caraguafmAsset.url, name: "Caraguá FM 89.5" },
   { src: new URL("../assets/sponsors/bigjhon.png", import.meta.url).href, name: "Big Jhon" },
 ];
 
