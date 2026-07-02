@@ -25,6 +25,7 @@ import fogosImg from "@/assets/fogos-real.png";
 import showsFlyerImg from "@/assets/shows-flyer.png";
 import rodaCarneImg from "@/assets/roda-carne.png";
 import barBrahmaRealImg from "@/assets/bar-brahma-real.png";
+import caraguafmAsset from "@/assets/sponsors/caraguafm.jpg.asset.json";
 const sponsorLogos = [
   { src: new URL("../assets/sponsors/tnc.png", import.meta.url).href, name: "TNC" },
   { src: new URL("../assets/sponsors/ford.png", import.meta.url).href, name: "Ford" },
