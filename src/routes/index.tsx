@@ -140,7 +140,7 @@ function HeroHeadline({ play }: { play: boolean }) {
   let charIndex = 0;
   return (
     <h1
-      className="text-display leading-[0.82] text-bone select-none"
+      className="text-display leading-[0.92] md:leading-[0.82] text-bone select-none"
       style={{ perspective: "1000px" }}
     >
       {lines.map((line, li) => (
@@ -148,10 +148,10 @@ function HeroHeadline({ play }: { play: boolean }) {
           key={li}
           className={`block overflow-hidden ${
             line.accent
-              ? "text-[16vw] md:text-[12vw] text-ember"
-              : "text-[11vw] md:text-[8vw]"
+              ? "text-[19vw] md:text-[12vw] text-ember"
+              : "text-[13.5vw] md:text-[8vw]"
           }`}
-          style={{ lineHeight: 0.82 }}
+          style={{ lineHeight: 0.92 }}
         >
           <span
             className="inline-block"
