@@ -24,7 +24,7 @@ import decoTouroImg from "@/assets/deco-touro.png";
 import fogosImg from "@/assets/fogos-real.png";
 import showsFlyerImg from "@/assets/shows-flyer.png";
 import rodaCarneImg from "@/assets/roda-carne.png";
-import barBrahmaRealImg from "@/assets/bar-brahma-real.png";
+
 import caraguafmLogo from "@/assets/sponsors/caraguafm.jpg";
 import tncLogo from "@/assets/sponsors/tnc.png";
 import fordLogo from "@/assets/sponsors/ford.png";
@@ -773,28 +773,6 @@ function Index() {
         </div>
       </section>
 
-      {/* BAR BRAHMA */}
-      <section className="py-20 md:py-24 bg-card/30 border-y border-border/40">
-        <div className="grid md:grid-cols-2 gap-0 items-stretch">
-          <div className="order-2 md:order-1 px-6 md:px-16 flex flex-col justify-center py-12">
-            <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Bar & Bebidas</div>
-            <h2 data-reveal className="text-display text-5xl md:text-7xl text-bone leading-none mb-6">
-              Chopp gelado,<br /><span className="text-ember">copo cheio.</span>
-            </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              Bar Brahma principal + 2 bares satélites espalhados pelo evento. Open bar de cervejas e refrigerantes para os ingressos do dia 05. Drinks especiais à parte.
-            </p>
-            <div className="flex flex-wrap gap-3 text-xs tracking-[0.2em] uppercase">
-              {["Brahma", "Red Bull", "Drinks autorais", "Chopp artesanal"].map((b) => (
-                <span key={b} className="px-4 py-2 border border-border/60 text-bone/80">{b}</span>
-              ))}
-            </div>
-          </div>
-          <div className="order-1 md:order-2 relative overflow-hidden aspect-square w-full">
-            <img src={barBrahmaRealImg} alt="Bar Brahma" loading="lazy" className="w-full h-full object-cover" />
-          </div>
-        </div>
-      </section>
 
       {/* DECORAÇÃO TEMÁTICA */}
       <section className="py-20 md:py-24 px-6">
