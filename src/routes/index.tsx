@@ -26,19 +26,30 @@ import showsFlyerImg from "@/assets/shows-flyer.png";
 import rodaCarneImg from "@/assets/roda-carne.png";
 import barBrahmaRealImg from "@/assets/bar-brahma-real.png";
 import caraguafmAsset from "@/assets/sponsors/caraguafm.jpg.asset.json";
+import tncLogo from "@/assets/sponsors/tnc.png";
+import fordLogo from "@/assets/sponsors/ford.png";
+import redbullLogo from "@/assets/sponsors/redbull.png";
+import trombiniLogo from "@/assets/sponsors/trombini.png";
+import ambevLogo from "@/assets/sponsors/ambev.png";
+import realezaLogo from "@/assets/sponsors/realeza.png";
+import selvaLogo from "@/assets/sponsors/selva.png";
+import hamptonLogo from "@/assets/sponsors/hampton.png";
+import bandLogo from "@/assets/sponsors/band.png";
+import qbLogo from "@/assets/sponsors/qb.png";
+import bigjhonLogo from "@/assets/sponsors/bigjhon.png";
 const sponsorLogos = [
-  { src: new URL("../assets/sponsors/tnc.png", import.meta.url).href, name: "TNC" },
-  { src: new URL("../assets/sponsors/ford.png", import.meta.url).href, name: "Ford" },
-  { src: new URL("../assets/sponsors/redbull.png", import.meta.url).href, name: "Red Bull" },
-  { src: new URL("../assets/sponsors/trombini.png", import.meta.url).href, name: "Diversões Trombini" },
-  { src: new URL("../assets/sponsors/ambev.png", import.meta.url).href, name: "Ambev" },
-  { src: new URL("../assets/sponsors/realeza.png", import.meta.url).href, name: "Realeza" },
-  { src: new URL("../assets/sponsors/selva.png", import.meta.url).href, name: "Selva Zeladoria" },
-  { src: new URL("../assets/sponsors/hampton.png", import.meta.url).href, name: "Hampton by Hilton" },
-  { src: new URL("../assets/sponsors/band.png", import.meta.url).href, name: "Band" },
-  { src: new URL("../assets/sponsors/qb.png", import.meta.url).href, name: "QB Construções" },
+  { src: tncLogo, name: "TNC" },
+  { src: fordLogo, name: "Ford" },
+  { src: redbullLogo, name: "Red Bull" },
+  { src: trombiniLogo, name: "Diversões Trombini" },
+  { src: ambevLogo, name: "Ambev" },
+  { src: realezaLogo, name: "Realeza" },
+  { src: selvaLogo, name: "Selva Zeladoria" },
+  { src: hamptonLogo, name: "Hampton by Hilton" },
+  { src: bandLogo, name: "Band" },
+  { src: qbLogo, name: "QB Construções" },
   { src: caraguafmAsset.url, name: "Caraguá FM 89.5" },
-  { src: new URL("../assets/sponsors/bigjhon.png", import.meta.url).href, name: "Big Jhon" },
+  { src: bigjhonLogo, name: "Big Jhon" },
 ];
 
 export const Route = createFileRoute("/")({
