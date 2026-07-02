@@ -37,7 +37,7 @@ const sponsorLogos = [
   { src: new URL("../assets/sponsors/hampton.png", import.meta.url).href, name: "Hampton by Hilton" },
   { src: new URL("../assets/sponsors/band.png", import.meta.url).href, name: "Band" },
   { src: new URL("../assets/sponsors/qb.png", import.meta.url).href, name: "QB Construções" },
-  { src: new URL("../assets/sponsors/caraguafm.png", import.meta.url).href, name: "Caraguá FM 89.5" },
+  { src: caraguafmAsset.url, name: "Caraguá FM 89.5" },
   { src: new URL("../assets/sponsors/bigjhon.png", import.meta.url).href, name: "Big Jhon" },
 ];
 
