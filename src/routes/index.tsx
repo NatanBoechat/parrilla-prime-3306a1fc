@@ -693,9 +693,9 @@ function Index() {
           </div>
           <div className="mt-10 grid sm:grid-cols-2 md:grid-cols-3 gap-6">
             {[
-              { t: "Salão de Beleza", d: "Para retoques de cabelo e maquiagem", img: beautyImg, pos: "center" },
-              { t: "Brinquedos Kids", d: "Entrada gratuita para as crianças", img: kidsZoneImg, pos: "center", darkOverlay: true },
-              { t: "Show de Fogos", d: "Encerramento cinematográfico no céu de Caraguá", img: fogosImg, pos: "center" },
+              { t: "Salão de Beleza", d: "Para retoques de cabelo e maquiagem", img: beautyImg, pos: "center", tag: "Dia 05" },
+              { t: "Brinquedos Kids", d: "Entrada gratuita para as crianças", img: kidsZoneImg, pos: "center", darkOverlay: true, tag: "Dia 05" },
+              { t: "Show de Fogos", d: "Encerramento cinematográfico no céu de Caraguá", img: fogosImg, pos: "center", tag: "Dia 05" },
             ].map((x) => (
               <div key={x.t} className="group relative overflow-hidden border border-border/40 hover:border-ember transition bg-card">
                 <div className="aspect-[4/3] overflow-hidden">
@@ -704,6 +704,7 @@ function Index() {
                   {x.darkOverlay && <div className="absolute inset-0 bg-background/40 mix-blend-multiply" />}
                 </div>
                 <div className="absolute inset-x-0 bottom-0 p-6">
+                  <div className="text-[10px] tracking-[0.3em] uppercase text-ember mb-2">{x.tag}</div>
                   <h3 className="text-display text-2xl text-bone mb-1 group-hover:text-ember transition">{x.t}</h3>
                   <p className="text-xs text-muted-foreground">{x.d}</p>
                 </div>
