@@ -681,19 +681,6 @@ function Index() {
           <div className="relative overflow-hidden border border-border/40">
             <img src={eventMapAsset} alt="Mapa do Parrilla Day Caraguá Beach" className="w-full h-auto" loading="lazy" />
           </div>
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 mt-10">
-            {[
-              { t: "Palco Principal", d: "Estrutura completa de box truss e LED" },
-              { t: "Camarote Premium", d: "Vista privilegiada · Open premium" },
-              { t: "Mega Estação Kids", d: "Brinquedos e monitores" },
-              { t: "Praia", d: "Acesso direto à beira-mar" },
-            ].map((x) => (
-              <div key={x.t} className="p-5 border border-border/40">
-                <div className="text-display text-xl text-ember mb-1">{x.t}</div>
-                <div className="text-xs text-muted-foreground">{x.d}</div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
