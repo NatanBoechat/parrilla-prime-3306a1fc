@@ -421,7 +421,7 @@ function Index() {
       {!loaded && <Preloader onDone={() => setLoaded(true)} />}
 
       {/* NAV */}
-      <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-background/60 border-b border-border/40">
+      <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-background/30 border-b border-border/30">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-2">
           <a href="#top" className="flex items-center gap-3">
             <img src={logoBrancaVermelha} alt="Parrilla Day" className="h-14 md:h-16 w-auto" />
@@ -442,15 +442,15 @@ function Index() {
       <section id="top" className="relative md:min-h-screen md:h-screen flex flex-col md:block md:items-center pt-20 md:pt-24 md:pb-24 overflow-hidden grain isolate">
         {/* DESKTOP BG */}
         <div className="hidden md:block absolute inset-0 z-0">
-          <img
+        <img
             src={heroDesktopAsset.url}
             alt=""
             className="absolute inset-y-0 right-0 h-full w-auto max-w-none object-cover object-right"
-            style={{ transform: "translateX(8%)" }}
+            style={{ transform: "translateX(22%)" }}
           />
-          {/* Gradient: black left → transparent right */}
-          <div className="absolute inset-0 bg-gradient-to-r from-background from-30% via-background/85 via-55% to-transparent" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,oklch(0.13_0.015_30/0.65)_95%)]" />
+          {/* Gradient: heavy black left → clear right, then subtle vignette */}
+          <div className="absolute inset-0 bg-gradient-to-r from-background from-45% via-background/90 via-65% to-transparent" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_50%,oklch(0.13_0.015_30/0.65)_95%)]" />
           <div className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-30 animate-heat-haze bg-[radial-gradient(ellipse_at_center,oklch(0.7_0.22_45/0.12),transparent_60%)]" />
         </div>
 
