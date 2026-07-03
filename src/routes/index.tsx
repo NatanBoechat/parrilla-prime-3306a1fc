@@ -446,10 +446,10 @@ function Index() {
             src={heroDesktopAsset.url}
             alt=""
             className="absolute inset-y-0 right-0 h-full w-auto max-w-none object-cover object-right"
-            style={{ transform: "translateX(22%)" }}
+            style={{ transform: "translateX(38%)" }}
           />
-          {/* Gradient: heavy black left → clear right, then subtle vignette */}
-          <div className="absolute inset-0 bg-gradient-to-r from-background from-45% via-background/90 via-65% to-transparent" />
+          {/* Gradient: heavy black left → clear right */}
+          <div className="absolute inset-0 bg-gradient-to-r from-background from-40% via-background/70 via-60% to-transparent to-85%" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_50%,oklch(0.13_0.015_30/0.65)_95%)]" />
           <div className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-30 animate-heat-haze bg-[radial-gradient(ellipse_at_center,oklch(0.7_0.22_45/0.12),transparent_60%)]" />
         </div>
@@ -492,7 +492,7 @@ function Index() {
 
         {/* CONTENT */}
         <div className="relative z-10 w-full md:absolute md:inset-0 md:flex md:items-center px-6 pt-6 md:pt-0 pb-16 md:pb-0">
-          <div className="max-w-[1600px] mx-auto w-full md:pr-[45%]">
+          <div className="max-w-[1600px] mx-auto w-full md:pr-[35%]">
             <div
               className="flex items-center gap-2 md:gap-3 mb-4 md:mb-8 text-[8px] md:text-[12px] tracking-[0.28em] md:tracking-[0.4em] uppercase text-ember"
               style={{
@@ -513,32 +513,30 @@ function Index() {
 
             <HeroHeadline play={loaded} />
 
-            <div className="mt-8 md:mt-10 flex flex-col md:grid md:grid-cols-[1.2fr_1fr] gap-8 md:gap-12 md:items-end">
-              <p
-                className="text-serif-italic text-lg md:text-2xl text-bone max-w-2xl leading-relaxed"
-                style={{
-                  animation: loaded ? "char-rise 1s ease-out 1.6s both" : "none",
-                  opacity: loaded ? undefined : 0,
-                  textShadow: "0 2px 16px rgba(0,0,0,0.9), 0 0 6px rgba(0,0,0,0.7)",
-                }}
-              >
-                Uma <span className="text-ember">experiência premium e única</span>, pensada para quem entende de churrasco e vive intensamente cada momento. Alta gastronomia, open bar premium e um lineup selecionado para um dia memorável.
-              </p>
-              <div
-                className="flex flex-wrap gap-4"
-                style={{
-                  animation: loaded ? "char-rise 1s ease-out 1.8s both" : "none",
-                  opacity: loaded ? undefined : 0,
-                }}
-              >
-                <a href="#ingressos" className="group relative px-6 md:px-8 py-3 md:py-4 bg-ember text-background text-[10px] md:text-xs tracking-[0.3em] uppercase font-bold hover:bg-ember/90 transition overflow-hidden">
-                  <span className="relative z-10">Garantir agora →</span>
-                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-bone/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                </a>
-                <a href="#festival" className="px-6 md:px-8 py-3 md:py-4 border border-ember/40 text-[10px] md:text-xs tracking-[0.3em] uppercase hover:border-ember hover:text-ember transition">
-                  Saber Mais
-                </a>
-              </div>
+            <p
+              className="mt-8 md:mt-10 text-serif-italic text-lg md:text-2xl text-bone max-w-2xl leading-relaxed"
+              style={{
+                animation: loaded ? "char-rise 1s ease-out 1.6s both" : "none",
+                opacity: loaded ? undefined : 0,
+                textShadow: "0 2px 16px rgba(0,0,0,0.9), 0 0 6px rgba(0,0,0,0.7)",
+              }}
+            >
+              Uma <span className="text-ember">experiência premium e única</span>, pensada para quem entende de churrasco e vive intensamente cada momento. Alta gastronomia, open bar premium e um lineup selecionado para um dia memorável.
+            </p>
+            <div
+              className="mt-8 md:mt-10 flex flex-wrap gap-4"
+              style={{
+                animation: loaded ? "char-rise 1s ease-out 1.8s both" : "none",
+                opacity: loaded ? undefined : 0,
+              }}
+            >
+              <a href="#ingressos" className="group relative px-6 md:px-8 py-3 md:py-4 bg-ember text-background text-[10px] md:text-xs tracking-[0.3em] uppercase font-bold hover:bg-ember/90 transition overflow-hidden">
+                <span className="relative z-10">Garantir agora →</span>
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-bone/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+              </a>
+              <a href="#festival" className="px-6 md:px-8 py-3 md:py-4 border border-ember/40 text-[10px] md:text-xs tracking-[0.3em] uppercase hover:border-ember hover:text-ember transition">
+                Saber Mais
+              </a>
             </div>
           </div>
         </div>
