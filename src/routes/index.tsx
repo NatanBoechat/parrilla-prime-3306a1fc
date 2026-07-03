@@ -513,32 +513,30 @@ function Index() {
 
             <HeroHeadline play={loaded} />
 
-            <div className="mt-8 md:mt-10 flex flex-col md:grid md:grid-cols-[1.2fr_1fr] gap-8 md:gap-12 md:items-end">
-              <p
-                className="text-serif-italic text-lg md:text-2xl text-bone max-w-2xl leading-relaxed"
-                style={{
-                  animation: loaded ? "char-rise 1s ease-out 1.6s both" : "none",
-                  opacity: loaded ? undefined : 0,
-                  textShadow: "0 2px 16px rgba(0,0,0,0.9), 0 0 6px rgba(0,0,0,0.7)",
-                }}
-              >
-                Uma <span className="text-ember">experiência premium e única</span>, pensada para quem entende de churrasco e vive intensamente cada momento. Alta gastronomia, open bar premium e um lineup selecionado para um dia memorável.
-              </p>
-              <div
-                className="flex flex-wrap gap-4"
-                style={{
-                  animation: loaded ? "char-rise 1s ease-out 1.8s both" : "none",
-                  opacity: loaded ? undefined : 0,
-                }}
-              >
-                <a href="#ingressos" className="group relative px-6 md:px-8 py-3 md:py-4 bg-ember text-background text-[10px] md:text-xs tracking-[0.3em] uppercase font-bold hover:bg-ember/90 transition overflow-hidden">
-                  <span className="relative z-10">Garantir agora →</span>
-                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-bone/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                </a>
-                <a href="#festival" className="px-6 md:px-8 py-3 md:py-4 border border-ember/40 text-[10px] md:text-xs tracking-[0.3em] uppercase hover:border-ember hover:text-ember transition">
-                  Saber Mais
-                </a>
-              </div>
+            <p
+              className="mt-8 md:mt-10 text-serif-italic text-lg md:text-2xl text-bone max-w-2xl leading-relaxed"
+              style={{
+                animation: loaded ? "char-rise 1s ease-out 1.6s both" : "none",
+                opacity: loaded ? undefined : 0,
+                textShadow: "0 2px 16px rgba(0,0,0,0.9), 0 0 6px rgba(0,0,0,0.7)",
+              }}
+            >
+              Uma <span className="text-ember">experiência premium e única</span>, pensada para quem entende de churrasco e vive intensamente cada momento. Alta gastronomia, open bar premium e um lineup selecionado para um dia memorável.
+            </p>
+            <div
+              className="mt-8 md:mt-10 flex flex-wrap gap-4"
+              style={{
+                animation: loaded ? "char-rise 1s ease-out 1.8s both" : "none",
+                opacity: loaded ? undefined : 0,
+              }}
+            >
+              <a href="#ingressos" className="group relative px-6 md:px-8 py-3 md:py-4 bg-ember text-background text-[10px] md:text-xs tracking-[0.3em] uppercase font-bold hover:bg-ember/90 transition overflow-hidden">
+                <span className="relative z-10">Garantir agora →</span>
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-bone/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+              </a>
+              <a href="#festival" className="px-6 md:px-8 py-3 md:py-4 border border-ember/40 text-[10px] md:text-xs tracking-[0.3em] uppercase hover:border-ember hover:text-ember transition">
+                Saber Mais
+              </a>
             </div>
           </div>
         </div>
