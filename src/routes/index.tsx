@@ -375,6 +375,7 @@ function InlineCTA({ label = "Garantir agora" }: { label?: string }) {
 function Index() {
   const [loaded, setLoaded] = useState(false);
   const [showBar, setShowBar] = useState(false);
+  const [menuGlass, setMenuGlass] = useState(false);
 
   useEffect(() => {
     if (!loaded) return;
@@ -409,7 +410,9 @@ function Index() {
   useEffect(() => {
     if (!loaded) return;
     const onScroll = () => {
-      setShowBar(window.scrollY > window.innerHeight * 0.9);
+      const y = window.scrollY;
+      setMenuGlass(y > 80);
+      setShowBar(y > window.innerHeight * 0.9);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -421,7 +424,13 @@ function Index() {
       {!loaded && <Preloader onDone={() => setLoaded(true)} />}
 
       {/* NAV */}
-      <header className="fixed top-0 inset-x-0 z-50 bg-background/10 border-b border-border/20">
+      <header
+        className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
+          menuGlass
+            ? "bg-background/70 border-b border-border/20 backdrop-blur-xl"
+            : "bg-transparent border-b border-transparent"
+        }`}
+      >
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-2">
           <a href="#top" className="flex items-center gap-3">
             <img src={logoBrancaVermelha} alt="Parrilla Day" className="h-14 md:h-16 w-auto" />
