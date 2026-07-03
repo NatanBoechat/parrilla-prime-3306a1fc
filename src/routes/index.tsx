@@ -504,7 +504,7 @@ function Index() {
                 textShadow: "0 2px 16px rgba(0,0,0,0.9), 0 0 6px rgba(0,0,0,0.7)",
               }}
             >
-              Uma <span className="text-ember">experiência premium e única</span>, feita para quem vive o churrasco como ritual. Do fogo à alta gastronomia, cada detalhe pensado para marcar o feriado da Independência.
+              Uma <span className="text-ember">experiência premium e única</span>, pensada para quem entende de churrasco e vive intensamente cada momento. Alta gastronomia, open bar premium e um lineup selecionado em um só dia memorável.
             </p>
             <div
               className="flex flex-wrap gap-4"
