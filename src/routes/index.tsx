@@ -504,7 +504,7 @@ function Index() {
                 textShadow: "0 2px 16px rgba(0,0,0,0.9), 0 0 6px rgba(0,0,0,0.7)",
               }}
             >
-              Uma <span className="text-ember">experiência premium e única</span>, pensada para quem entende de churrasco e vive intensamente cada momento. Alta gastronomia, open bar premium e um lineup selecionado em um só dia memorável.
+              Uma <span className="text-ember">experiência premium e única</span>, pensada para quem entende de churrasco e vive intensamente cada momento. Alta gastronomia, open bar premium e um lineup selecionado para um dia memorável.
             </p>
             <div
               className="flex flex-wrap gap-4"
@@ -696,7 +696,7 @@ function Index() {
               Um churrasco <span className="text-ember">verdadeiramente premium</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              Uma experiência premium e única, construída em cada detalhe. Do fogo lento das parrilleras ao serviço de camarote, tudo pensado para transformar o feriado no ponto alto do seu ano.
+              Uma experiência premium e única, construída em cada detalhe. Do serviço de camarote às parrilleras selecionadas, tudo pensado para transformar esse dia no ponto alto do seu ano.
             </p>
             <div className="mt-10">
               <a href="#ingressos" className="inline-block px-8 py-4 bg-ember text-background text-xs tracking-[0.25em] uppercase font-bold hover:bg-ember/90 transition rounded-md">
