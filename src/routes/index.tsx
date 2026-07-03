@@ -504,7 +504,7 @@ function Index() {
                 textShadow: "0 2px 16px rgba(0,0,0,0.9), 0 0 6px rgba(0,0,0,0.7)",
               }}
             >
-              Uma jornada de fogo, sertanejo e alta gastronomia <span className="text-ember">à beira-mar</span>. O feriado da Independência transformado em festival.
+              Uma <span className="text-ember">experiência premium e única</span>, feita para quem vive o churrasco como ritual. Do fogo à alta gastronomia, cada detalhe pensado para marcar o feriado da Independência.
             </p>
             <div
               className="flex flex-wrap gap-4"
