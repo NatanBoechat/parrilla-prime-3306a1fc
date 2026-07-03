@@ -749,7 +749,7 @@ function Index() {
                 <li className="flex gap-3"><span className="text-ember">▸</span> Tenda exclusiva com vista privilegiada</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Cortes Premium exclusivos do Camarote</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Open Churrasco Premium · Open Bar Premium</li>
-                <li className="flex gap-3"><span className="text-ember">▸</span> Estações de chopp · Garçons exclusivos</li>
+                <li className="flex gap-3"><span className="text-ember">▸</span> Garçons exclusivos</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Banheiros e móveis diferenciados</li>
               </ul>
               <a href="#ingressos" className="w-full text-center py-4 bg-ember text-background text-sm tracking-[0.2em] uppercase font-semibold hover:bg-ember/90 transition mt-auto rounded-md">
