@@ -348,17 +348,24 @@ function StickyBuyBar({ visible }: { visible: boolean }) {
   );
 }
 
-function InlineCTA({ label = "Viver essa experiência" }: { label?: string }) {
+function InlineCTA({ label = "Garantir agora" }: { label?: string }) {
   return (
-    <div className="px-6 py-14 md:py-20">
-      <div className="max-w-5xl mx-auto text-center border border-ember/40 rounded-lg py-10 md:py-14 px-6 bg-gradient-to-br from-blood/30 to-card/40 backdrop-blur">
-        <div className="text-[10px] md:text-xs tracking-[0.4em] uppercase text-ember mb-3">05 · Set · 2026</div>
-        <h3 className="text-display text-3xl md:text-5xl text-bone mb-6">{label}</h3>
+    <div className="px-6 py-16 md:py-24">
+      <div
+        className="max-w-4xl mx-auto text-center rounded-2xl border border-ember/40 px-8 md:px-16 py-12 md:py-20"
+        style={{
+          background: "radial-gradient(ellipse at top, oklch(0.22 0.06 35 / 0.9), oklch(0.12 0.03 30 / 0.95) 70%)",
+          boxShadow: "0 24px 80px -24px rgba(0,0,0,0.6), inset 0 1px 0 0 oklch(0.7 0.18 45 / 0.15)",
+        }}
+      >
+        <div className="text-[11px] md:text-xs tracking-[0.45em] uppercase text-ember mb-5">05 · SET · 2026</div>
+        <h3 className="text-display text-4xl md:text-6xl lg:text-7xl text-bone mb-8 leading-none">{label}</h3>
         <a
           href="#ingressos"
-          className="inline-block px-8 md:px-10 py-4 bg-ember text-background text-xs md:text-sm tracking-[0.25em] uppercase font-bold hover:bg-ember/90 transition rounded-md"
+          className="group inline-flex items-center justify-center gap-3 px-10 md:px-14 py-4 md:py-5 bg-ember text-background text-xs md:text-sm tracking-[0.3em] uppercase font-bold hover:bg-ember/90 transition rounded-lg"
         >
-          Garantir agora →
+          Garantir agora
+          <span className="transition-transform group-hover:translate-x-1">→</span>
         </a>
       </div>
     </div>
