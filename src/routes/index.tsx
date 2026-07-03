@@ -163,8 +163,8 @@ function HeroHeadline({ play }: { play: boolean }) {
           key={li}
           className={`block overflow-hidden ${
             line.accent
-              ? "text-[19vw] md:text-[12vw] text-ember"
-              : "text-[13.5vw] md:text-[8vw]"
+              ? "text-[16vw] md:text-[8.5vw] text-ember"
+              : "text-[11vw] md:text-[5.8vw]"
           } leading-[0.92] md:leading-[0.82]`}
         >
           <span className="inline-block" style={{ transformStyle: "preserve-3d" }}>
@@ -421,7 +421,7 @@ function Index() {
       {!loaded && <Preloader onDone={() => setLoaded(true)} />}
 
       {/* NAV */}
-      <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-background/30 border-b border-border/30">
+      <header className="fixed top-0 inset-x-0 z-50 bg-background/10 border-b border-border/20">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-2">
           <a href="#top" className="flex items-center gap-3">
             <img src={logoBrancaVermelha} alt="Parrilla Day" className="h-14 md:h-16 w-auto" />
@@ -446,11 +446,11 @@ function Index() {
             src={heroDesktopAsset.url}
             alt=""
             className="absolute inset-y-0 right-0 h-full w-auto max-w-none object-cover object-right"
-            style={{ transform: "translateX(38%)" }}
+            style={{ transform: "translateX(30%)" }}
           />
-          {/* Gradient: heavy black left → clear right */}
-          <div className="absolute inset-0 bg-gradient-to-r from-background from-40% via-background/70 via-60% to-transparent to-85%" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_50%,oklch(0.13_0.015_30/0.65)_95%)]" />
+          {/* Gradient: narrower left-side fade so faces stay visible */}
+          <div className="absolute inset-0 bg-gradient-to-r from-background from-15% via-background/60 via-30% to-transparent to-50%" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_50%,oklch(0.13_0.015_30/0.6)_95%)]" />
           <div className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-30 animate-heat-haze bg-[radial-gradient(ellipse_at_center,oklch(0.7_0.22_45/0.12),transparent_60%)]" />
         </div>
 
@@ -514,7 +514,7 @@ function Index() {
             <HeroHeadline play={loaded} />
 
             <p
-              className="mt-8 md:mt-10 text-serif-italic text-lg md:text-2xl text-bone max-w-2xl leading-relaxed"
+              className="mt-6 md:mt-8 text-serif-italic text-base md:text-xl text-bone max-w-xl leading-relaxed"
               style={{
                 animation: loaded ? "char-rise 1s ease-out 1.6s both" : "none",
                 opacity: loaded ? undefined : 0,
