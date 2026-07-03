@@ -514,7 +514,7 @@ function Index() {
             <HeroHeadline play={loaded} />
 
             <p
-              className="mt-8 md:mt-10 text-serif-italic text-lg md:text-2xl text-bone max-w-2xl leading-relaxed"
+              className="mt-6 md:mt-8 text-serif-italic text-base md:text-xl text-bone max-w-xl leading-relaxed"
               style={{
                 animation: loaded ? "char-rise 1s ease-out 1.6s both" : "none",
                 opacity: loaded ? undefined : 0,
