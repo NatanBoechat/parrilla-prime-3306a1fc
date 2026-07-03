@@ -576,26 +576,8 @@ function Index() {
       {/* PHOTO STRIP */}
       <PhotoStrip />
 
-      {/* O FESTIVAL */}
-      <section id="festival" className="py-20 md:py-24 px-6">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12">
-          <Reveal className="md:col-span-5">
-            <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">O Festival</div>
-            <h2 data-reveal className="text-display text-4xl md:text-5xl lg:text-6xl text-bone leading-[0.95]">
-              Um festival.<br />Fogo em toda parte.<br /><span className="text-ember">Beira-mar.</span>
-            </h2>
-          </Reveal>
-          <Reveal className="md:col-span-7 space-y-8" delay={120}>
-            <p data-reveal data-reveal-delay="150" className="text-serif-italic text-2xl md:text-3xl text-bone/90 leading-snug">
-              O Parrilla Day chega à sua 3ª edição com crescimento de <span className="text-ember">2000%</span> sobre as edições anteriores. Uma celebração do fogo, da carne e da brasa, à beira do mar em Caraguatatuba.
-            </p>
-            <div className="pt-8 border-t border-border/40">
-              <div className="text-display text-6xl md:text-7xl text-ember">6.000</div>
-              <div className="text-xs tracking-[0.2em] uppercase text-muted-foreground mt-2">Ingressos · 05 de Setembro</div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      <InlineCTA label="Garantir agora" />
+
 
       {/* ESTAÇÃO DE CHURRASCO PREMIUM */}
       <section id="estacoes" className="py-20 md:py-24 px-6 bg-card/30 border-y border-border/40 relative">
