@@ -461,8 +461,8 @@ function Index() {
             alt="Parrilla Day"
             className="w-full h-auto block"
           />
-          {/* Fade bottom edge into background */}
-          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-background pointer-events-none" />
+          {/* Slight bottom fade to blend into the page, not hide flyer details */}
+          <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-b from-transparent via-background/30 to-background pointer-events-none" />
         </div>
 
         {/* Rising embers (desktop only) */}
