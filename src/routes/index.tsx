@@ -420,7 +420,6 @@ function Index() {
             <img src={logoBrancaVermelha} alt="Parrilla Day" className="h-14 md:h-16 w-auto" />
           </a>
           <nav className="hidden md:flex items-center gap-8 text-xs tracking-[0.25em] uppercase text-muted-foreground">
-            <a href="#festival" className="hover:text-ember transition">O Festival</a>
             <a href="#atracoes" className="hover:text-ember transition">Atrações</a>
             <a href="#estacoes" className="hover:text-ember transition">Estações</a>
             <a href="#mapa" className="hover:text-ember transition">Mapa</a>
