@@ -446,7 +446,7 @@ function Index() {
             src={heroDesktopAsset.url}
             alt=""
             className="absolute inset-y-0 right-0 h-full w-auto max-w-none object-cover object-right"
-            style={{ transform: "translateX(30%)" }}
+            style={{ transform: "translateX(18%)" }}
           />
           {/* Gradient: narrower left-side fade so faces stay visible */}
           <div className="absolute inset-0 bg-gradient-to-r from-background from-15% via-background/60 via-30% to-transparent to-50%" />
