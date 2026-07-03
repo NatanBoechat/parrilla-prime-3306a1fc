@@ -691,27 +691,13 @@ function Index() {
             <img src={rodaCarneImg} alt="Roda de carne Parrilla Day" loading="lazy" className="w-full h-full object-cover" />
           </div>
           <div className="px-6 md:px-16 flex flex-col justify-center py-12">
-            <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Estrutura</div>
+            <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Experiência</div>
             <h2 data-reveal className="text-display text-5xl md:text-7xl text-bone leading-none mb-6">
-              Construída para <span className="text-ember">incendiar</span>
+              Um churrasco <span className="text-ember">verdadeiramente premium</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              Cada detalhe pensado para uma experiência inesquecível. Do palco LED ao corredor de entrada cinematográfico, das parrilleras aos camarotes premium.
+              Uma experiência premium e única, construída em cada detalhe. Do fogo lento das parrilleras ao serviço de camarote, tudo pensado para transformar o feriado no ponto alto do seu ano.
             </p>
-            <div className="grid grid-cols-2 gap-px bg-border">
-              {[
-                "Palco principal LED",
-                "Box Truss completo",
-                "Som & iluminação pro",
-                "Parrilleras ativas",
-                "Assadores ao vivo",
-                "Tendas climatizadas",
-                "Decoração temática",
-                "Corredor cinematográfico",
-              ].map((s) => (
-                <div key={s} className="p-4 bg-background text-sm tracking-wide text-bone/80">{s}</div>
-              ))}
-            </div>
             <div className="mt-10">
               <a href="#ingressos" className="inline-block px-8 py-4 bg-ember text-background text-xs tracking-[0.25em] uppercase font-bold hover:bg-ember/90 transition rounded-md">
                 Garantir agora →
