@@ -538,6 +538,10 @@ function Index() {
                 Saber Mais
               </a>
             </div>
+
+            <div className="hidden md:block mt-12 text-[10px] tracking-[0.4em] uppercase text-muted-foreground animate-pulse">
+              ↓ Role para descobrir
+            </div>
           </div>
         </div>
 
