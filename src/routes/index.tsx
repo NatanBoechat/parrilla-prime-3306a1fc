@@ -727,8 +727,7 @@ function Index() {
                 <span className="text-muted-foreground">+ taxa</span>
               </div>
               <ul className="space-y-3 mt-10 mb-12 text-sm text-muted-foreground">
-                <li className="flex gap-3"><span className="text-ember">▸</span> Acesso completo ao Parrilla Day</li>
-                <li className="flex gap-3"><span className="text-ember">▸</span> Open Bar Premium (cervejas e refrigerantes)</li>
+                <li className="flex gap-3"><span className="text-ember">▸</span> Open Bar Premium</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Open Churrasco Premium</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Acesso a todos os shows e atrações</li>
               </ul>
