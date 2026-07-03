@@ -588,7 +588,7 @@ function Index() {
         <div className="max-w-6xl mx-auto">
           <h2 data-reveal className="text-display text-5xl md:text-7xl text-bone mb-4">Estação de <span className="text-ember">Churrasco Premium</span></h2>
           <p data-reveal data-reveal-delay="150" className="text-serif-italic text-xl md:text-2xl text-muted-foreground mb-16 max-w-3xl">
-            Os maiores chefes do Brasil, ao vivo, a céu aberto — cortes nobres em fogo lento, à beira-mar.
+            Uma experiência premium e única. Os maiores chefes do Brasil comandando estações à céu aberto, com cortes nobres em fogo lento e serviço de alto padrão do início ao fim.
           </p>
 
           <div className="border border-border/40 bg-background/60 backdrop-blur">
