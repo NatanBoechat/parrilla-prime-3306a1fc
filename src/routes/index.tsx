@@ -441,19 +441,25 @@ function Index() {
       {/* HERO */}
       <section id="top" className="relative min-h-screen h-screen flex items-center pt-24 md:pt-24 pb-24 md:pb-24 px-6 overflow-hidden grain isolate">
         <div className="absolute inset-0 z-0">
-          <video
-            src={heroVideoAsset}
-            poster={heroBgAsset}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            className="absolute inset-0 w-full h-full object-cover"
+          {/* Desktop art */}
+          <img
+            src={heroDesktopAsset.url}
+            alt=""
+            className="hidden md:block absolute inset-0 w-full h-full object-cover object-right"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/35 to-background/95" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,oklch(0.13_0.015_30/0.75)_90%)]" />
-          <div className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-40 animate-heat-haze bg-[radial-gradient(ellipse_at_center,oklch(0.7_0.22_45/0.15),transparent_60%)]" />
+          {/* Mobile art */}
+          <img
+            src={heroMobileAsset.url}
+            alt=""
+            className="md:hidden absolute inset-0 w-full h-full object-cover object-top"
+          />
+          {/* Desktop gradient: black left → transparent right */}
+          <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-background via-background/80 via-40% to-transparent" />
+          {/* Mobile gradient: transparent top → black bottom */}
+          <div className="md:hidden absolute inset-0 bg-gradient-to-b from-transparent via-background/40 via-45% to-background" />
+          {/* Global subtle vignette */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,oklch(0.13_0.015_30/0.65)_95%)]" />
+          <div className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-30 animate-heat-haze bg-[radial-gradient(ellipse_at_center,oklch(0.7_0.22_45/0.12),transparent_60%)]" />
         </div>
 
         {/* Rising embers */}
