@@ -420,7 +420,6 @@ function Index() {
             <img src={logoBrancaVermelha} alt="Parrilla Day" className="h-14 md:h-16 w-auto" />
           </a>
           <nav className="hidden md:flex items-center gap-8 text-xs tracking-[0.25em] uppercase text-muted-foreground">
-            <a href="#festival" className="hover:text-ember transition">O Festival</a>
             <a href="#atracoes" className="hover:text-ember transition">Atrações</a>
             <a href="#estacoes" className="hover:text-ember transition">Estações</a>
             <a href="#mapa" className="hover:text-ember transition">Mapa</a>
@@ -505,7 +504,7 @@ function Index() {
                 textShadow: "0 2px 16px rgba(0,0,0,0.9), 0 0 6px rgba(0,0,0,0.7)",
               }}
             >
-              Uma jornada de fogo, sertanejo e alta gastronomia <span className="text-ember">à beira-mar</span>. O feriado da Independência transformado em festival.
+              Uma <span className="text-ember">experiência premium e única</span>, feita para quem vive o churrasco como ritual. Do fogo à alta gastronomia, cada detalhe pensado para marcar o feriado da Independência.
             </p>
             <div
               className="flex flex-wrap gap-4"
@@ -577,26 +576,8 @@ function Index() {
       {/* PHOTO STRIP */}
       <PhotoStrip />
 
-      {/* O FESTIVAL */}
-      <section id="festival" className="py-20 md:py-24 px-6">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12">
-          <Reveal className="md:col-span-5">
-            <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">O Festival</div>
-            <h2 data-reveal className="text-display text-4xl md:text-5xl lg:text-6xl text-bone leading-[0.95]">
-              Um festival.<br />Fogo em toda parte.<br /><span className="text-ember">Beira-mar.</span>
-            </h2>
-          </Reveal>
-          <Reveal className="md:col-span-7 space-y-8" delay={120}>
-            <p data-reveal data-reveal-delay="150" className="text-serif-italic text-2xl md:text-3xl text-bone/90 leading-snug">
-              O Parrilla Day chega à sua 3ª edição com crescimento de <span className="text-ember">2000%</span> sobre as edições anteriores. Uma celebração do fogo, da carne e da brasa, à beira do mar em Caraguatatuba.
-            </p>
-            <div className="pt-8 border-t border-border/40">
-              <div className="text-display text-6xl md:text-7xl text-ember">6.000</div>
-              <div className="text-xs tracking-[0.2em] uppercase text-muted-foreground mt-2">Ingressos · 05 de Setembro</div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      <InlineCTA label="Garantir agora" />
+
 
       {/* ESTAÇÃO DE CHURRASCO PREMIUM */}
       <section id="estacoes" className="py-20 md:py-24 px-6 bg-card/30 border-y border-border/40 relative">
@@ -607,7 +588,7 @@ function Index() {
         <div className="max-w-6xl mx-auto">
           <h2 data-reveal className="text-display text-5xl md:text-7xl text-bone mb-4">Estação de <span className="text-ember">Churrasco Premium</span></h2>
           <p data-reveal data-reveal-delay="150" className="text-serif-italic text-xl md:text-2xl text-muted-foreground mb-16 max-w-3xl">
-            Os maiores chefes do Brasil, ao vivo, a céu aberto — cortes nobres em fogo lento, à beira-mar.
+            Uma experiência premium e única. Os maiores chefes do Brasil comandando estações à céu aberto, com cortes nobres em fogo lento e serviço de alto padrão do início ao fim.
           </p>
 
           <div className="border border-border/40 bg-background/60 backdrop-blur">
@@ -670,7 +651,7 @@ function Index() {
             Entretenimento de <span className="text-ember">outro nível</span>
           </h2>
           <p data-reveal data-reveal-delay="150" className="text-serif-italic text-xl md:text-2xl text-muted-foreground mb-16 max-w-3xl">
-            Palco principal, brinquedos de parque, performances e adrenalina — atrações premium pensadas para você viver o dia inteiro.
+            Muito além do churrasco: um dia inteiro de experiências premium, com shows nacionais, atrações exclusivas e momentos únicos pensados para você viver de ponta a ponta.
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {ATRACOES.map((a) => (
@@ -700,19 +681,6 @@ function Index() {
           <div className="relative overflow-hidden border border-border/40">
             <img src={eventMapAsset} alt="Mapa do Parrilla Day Caraguá Beach" className="w-full h-auto" loading="lazy" />
           </div>
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 mt-10">
-            {[
-              { t: "Palco Principal", d: "Estrutura completa de box truss e LED" },
-              { t: "Camarote Premium", d: "Vista privilegiada · Open premium" },
-              { t: "Mega Estação Kids", d: "Brinquedos e monitores" },
-              { t: "Praia", d: "Acesso direto à beira-mar" },
-            ].map((x) => (
-              <div key={x.t} className="p-5 border border-border/40">
-                <div className="text-display text-xl text-ember mb-1">{x.t}</div>
-                <div className="text-xs text-muted-foreground">{x.d}</div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -723,27 +691,13 @@ function Index() {
             <img src={rodaCarneImg} alt="Roda de carne Parrilla Day" loading="lazy" className="w-full h-full object-cover" />
           </div>
           <div className="px-6 md:px-16 flex flex-col justify-center py-12">
-            <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Estrutura</div>
+            <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Experiência</div>
             <h2 data-reveal className="text-display text-5xl md:text-7xl text-bone leading-none mb-6">
-              Construída para <span className="text-ember">incendiar</span>
+              Um churrasco <span className="text-ember">verdadeiramente premium</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              Cada detalhe pensado para uma experiência inesquecível. Do palco LED ao corredor de entrada cinematográfico, das parrilleras aos camarotes premium.
+              Uma experiência premium e única, construída em cada detalhe. Do fogo lento das parrilleras ao serviço de camarote, tudo pensado para transformar o feriado no ponto alto do seu ano.
             </p>
-            <div className="grid grid-cols-2 gap-px bg-border">
-              {[
-                "Palco principal LED",
-                "Box Truss completo",
-                "Som & iluminação pro",
-                "Parrilleras ativas",
-                "Assadores ao vivo",
-                "Tendas climatizadas",
-                "Decoração temática",
-                "Corredor cinematográfico",
-              ].map((s) => (
-                <div key={s} className="p-4 bg-background text-sm tracking-wide text-bone/80">{s}</div>
-              ))}
-            </div>
             <div className="mt-10">
               <a href="#ingressos" className="inline-block px-8 py-4 bg-ember text-background text-xs tracking-[0.25em] uppercase font-bold hover:bg-ember/90 transition rounded-md">
                 Garantir agora →
@@ -773,8 +727,7 @@ function Index() {
                 <span className="text-muted-foreground">+ taxa</span>
               </div>
               <ul className="space-y-3 mt-10 mb-12 text-sm text-muted-foreground">
-                <li className="flex gap-3"><span className="text-ember">▸</span> Acesso completo ao Parrilla Day</li>
-                <li className="flex gap-3"><span className="text-ember">▸</span> Open Bar Premium (cervejas e refrigerantes)</li>
+                <li className="flex gap-3"><span className="text-ember">▸</span> Open Bar Premium</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Open Churrasco Premium</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Acesso a todos os shows e atrações</li>
               </ul>
@@ -796,7 +749,7 @@ function Index() {
                 <li className="flex gap-3"><span className="text-ember">▸</span> Tenda exclusiva com vista privilegiada</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Cortes Premium exclusivos do Camarote</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Open Churrasco Premium · Open Bar Premium</li>
-                <li className="flex gap-3"><span className="text-ember">▸</span> Estações de chopp · Garçons exclusivos</li>
+                <li className="flex gap-3"><span className="text-ember">▸</span> Garçons exclusivos</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Banheiros e móveis diferenciados</li>
               </ul>
               <a href="#ingressos" className="w-full text-center py-4 bg-ember text-background text-sm tracking-[0.2em] uppercase font-semibold hover:bg-ember/90 transition mt-auto rounded-md">
