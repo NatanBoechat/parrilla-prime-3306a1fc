@@ -651,7 +651,7 @@ function Index() {
             Entretenimento de <span className="text-ember">outro nível</span>
           </h2>
           <p data-reveal data-reveal-delay="150" className="text-serif-italic text-xl md:text-2xl text-muted-foreground mb-16 max-w-3xl">
-            Palco principal, brinquedos de parque, performances e adrenalina — atrações premium pensadas para você viver o dia inteiro.
+            Muito além do churrasco: um dia inteiro de experiências premium, com shows nacionais, atrações exclusivas e momentos únicos pensados para você viver de ponta a ponta.
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {ATRACOES.map((a) => (
