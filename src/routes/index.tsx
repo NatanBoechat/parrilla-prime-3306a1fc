@@ -439,31 +439,34 @@ function Index() {
       </header>
 
       {/* HERO */}
-      <section id="top" className="relative min-h-screen h-screen flex items-center pt-24 md:pt-24 pb-24 md:pb-24 px-6 overflow-hidden grain isolate">
-        <div className="absolute inset-0 z-0">
-          {/* Desktop art */}
+      <section id="top" className="relative md:min-h-screen md:h-screen flex flex-col md:block md:items-center pt-20 md:pt-24 md:pb-24 overflow-hidden grain isolate">
+        {/* DESKTOP BG */}
+        <div className="hidden md:block absolute inset-0 z-0">
           <img
             src={heroDesktopAsset.url}
             alt=""
-            className="hidden md:block absolute inset-0 w-full h-full object-cover object-right"
+            className="absolute inset-y-0 right-0 h-full w-auto max-w-none object-cover object-right"
+            style={{ transform: "translateX(8%)" }}
           />
-          {/* Mobile art */}
-          <img
-            src={heroMobileAsset.url}
-            alt=""
-            className="md:hidden absolute inset-0 w-full h-full object-cover object-top"
-          />
-          {/* Desktop gradient: black left → transparent right */}
-          <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-background via-background/80 via-40% to-transparent" />
-          {/* Mobile gradient: transparent top → black bottom */}
-          <div className="md:hidden absolute inset-0 bg-gradient-to-b from-transparent via-background/40 via-45% to-background" />
-          {/* Global subtle vignette */}
+          {/* Gradient: black left → transparent right */}
+          <div className="absolute inset-0 bg-gradient-to-r from-background from-30% via-background/85 via-55% to-transparent" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,oklch(0.13_0.015_30/0.65)_95%)]" />
           <div className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-30 animate-heat-haze bg-[radial-gradient(ellipse_at_center,oklch(0.7_0.22_45/0.12),transparent_60%)]" />
         </div>
 
-        {/* Rising embers */}
-        <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
+        {/* MOBILE BANNER (top) */}
+        <div className="md:hidden relative w-full">
+          <img
+            src={heroMobileAsset.url}
+            alt="Parrilla Day"
+            className="w-full h-auto block"
+          />
+          {/* Fade bottom edge into background */}
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-background pointer-events-none" />
+        </div>
+
+        {/* Rising embers (desktop only) */}
+        <div className="hidden md:block absolute inset-0 z-[1] pointer-events-none overflow-hidden">
           {Array.from({ length: 22 }).map((_, i) => {
             const left = (i * 53) % 100;
             const delay = (i * 0.37) % 8;
@@ -487,57 +490,60 @@ function Index() {
           })}
         </div>
 
-        <div className="max-w-[1600px] mx-auto w-full relative z-10">
-          <div
-            className="flex items-center gap-2 md:gap-3 mb-4 md:mb-8 text-[8px] md:text-[12px] tracking-[0.28em] md:tracking-[0.4em] uppercase text-ember"
-            style={{
-              animation: loaded ? "char-rise 0.8s ease-out 0s both" : "none",
-              opacity: loaded ? undefined : 0,
-              textShadow: "0 2px 12px rgba(0,0,0,0.9), 0 0 4px rgba(0,0,0,0.8)",
-            }}
-          >
-            <span
-              className="h-px bg-ember origin-left block shrink-0"
-              style={{
-                width: "1.5rem",
-                animation: loaded ? "slash-in 0.9s cubic-bezier(0.7,0,0.2,1) 0.1s both" : "none",
-              }}
-            />
-            <span className="whitespace-nowrap">3ª Ed. · Caraguá · 05 Set 2026</span>
-          </div>
-
-          <HeroHeadline play={loaded} />
-
-          <div className="mt-8 md:mt-10 grid md:grid-cols-[1.2fr_1fr] gap-8 md:gap-12 items-end">
-            <p
-              className="text-serif-italic text-lg md:text-2xl text-bone max-w-2xl leading-relaxed"
-              style={{
-                animation: loaded ? "char-rise 1s ease-out 1.6s both" : "none",
-                opacity: loaded ? undefined : 0,
-                textShadow: "0 2px 16px rgba(0,0,0,0.9), 0 0 6px rgba(0,0,0,0.7)",
-              }}
-            >
-              Uma <span className="text-ember">experiência premium e única</span>, pensada para quem entende de churrasco e vive intensamente cada momento. Alta gastronomia, open bar premium e um lineup selecionado para um dia memorável.
-            </p>
+        {/* CONTENT */}
+        <div className="relative z-10 w-full md:absolute md:inset-0 md:flex md:items-center px-6 pt-6 md:pt-0 pb-16 md:pb-0">
+          <div className="max-w-[1600px] mx-auto w-full md:pr-[45%]">
             <div
-              className="flex flex-wrap gap-4"
+              className="flex items-center gap-2 md:gap-3 mb-4 md:mb-8 text-[8px] md:text-[12px] tracking-[0.28em] md:tracking-[0.4em] uppercase text-ember"
               style={{
-                animation: loaded ? "char-rise 1s ease-out 1.8s both" : "none",
+                animation: loaded ? "char-rise 0.8s ease-out 0s both" : "none",
                 opacity: loaded ? undefined : 0,
+                textShadow: "0 2px 12px rgba(0,0,0,0.9), 0 0 4px rgba(0,0,0,0.8)",
               }}
             >
-              <a href="#ingressos" className="group relative px-6 md:px-8 py-3 md:py-4 bg-ember text-background text-[10px] md:text-xs tracking-[0.3em] uppercase font-bold hover:bg-ember/90 transition overflow-hidden">
-                <span className="relative z-10">Garantir agora →</span>
-                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-bone/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-              </a>
-              <a href="#festival" className="px-6 md:px-8 py-3 md:py-4 border border-ember/40 text-[10px] md:text-xs tracking-[0.3em] uppercase hover:border-ember hover:text-ember transition">
-                Saber Mais
-              </a>
+              <span
+                className="h-px bg-ember origin-left block shrink-0"
+                style={{
+                  width: "1.5rem",
+                  animation: loaded ? "slash-in 0.9s cubic-bezier(0.7,0,0.2,1) 0.1s both" : "none",
+                }}
+              />
+              <span className="whitespace-nowrap">3ª Ed. · Caraguá · 05 Set 2026</span>
+            </div>
+
+            <HeroHeadline play={loaded} />
+
+            <div className="mt-8 md:mt-10 flex flex-col md:grid md:grid-cols-[1.2fr_1fr] gap-8 md:gap-12 md:items-end">
+              <p
+                className="text-serif-italic text-lg md:text-2xl text-bone max-w-2xl leading-relaxed"
+                style={{
+                  animation: loaded ? "char-rise 1s ease-out 1.6s both" : "none",
+                  opacity: loaded ? undefined : 0,
+                  textShadow: "0 2px 16px rgba(0,0,0,0.9), 0 0 6px rgba(0,0,0,0.7)",
+                }}
+              >
+                Uma <span className="text-ember">experiência premium e única</span>, pensada para quem entende de churrasco e vive intensamente cada momento. Alta gastronomia, open bar premium e um lineup selecionado para um dia memorável.
+              </p>
+              <div
+                className="flex flex-wrap gap-4"
+                style={{
+                  animation: loaded ? "char-rise 1s ease-out 1.8s both" : "none",
+                  opacity: loaded ? undefined : 0,
+                }}
+              >
+                <a href="#ingressos" className="group relative px-6 md:px-8 py-3 md:py-4 bg-ember text-background text-[10px] md:text-xs tracking-[0.3em] uppercase font-bold hover:bg-ember/90 transition overflow-hidden">
+                  <span className="relative z-10">Garantir agora →</span>
+                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-bone/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                </a>
+                <a href="#festival" className="px-6 md:px-8 py-3 md:py-4 border border-ember/40 text-[10px] md:text-xs tracking-[0.3em] uppercase hover:border-ember hover:text-ember transition">
+                  Saber Mais
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[10px] tracking-[0.4em] uppercase text-muted-foreground animate-pulse">
+        <div className="hidden md:block absolute bottom-8 left-1/2 -translate-x-1/2 text-[10px] tracking-[0.4em] uppercase text-muted-foreground animate-pulse">
           ↓ Role para descobrir
         </div>
       </section>
