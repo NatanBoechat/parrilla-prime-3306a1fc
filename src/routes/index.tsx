@@ -446,11 +446,11 @@ function Index() {
             src={heroDesktopAsset.url}
             alt=""
             className="absolute inset-y-0 right-0 h-full w-auto max-w-none object-cover object-right"
-            style={{ transform: "translateX(38%)" }}
+            style={{ transform: "translateX(30%)" }}
           />
-          {/* Gradient: heavy black left → clear right */}
-          <div className="absolute inset-0 bg-gradient-to-r from-background from-40% via-background/70 via-60% to-transparent to-85%" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_50%,oklch(0.13_0.015_30/0.65)_95%)]" />
+          {/* Gradient: narrower left-side fade so faces stay visible */}
+          <div className="absolute inset-0 bg-gradient-to-r from-background from-15% via-background/60 via-30% to-transparent to-50%" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_50%,oklch(0.13_0.015_30/0.6)_95%)]" />
           <div className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-30 animate-heat-haze bg-[radial-gradient(ellipse_at_center,oklch(0.7_0.22_45/0.12),transparent_60%)]" />
         </div>
 
