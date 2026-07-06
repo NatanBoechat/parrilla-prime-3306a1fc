@@ -672,7 +672,8 @@ function Index() {
       </div>
 
       {/* PHOTO STRIP */}
-      <PhotoStrip />
+      {/* <PhotoStrip /> hidden — kept for potential restore */}
+      <PhotoStripNew />
 
       <InlineCTA label="Garantir agora" />
 
