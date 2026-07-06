@@ -8,7 +8,7 @@ import chefAsset from "@/assets/chef.jpg";
 import coupleAsset from "@/assets/couple.jpg";
 const heroDesktopAsset = { url: "/hero/hero-desktop.png" };
 const heroMobileAsset = { url: "/hero/hero-mobile.png" };
-import eventMapAsset from "@/assets/event-map.jpg";
+import eventMapAsset from "@/assets/event-map-aerial.jpg.asset.json";
 import rodaGiganteImg from "@/assets/roda-gigante-real.png";
 import touroMecanicoImg from "@/assets/touro-real.png";
 import roboGiganteImg from "@/assets/robo-real.png";
@@ -427,8 +427,8 @@ function Index() {
       <header
         className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
           menuGlass
-            ? "bg-background/70 border-b border-border/20 backdrop-blur-xl"
-            : "bg-transparent border-b border-transparent"
+            ? "bg-background/70 border-b border-border/20 backdrop-blur-xl md:translate-y-0 md:opacity-100"
+            : "bg-transparent border-b border-transparent md:-translate-y-full md:opacity-0 md:pointer-events-none"
         }`}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-2">
@@ -706,7 +706,7 @@ function Index() {
             Parrilla Day <span className="text-ember">Caraguá Beach</span>
           </h2>
           <div className="relative overflow-hidden border border-border/40">
-            <img src={eventMapAsset} alt="Mapa do Parrilla Day Caraguá Beach" className="w-full h-auto" loading="lazy" />
+            <img src={eventMapAsset.url} alt="Mapa do Parrilla Day Caraguá Beach" className="w-full h-auto" loading="lazy" />
           </div>
         </div>
       </section>
