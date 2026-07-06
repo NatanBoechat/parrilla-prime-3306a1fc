@@ -706,7 +706,7 @@ function Index() {
             Parrilla Day <span className="text-ember">Caraguá Beach</span>
           </h2>
           <div className="relative overflow-hidden border border-border/40">
-            <img src={eventMapAsset} alt="Mapa do Parrilla Day Caraguá Beach" className="w-full h-auto" loading="lazy" />
+            <img src={eventMapAsset.url} alt="Mapa do Parrilla Day Caraguá Beach" className="w-full h-auto" loading="lazy" />
           </div>
         </div>
       </section>
