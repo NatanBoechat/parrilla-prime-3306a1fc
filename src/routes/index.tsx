@@ -427,8 +427,8 @@ function Index() {
       <header
         className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
           menuGlass
-            ? "bg-background/70 border-b border-border/20 backdrop-blur-xl"
-            : "bg-transparent border-b border-transparent"
+            ? "bg-background/70 border-b border-border/20 backdrop-blur-xl md:translate-y-0 md:opacity-100"
+            : "bg-transparent border-b border-transparent md:-translate-y-full md:opacity-0 md:pointer-events-none"
         }`}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-2">
