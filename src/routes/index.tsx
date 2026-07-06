@@ -8,7 +8,7 @@ import chefAsset from "@/assets/chef.jpg";
 import coupleAsset from "@/assets/couple.jpg";
 const heroDesktopAsset = { url: "/hero/hero-desktop.png" };
 const heroMobileAsset = { url: "/hero/hero-mobile.png" };
-import eventMapAsset from "@/assets/event-map.jpg";
+import eventMapAsset from "@/assets/event-map-aerial.jpg.asset.json";
 import rodaGiganteImg from "@/assets/roda-gigante-real.png";
 import touroMecanicoImg from "@/assets/touro-real.png";
 import roboGiganteImg from "@/assets/robo-real.png";
