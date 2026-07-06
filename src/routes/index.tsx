@@ -308,8 +308,73 @@ function PhotoStrip() {
   );
 }
 
+function PhotoStripNew() {
+  const photos = [gallery1.url, gallery2.url, gallery3.url, gallery4.url, gallery5.url];
+  const ref = useRef<HTMLDivElement>(null);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const el = ref.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const vh = window.innerHeight;
+      const total = rect.height - vh;
+      const p = Math.min(1, Math.max(0, -rect.top / total));
+      setProgress(p);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <section ref={ref} className="relative" style={{ height: `${photos.length * 55}vh` }}>
+      <div className="sticky top-0 h-screen overflow-hidden">
+        {photos.map((p, i) => {
+          const start = i / photos.length;
+          const end = (i + 1) / photos.length;
+          let opacity = 0;
+          let scale = 1.15;
+          let y = 60;
+          const isLast = i === photos.length - 1;
+          if (progress >= start && progress < end) {
+            const local = (progress - start) / (end - start);
+            if (i === 0) {
+              opacity = local > 0.85 ? (1 - local) / 0.15 : 1;
+            } else if (isLast) {
+              opacity = local < 0.15 ? local / 0.15 : 1;
+            } else {
+              opacity = local < 0.15 ? local / 0.15 : local > 0.85 ? (1 - local) / 0.15 : 1;
+            }
+            scale = 1.15 - local * 0.15;
+            y = 60 - local * 60;
+          } else if (i === 0 && progress < start) {
+            opacity = 1;
+            scale = 1;
+            y = 0;
+          } else if (isLast && progress >= end) {
+            opacity = 1;
+            scale = 1;
+            y = 0;
+          }
+          return (
+            <div
+              key={i}
+              className="absolute inset-0 transition-none"
+              style={{ opacity, transform: `translateY(${y}px) scale(${scale})` }}
+            >
+              <img src={p} alt="" className="w-full h-full object-cover" style={{ objectPosition: "center" }} />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/40" />
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
 const ATRACOES = [
-  { t: "Shows Sertanejos", d: "Guilherme & Vinícius, Naessa, Peddro Henrique & Luciano no palco principal.", img: showSertanejoImg, tag: "Dia 05" },
   { t: "Balonismo", d: "Subida de balão de ar quente sobre o litoral ao nascer do sol.", img: balonismoImg, tag: "Dia 05" },
   { t: "Robô Gigante", d: "Performance interativa com LEDs e fumaça que para o festival.", img: roboGiganteImg, tag: "Dia 05" },
   { t: "Roda Gigante", d: "Vista panorâmica do festival e da praia de Caraguatatuba.", img: rodaGiganteImg, tag: "Dia 05" },
