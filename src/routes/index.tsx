@@ -18,11 +18,11 @@ import showSertanejoImg from "@/assets/shows-real.png";
 import kidsZoneImg from "@/assets/kids-zone.png";
 import showsFlyerImg from "@/assets/shows-flyer.png";
 import rodaCarneImg from "@/assets/roda-carne.png";
-import gallery1 from "@/assets/gallery-35.jpg.asset.json";
-import gallery2 from "@/assets/gallery-36.jpg.asset.json";
-import gallery3 from "@/assets/gallery-37.jpg.asset.json";
-import gallery4 from "@/assets/gallery-38.jpg.asset.json";
-import gallery5 from "@/assets/gallery-39.jpg.asset.json";
+const gallery1 = { url: "/gallery/gallery-35.jpg" };
+const gallery2 = { url: "/gallery/gallery-36.jpg" };
+const gallery3 = { url: "/gallery/gallery-37.jpg" };
+const gallery4 = { url: "/gallery/gallery-38.jpg" };
+const gallery5 = { url: "/gallery/gallery-39.jpg" };
 
 import caraguafmLogo from "@/assets/sponsors/caraguafm.jpg";
 import tncLogo from "@/assets/sponsors/tnc.png";
