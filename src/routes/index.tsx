@@ -584,7 +584,7 @@ function Index() {
       </header>
 
       {/* HERO */}
-      <section id="top" className="relative md:min-h-screen md:h-screen flex flex-col md:block md:items-center pt-20 md:pt-24 md:pb-24 overflow-hidden grain isolate">
+      <section id="top" className="relative md:min-h-screen flex flex-col md:block md:items-center pt-20 md:pt-24 md:pb-24 overflow-hidden grain isolate">
         {/* DESKTOP BG */}
         <div className="hidden md:block absolute inset-0 z-0">
         <img
