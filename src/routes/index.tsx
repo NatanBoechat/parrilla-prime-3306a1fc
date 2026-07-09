@@ -395,7 +395,7 @@ function EdicaoGallery() {
           O que já <span className="text-ember">rolou</span> por aqui
         </h2>
         <p data-reveal data-reveal-delay="150" className="text-serif-italic text-lg md:text-2xl text-muted-foreground mb-14 md:mb-20 max-w-3xl">
-          Registros reais da última edição do Parrilla Day. Fogo, público e alta gastronomia à beira-mar.
+          Registros da última edição do Parrilla Day.
         </p>
 
         <div className="grid grid-cols-6 auto-rows-[110px] md:auto-rows-[170px] gap-3 md:gap-4">
