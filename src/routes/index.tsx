@@ -635,7 +635,7 @@ function Index() {
 
         {/* CONTENT */}
         <div className="relative z-10 w-full md:absolute md:inset-0 md:flex md:items-center px-6 pt-6 md:pt-0 pb-16 md:pb-0">
-          <div className="max-w-[1600px] mx-auto w-full md:max-w-[52%] lg:max-w-[48%] xl:max-w-[46%] 2xl:max-w-[44%] md:mr-auto md:ml-[max(1.5rem,calc((100vw-1600px)/2+1.5rem))] md:pl-0">
+          <div className="mx-auto md:mx-0 w-full md:max-w-[52%] lg:max-w-[48%] xl:max-w-[44%] 2xl:max-w-[40%]">
             <div
               className="flex items-center gap-2 md:gap-3 mb-4 md:mb-8 text-[8px] md:text-[12px] tracking-[0.28em] md:tracking-[0.4em] uppercase text-ember"
               style={{
