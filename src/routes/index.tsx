@@ -898,13 +898,9 @@ function Index() {
               <ul className="space-y-3 mt-8 mb-10 text-sm text-muted-foreground">
                 <li className="flex gap-3"><span className="text-ember">▸</span> Open Churrasco Premium</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Acesso a todos os shows e atrações</li>
-                <li className="flex gap-3"><span className="text-ember">▸</span> Mega Estação Kids liberada</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Bebidas vendidas à parte</li>
                 <li className="flex gap-3"><span className="text-muted-foreground/70">✕</span> <span className="text-muted-foreground/70">Sem Open Bar</span></li>
               </ul>
-              <p className="text-[11px] leading-relaxed text-muted-foreground/80 mb-6">
-                Menores de idade não têm acesso às áreas de Open Bar. Este é o ingresso indicado para quem vai levar crianças.
-              </p>
               <a href={TICKET_URL} target="_blank" rel="noreferrer" className="w-full text-center py-4 bg-ember text-background text-sm tracking-[0.2em] uppercase font-semibold hover:bg-ember/90 transition mt-auto rounded-md">
                 Garantir agora
               </a>
