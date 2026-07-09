@@ -587,16 +587,12 @@ function Index() {
       <section id="top" className="relative md:min-h-screen flex flex-col md:block md:items-center pt-20 md:pt-24 md:pb-24 overflow-hidden grain isolate">
         {/* DESKTOP BG */}
         <div className="hidden md:block absolute inset-0 z-0">
-          <div className="absolute inset-y-0 right-0 w-[58%] lg:w-[55%] xl:w-[52%] 2xl:w-[50%]">
-            <img
-              src={heroDesktopAsset.url}
-              alt=""
-              className="absolute inset-0 w-full h-full object-cover object-right"
-            />
-          </div>
-          {/* Gradient fades over the image's left edge so nothing important gets tampered */}
-          <div className="absolute inset-0 bg-gradient-to-r from-background from-40% via-background/70 via-52% to-transparent to-62%" />
-          <div className="absolute inset-y-0 right-0 w-[6%] bg-gradient-to-l from-background/60 to-transparent" />
+          <img
+            src={heroDesktopAsset.url}
+            alt=""
+            className="absolute inset-y-0 right-0 h-full w-auto max-w-none object-cover object-right"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background from-15% via-background/80 via-38% to-transparent to-58%" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_50%,oklch(0.13_0.015_30/0.6)_95%)]" />
           <div className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-30 animate-heat-haze bg-[radial-gradient(ellipse_at_center,oklch(0.7_0.22_45/0.12),transparent_60%)]" />
         </div>
@@ -639,7 +635,7 @@ function Index() {
 
         {/* CONTENT */}
         <div className="relative z-10 w-full md:absolute md:inset-0 md:flex md:items-center px-6 pt-6 md:pt-0 pb-16 md:pb-0">
-          <div className="max-w-[1600px] mx-auto w-full md:pr-[60%] lg:pr-[57%] xl:pr-[54%] 2xl:pr-[52%]">
+          <div className="mx-auto md:mx-0 w-full md:max-w-[52%] lg:max-w-[48%] xl:max-w-[44%] 2xl:max-w-[40%]">
             <div
               className="flex items-center gap-2 md:gap-3 mb-4 md:mb-8 text-[8px] md:text-[12px] tracking-[0.28em] md:tracking-[0.4em] uppercase text-ember"
               style={{
