@@ -23,6 +23,17 @@ const gallery2 = { url: "/gallery/gallery-36.jpg" };
 const gallery3 = { url: "/gallery/gallery-37.jpg" };
 const gallery4 = { url: "/gallery/gallery-38.jpg" };
 const gallery5 = { url: "/gallery/gallery-39.jpg" };
+const edicaoPhotos = [
+  { url: "/gallery/edicao/img-4120.jpg", caption: "A festa" },
+  { url: "/gallery/edicao/img-4117.jpg", caption: "Roda de fogo" },
+  { url: "/gallery/edicao/img-4121.jpg", caption: "Estações" },
+  { url: "/gallery/edicao/img-4119.jpg", caption: "Fogo lento" },
+  { url: "/gallery/edicao/img-4122.jpg", caption: "Os mestres" },
+  { url: "/gallery/edicao/img-4118.jpg", caption: "Chama viva" },
+  { url: "/gallery/edicao/img-4124.jpg", caption: "Torresmo" },
+  { url: "/gallery/edicao/img-4123.jpg", caption: "Peixe na brasa" },
+];
+const TICKET_URL = "https://www.bilheteriadigital.com/parrilla-day-05-de-setembro?c=148592";
 
 import caraguafmLogo from "@/assets/sponsors/caraguafm.jpg";
 import tncLogo from "@/assets/sponsors/tnc.png";
