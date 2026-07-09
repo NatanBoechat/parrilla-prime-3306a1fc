@@ -385,6 +385,56 @@ function PhotoStripNew() {
   );
 }
 
+function EdicaoGallery() {
+  return (
+    <section id="galeria-edicao" className="relative py-24 md:py-32 px-6 bg-background overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none opacity-40 bg-[radial-gradient(ellipse_at_top,oklch(0.22_0.06_35/0.35),transparent_60%)]" />
+      <div className="max-w-7xl mx-auto relative">
+        <div className="text-[10px] md:text-xs tracking-[0.4em] uppercase text-ember mb-4">Galeria · Última edição</div>
+        <h2 data-reveal className="text-display text-5xl md:text-7xl text-bone mb-4 leading-[0.95]">
+          O que já <span className="text-ember">rolou</span> por aqui
+        </h2>
+        <p data-reveal data-reveal-delay="150" className="text-serif-italic text-lg md:text-2xl text-muted-foreground mb-14 md:mb-20 max-w-3xl">
+          Registros reais da última edição do Parrilla Day. Fogo, público e alta gastronomia à beira-mar.
+        </p>
+
+        <div className="grid grid-cols-6 auto-rows-[110px] md:auto-rows-[170px] gap-3 md:gap-4">
+          {edicaoPhotos.map((p, i) => {
+            // Custom premium bento layout
+            const layouts = [
+              "col-span-6 md:col-span-4 row-span-3",       // 0 hero
+              "col-span-3 md:col-span-2 row-span-2",       // 1
+              "col-span-3 md:col-span-2 row-span-2",       // 2
+              "col-span-3 md:col-span-3 row-span-2",       // 3
+              "col-span-3 md:col-span-3 row-span-2",       // 4
+              "col-span-6 md:col-span-2 row-span-3",       // 5 tall
+              "col-span-3 md:col-span-2 row-span-2",       // 6
+              "col-span-3 md:col-span-2 row-span-2",       // 7
+            ];
+            return (
+              <figure
+                key={i}
+                data-reveal
+                data-reveal-delay={String((i % 4) * 90)}
+                className={`${layouts[i]} group relative overflow-hidden border border-border/30 bg-card`}
+              >
+                <img
+                  src={p.url}
+                  alt={p.caption}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition duration-[1400ms] ease-out group-hover:scale-[1.06]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/0 to-transparent opacity-70 group-hover:opacity-90 transition duration-500" />
+                <div className="absolute inset-0 ring-1 ring-inset ring-ember/0 group-hover:ring-ember/50 transition duration-500" />
+              </figure>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 const ATRACOES = [
   { t: "Shows Sertanejos", d: "Guilherme & Vinícius, Naessa, Peddro Henrique & Luciano no palco principal.", img: showSertanejoImg, tag: "Dia 05" },
   { t: "Balonismo", d: "Subida de balão de ar quente sobre o litoral ao nascer do sol.", img: balonismoImg, tag: "Dia 05" },
