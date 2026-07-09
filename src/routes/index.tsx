@@ -590,9 +590,9 @@ function Index() {
           <img
             src={heroDesktopAsset.url}
             alt=""
-            className="absolute inset-y-0 right-0 h-full w-auto max-w-none object-cover object-right"
+            className="absolute inset-y-0 right-0 h-full w-auto max-w-none object-cover object-right translate-x-[14%] lg:translate-x-[8%] xl:translate-x-[3%] 2xl:translate-x-0"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background from-15% via-background/80 via-38% to-transparent to-58%" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background from-15% via-background/80 via-38% to-transparent to-58% 2xl:to-68%" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_50%,oklch(0.13_0.015_30/0.6)_95%)]" />
           <div className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-30 animate-heat-haze bg-[radial-gradient(ellipse_at_center,oklch(0.7_0.22_45/0.12),transparent_60%)]" />
         </div>
