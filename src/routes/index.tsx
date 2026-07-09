@@ -411,18 +411,20 @@ function StickyBuyBar({ visible }: { visible: boolean }) {
           backdropFilter: "blur(22px) saturate(160%)",
         }}
       >
-        <div className="flex items-center gap-3 min-w-0">
+        <div className="flex items-center gap-2 md:gap-3 min-w-0 flex-1">
           <img src={logoBrancaVermelha} alt="" className="h-9 md:h-11 w-auto shrink-0" />
-          <div className="min-w-0 hidden sm:block">
-            <div className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-ember">Parrilla Day · 05 Set 2026</div>
-            <div className="text-xs md:text-sm text-bone/80 truncate">Open Churrasco Premium · Open Bar Premium</div>
+          <div className="min-w-0">
+            <div className="text-[8px] md:text-xs tracking-[0.22em] md:tracking-[0.3em] uppercase text-ember truncate">Parrilla Day · 05 Set 2026</div>
+            <div className="text-[10px] md:text-sm text-bone/80 truncate">Open Churrasco Premium · Open Bar Premium</div>
           </div>
         </div>
         <a
-          href="#ingressos"
-          className="group relative shrink-0 px-5 md:px-8 py-3 md:py-4 bg-ember text-background text-[10px] md:text-xs tracking-[0.25em] uppercase font-bold hover:bg-ember/90 transition overflow-hidden rounded-md"
+          href={TICKET_URL}
+          target="_blank"
+          rel="noreferrer"
+          className="group relative shrink-0 px-4 md:px-8 py-3 md:py-4 bg-ember text-background text-[9px] md:text-xs tracking-[0.22em] md:tracking-[0.25em] uppercase font-bold hover:bg-ember/90 transition overflow-hidden rounded-md"
         >
-          <span className="relative z-10">Garantir agora →</span>
+          <span className="relative z-10">Garantir →</span>
           <span className="absolute inset-0 bg-gradient-to-r from-transparent via-bone/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
         </a>
       </div>
