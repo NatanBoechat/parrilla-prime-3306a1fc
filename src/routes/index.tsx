@@ -495,7 +495,9 @@ function InlineCTA({ label = "Garantir agora" }: { label?: string }) {
         <div className="text-[11px] md:text-xs tracking-[0.45em] uppercase text-ember mb-5">05 · SET · 2026</div>
         <h3 className="text-display text-4xl md:text-6xl lg:text-7xl text-bone mb-8 leading-none">{label}</h3>
         <a
-          href="#ingressos"
+          href={TICKET_URL}
+          target="_blank"
+          rel="noreferrer"
           className="group inline-flex items-center justify-center gap-3 px-10 md:px-14 py-4 md:py-5 bg-ember text-background text-xs md:text-sm tracking-[0.3em] uppercase font-bold hover:bg-ember/90 transition rounded-lg"
         >
           Garantir agora
