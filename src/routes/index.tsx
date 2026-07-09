@@ -592,7 +592,7 @@ function Index() {
             alt=""
             className="absolute inset-y-0 right-0 h-full w-auto max-w-none object-cover object-right translate-x-[28%] lg:translate-x-[22%] xl:translate-x-[16%] 2xl:translate-x-[12%]"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background from-14% via-background/72 via-34% to-transparent to-50% xl:to-52% 2xl:to-54%" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background from-14% via-background/72 via-34% to-transparent to-50% xl:to-52% 2xl:from-8% 2xl:via-28% 2xl:to-68%" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_50%,oklch(0.13_0.015_30/0.6)_95%)]" />
           <div className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-30 animate-heat-haze bg-[radial-gradient(ellipse_at_center,oklch(0.7_0.22_45/0.12),transparent_60%)]" />
         </div>
@@ -945,7 +945,7 @@ function Index() {
             </div>
           </div>
           <p className="mt-10 text-xs md:text-sm leading-relaxed text-muted-foreground/80 max-w-3xl">
-            Em todos os ingressos a <span className="text-ember">Mega Estação Kids</span> é liberada. Lembrando que menores de idade não têm acesso às áreas de Open Bar. O ingresso <span className="text-bone">Standard</span> é o indicado para quem vai levar crianças.
+            Em todos os ingressos a <span className="text-ember">Mega Estação Kids</span> é liberada. Lembrando que menores de idade não pode acessar às áreas de Open Bar. O ingresso <span className="text-bone">Standard</span> é o indicado para quem vai levar crianças.
           </p>
         </div>
       </section>
