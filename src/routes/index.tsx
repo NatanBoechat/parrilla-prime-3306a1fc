@@ -738,7 +738,10 @@ function Index() {
       {/* <PhotoStrip /> hidden — kept for potential restore */}
       <PhotoStripNew />
 
+      <EdicaoGallery />
+
       <InlineCTA label="Garantir agora" />
+
 
 
       {/* ESTAÇÃO DE CHURRASCO PREMIUM */}
