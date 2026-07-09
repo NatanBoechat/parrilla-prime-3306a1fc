@@ -23,6 +23,17 @@ const gallery2 = { url: "/gallery/gallery-36.jpg" };
 const gallery3 = { url: "/gallery/gallery-37.jpg" };
 const gallery4 = { url: "/gallery/gallery-38.jpg" };
 const gallery5 = { url: "/gallery/gallery-39.jpg" };
+const edicaoPhotos = [
+  { url: "/gallery/edicao/img-4120.jpg", caption: "A festa" },
+  { url: "/gallery/edicao/img-4117.jpg", caption: "Roda de fogo" },
+  { url: "/gallery/edicao/img-4121.jpg", caption: "Estações" },
+  { url: "/gallery/edicao/img-4119.jpg", caption: "Fogo lento" },
+  { url: "/gallery/edicao/img-4122.jpg", caption: "Os mestres" },
+  { url: "/gallery/edicao/img-4118.jpg", caption: "Chama viva" },
+  { url: "/gallery/edicao/img-4124.jpg", caption: "Torresmo" },
+  { url: "/gallery/edicao/img-4123.jpg", caption: "Peixe na brasa" },
+];
+const TICKET_URL = "https://www.bilheteriadigital.com/parrilla-day-05-de-setembro?c=148592";
 
 import caraguafmLogo from "@/assets/sponsors/caraguafm.jpg";
 import tncLogo from "@/assets/sponsors/tnc.png";
@@ -374,6 +385,56 @@ function PhotoStripNew() {
   );
 }
 
+function EdicaoGallery() {
+  return (
+    <section id="galeria-edicao" className="relative py-24 md:py-32 px-6 bg-background overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none opacity-40 bg-[radial-gradient(ellipse_at_top,oklch(0.22_0.06_35/0.35),transparent_60%)]" />
+      <div className="max-w-7xl mx-auto relative">
+        <div className="text-[10px] md:text-xs tracking-[0.4em] uppercase text-ember mb-4">Galeria · Última edição</div>
+        <h2 data-reveal className="text-display text-5xl md:text-7xl text-bone mb-4 leading-[0.95]">
+          O que já <span className="text-ember">rolou</span> por aqui
+        </h2>
+        <p data-reveal data-reveal-delay="150" className="text-serif-italic text-lg md:text-2xl text-muted-foreground mb-14 md:mb-20 max-w-3xl">
+          Registros reais da última edição do Parrilla Day. Fogo, público e alta gastronomia à beira-mar.
+        </p>
+
+        <div className="grid grid-cols-6 auto-rows-[110px] md:auto-rows-[170px] gap-3 md:gap-4">
+          {edicaoPhotos.map((p, i) => {
+            // Custom premium bento layout
+            const layouts = [
+              "col-span-6 md:col-span-4 row-span-3",       // 0 hero
+              "col-span-3 md:col-span-2 row-span-2",       // 1
+              "col-span-3 md:col-span-2 row-span-2",       // 2
+              "col-span-3 md:col-span-3 row-span-2",       // 3
+              "col-span-3 md:col-span-3 row-span-2",       // 4
+              "col-span-6 md:col-span-2 row-span-3",       // 5 tall
+              "col-span-3 md:col-span-2 row-span-2",       // 6
+              "col-span-3 md:col-span-2 row-span-2",       // 7
+            ];
+            return (
+              <figure
+                key={i}
+                data-reveal
+                data-reveal-delay={String((i % 4) * 90)}
+                className={`${layouts[i]} group relative overflow-hidden border border-border/30 bg-card`}
+              >
+                <img
+                  src={p.url}
+                  alt={p.caption}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition duration-[1400ms] ease-out group-hover:scale-[1.06]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/0 to-transparent opacity-70 group-hover:opacity-90 transition duration-500" />
+                <div className="absolute inset-0 ring-1 ring-inset ring-ember/0 group-hover:ring-ember/50 transition duration-500" />
+              </figure>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 const ATRACOES = [
   { t: "Shows Sertanejos", d: "Guilherme & Vinícius, Naessa, Peddro Henrique & Luciano no palco principal.", img: showSertanejoImg, tag: "Dia 05" },
   { t: "Balonismo", d: "Subida de balão de ar quente sobre o litoral ao nascer do sol.", img: balonismoImg, tag: "Dia 05" },
@@ -400,18 +461,20 @@ function StickyBuyBar({ visible }: { visible: boolean }) {
           backdropFilter: "blur(22px) saturate(160%)",
         }}
       >
-        <div className="flex items-center gap-3 min-w-0">
+        <div className="flex items-center gap-2 md:gap-3 min-w-0 flex-1">
           <img src={logoBrancaVermelha} alt="" className="h-9 md:h-11 w-auto shrink-0" />
-          <div className="min-w-0 hidden sm:block">
-            <div className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-ember">Parrilla Day · 05 Set 2026</div>
-            <div className="text-xs md:text-sm text-bone/80 truncate">Open Churrasco Premium · Open Bar Premium</div>
+          <div className="min-w-0">
+            <div className="text-[8px] md:text-xs tracking-[0.22em] md:tracking-[0.3em] uppercase text-ember truncate">Parrilla Day · 05 Set 2026</div>
+            <div className="text-[10px] md:text-sm text-bone/80 truncate">Open Churrasco Premium · Open Bar Premium</div>
           </div>
         </div>
         <a
-          href="#ingressos"
-          className="group relative shrink-0 px-5 md:px-8 py-3 md:py-4 bg-ember text-background text-[10px] md:text-xs tracking-[0.25em] uppercase font-bold hover:bg-ember/90 transition overflow-hidden rounded-md"
+          href={TICKET_URL}
+          target="_blank"
+          rel="noreferrer"
+          className="group relative shrink-0 px-4 md:px-8 py-3 md:py-4 bg-ember text-background text-[9px] md:text-xs tracking-[0.22em] md:tracking-[0.25em] uppercase font-bold hover:bg-ember/90 transition overflow-hidden rounded-md"
         >
-          <span className="relative z-10">Garantir agora →</span>
+          <span className="relative z-10">Garantir →</span>
           <span className="absolute inset-0 bg-gradient-to-r from-transparent via-bone/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
         </a>
       </div>
@@ -432,7 +495,9 @@ function InlineCTA({ label = "Garantir agora" }: { label?: string }) {
         <div className="text-[11px] md:text-xs tracking-[0.45em] uppercase text-ember mb-5">05 · SET · 2026</div>
         <h3 className="text-display text-4xl md:text-6xl lg:text-7xl text-bone mb-8 leading-none">{label}</h3>
         <a
-          href="#ingressos"
+          href={TICKET_URL}
+          target="_blank"
+          rel="noreferrer"
           className="group inline-flex items-center justify-center gap-3 px-10 md:px-14 py-4 md:py-5 bg-ember text-background text-xs md:text-sm tracking-[0.3em] uppercase font-bold hover:bg-ember/90 transition rounded-lg"
         >
           Garantir agora
@@ -526,10 +591,10 @@ function Index() {
             src={heroDesktopAsset.url}
             alt=""
             className="absolute inset-y-0 right-0 h-full w-auto max-w-none object-cover object-right"
-            style={{ transform: "translateX(18%)" }}
           />
-          {/* Gradient: narrower left-side fade so faces stay visible */}
-          <div className="absolute inset-0 bg-gradient-to-r from-background from-15% via-background/60 via-30% to-transparent to-50%" />
+          {/* Gradient: fades further right so no hard edge appears on narrower notebook screens */}
+          <div className="absolute inset-0 bg-gradient-to-r from-background from-10% via-background/85 via-35% via-background/40 via-55% to-transparent to-72%" />
+          <div className="absolute inset-y-0 right-0 w-[8%] bg-gradient-to-l from-background to-transparent" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_50%,oklch(0.13_0.015_30/0.6)_95%)]" />
           <div className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-30 animate-heat-haze bg-[radial-gradient(ellipse_at_center,oklch(0.7_0.22_45/0.12),transparent_60%)]" />
         </div>
@@ -675,7 +740,10 @@ function Index() {
       {/* <PhotoStrip /> hidden — kept for potential restore */}
       <PhotoStripNew />
 
+      <EdicaoGallery />
+
       <InlineCTA label="Garantir agora" />
+
 
 
       {/* ESTAÇÃO DE CHURRASCO PREMIUM */}
@@ -816,42 +884,68 @@ function Index() {
           <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Ingressos</div>
           <h2 data-reveal className="text-display text-5xl md:text-7xl text-bone mb-4">Sua entrada no festival</h2>
           <p data-reveal data-reveal-delay="150" className="text-serif-italic text-xl text-muted-foreground mb-16 max-w-2xl">
-            05 de setembro · Open Bar Premium · Open Churrasco Premium · Drinks vendidos à parte
+            05 de setembro · Escolha a experiência ideal para o seu dia
           </p>
-          <div className="grid md:grid-cols-2 gap-6 items-stretch">
-            <div className="p-10 md:p-14 border border-border/60 bg-card/60 backdrop-blur flex flex-col">
-              <div className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">Front Stage · Dia 05</div>
+          <div className="grid md:grid-cols-3 gap-6 items-stretch">
+            {/* STANDARD */}
+            <div className="p-8 md:p-10 border border-border/60 bg-card/60 backdrop-blur flex flex-col">
+              <div className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">Standard · Dia 05</div>
               <div className="flex items-baseline gap-2 mb-2 flex-wrap">
-                <span className="text-display text-7xl md:text-8xl text-bone">R$349</span>
+                <span className="text-display text-6xl md:text-7xl text-bone">R$249</span>
                 <span className="text-muted-foreground">+ taxa</span>
               </div>
-              <ul className="space-y-3 mt-10 mb-12 text-sm text-muted-foreground">
+              <div className="text-[11px] tracking-[0.2em] uppercase text-ember/90 mt-2">Ideal para famílias com crianças</div>
+              <ul className="space-y-3 mt-8 mb-10 text-sm text-muted-foreground">
+                <li className="flex gap-3"><span className="text-ember">▸</span> Open Churrasco Premium</li>
+                <li className="flex gap-3"><span className="text-ember">▸</span> Acesso a todos os shows e atrações</li>
+                <li className="flex gap-3"><span className="text-ember">▸</span> Mega Estação Kids liberada</li>
+                <li className="flex gap-3"><span className="text-ember">▸</span> Bebidas vendidas à parte</li>
+                <li className="flex gap-3"><span className="text-muted-foreground/70">✕</span> <span className="text-muted-foreground/70">Sem Open Bar</span></li>
+              </ul>
+              <p className="text-[11px] leading-relaxed text-muted-foreground/80 mb-6">
+                Menores de idade não têm acesso às áreas de Open Bar. Este é o ingresso indicado para quem vai levar crianças.
+              </p>
+              <a href={TICKET_URL} target="_blank" rel="noreferrer" className="w-full text-center py-4 bg-ember text-background text-sm tracking-[0.2em] uppercase font-semibold hover:bg-ember/90 transition mt-auto rounded-md">
+                Garantir agora
+              </a>
+            </div>
+
+            {/* FRONT STAGE */}
+            <div className="p-8 md:p-10 border border-border/60 bg-card/60 backdrop-blur flex flex-col">
+              <div className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">Front Stage · Dia 05</div>
+              <div className="flex items-baseline gap-2 mb-2 flex-wrap">
+                <span className="text-display text-6xl md:text-7xl text-bone">R$349</span>
+                <span className="text-muted-foreground">+ taxa</span>
+              </div>
+              <ul className="space-y-3 mt-8 mb-10 text-sm text-muted-foreground">
                 <li className="flex gap-3"><span className="text-ember">▸</span> Open Bar Premium</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Open Churrasco Premium</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Acesso a todos os shows e atrações</li>
               </ul>
-              <a href="#ingressos" className="w-full text-center py-4 bg-ember text-background text-sm tracking-[0.2em] uppercase font-semibold hover:bg-ember/90 transition mt-auto rounded-md">
+              <a href={TICKET_URL} target="_blank" rel="noreferrer" className="w-full text-center py-4 bg-ember text-background text-sm tracking-[0.2em] uppercase font-semibold hover:bg-ember/90 transition mt-auto rounded-md">
                 Garantir agora
               </a>
             </div>
-            <div className="p-10 md:p-14 border border-ember bg-gradient-to-br from-blood/40 to-card/60 backdrop-blur relative flex flex-col">
+
+            {/* CAMAROTE */}
+            <div className="p-8 md:p-10 border border-ember bg-gradient-to-br from-blood/40 to-card/60 backdrop-blur relative flex flex-col">
               <div className="absolute top-6 right-6 text-[10px] tracking-[0.3em] uppercase text-ember">★ Premium</div>
               <div className="text-xs tracking-[0.3em] uppercase text-ember mb-4">Camarote · Dia 05</div>
               <div className="flex items-baseline gap-2 mb-1 flex-wrap">
-                <span className="text-display text-6xl md:text-7xl text-bone">R$629</span>
+                <span className="text-display text-5xl md:text-6xl text-bone">R$629</span>
                 <span className="text-muted-foreground text-sm tracking-wide uppercase">por pessoa + taxa</span>
               </div>
               <div className="text-sm text-bone/70 mb-2">
                 Camarote fechado para <span className="text-ember font-semibold">10 pessoas</span> · <span className="text-muted-foreground">R$6.290 + taxa no total</span>
               </div>
-              <ul className="space-y-3 mt-10 mb-12 text-sm text-bone/80">
+              <ul className="space-y-3 mt-8 mb-10 text-sm text-bone/80">
                 <li className="flex gap-3"><span className="text-ember">▸</span> Tenda exclusiva com vista privilegiada</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Cortes Premium exclusivos do Camarote</li>
-                <li className="flex gap-3"><span className="text-ember">▸</span> Open Churrasco Premium · Open Bar Premium</li>
+                <li className="flex gap-3"><span className="text-ember">▸</span> Open Churrasco · Open Bar Premium</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Garçons exclusivos</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Banheiros e móveis diferenciados</li>
               </ul>
-              <a href="#ingressos" className="w-full text-center py-4 bg-ember text-background text-sm tracking-[0.2em] uppercase font-semibold hover:bg-ember/90 transition mt-auto rounded-md">
+              <a href={TICKET_URL} target="_blank" rel="noreferrer" className="w-full text-center py-4 bg-ember text-background text-sm tracking-[0.2em] uppercase font-semibold hover:bg-ember/90 transition mt-auto rounded-md">
                 Reservar Camarote
               </a>
             </div>
