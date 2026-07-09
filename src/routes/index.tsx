@@ -179,8 +179,8 @@ function HeroHeadline({ play }: { play: boolean }) {
           key={li}
           className={`block overflow-hidden ${
             line.accent
-              ? "text-[16vw] md:text-[8.5vw] text-ember"
-              : "text-[11vw] md:text-[5.8vw]"
+              ? "text-[16vw] md:text-[clamp(3.5rem,7.5vw,8.5rem)] text-ember"
+              : "text-[11vw] md:text-[clamp(2.25rem,5vw,5.75rem)]"
           } leading-[0.92] md:leading-[0.82]`}
         >
           <span className="inline-block" style={{ transformStyle: "preserve-3d" }}>
@@ -320,7 +320,7 @@ function PhotoStrip() {
 }
 
 function PhotoStripNew() {
-  const photos = [gallery1.url, gallery2.url, gallery3.url, gallery4.url, gallery5.url];
+  const photos = [gallery1.url, gallery2.url, gallery3.url, gallery4.url];
   const ref = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
 
@@ -395,7 +395,7 @@ function EdicaoGallery() {
           O que já <span className="text-ember">rolou</span> por aqui
         </h2>
         <p data-reveal data-reveal-delay="150" className="text-serif-italic text-lg md:text-2xl text-muted-foreground mb-14 md:mb-20 max-w-3xl">
-          Registros reais da última edição do Parrilla Day. Fogo, público e alta gastronomia à beira-mar.
+          Registros da última edição do Parrilla Day.
         </p>
 
         <div className="grid grid-cols-6 auto-rows-[110px] md:auto-rows-[170px] gap-3 md:gap-4">
@@ -584,7 +584,7 @@ function Index() {
       </header>
 
       {/* HERO */}
-      <section id="top" className="relative md:min-h-screen md:h-screen flex flex-col md:block md:items-center pt-20 md:pt-24 md:pb-24 overflow-hidden grain isolate">
+      <section id="top" className="relative md:min-h-screen flex flex-col md:block md:items-center pt-20 md:pt-24 md:pb-24 overflow-hidden grain isolate">
         {/* DESKTOP BG */}
         <div className="hidden md:block absolute inset-0 z-0">
         <img
@@ -898,13 +898,9 @@ function Index() {
               <ul className="space-y-3 mt-8 mb-10 text-sm text-muted-foreground">
                 <li className="flex gap-3"><span className="text-ember">▸</span> Open Churrasco Premium</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Acesso a todos os shows e atrações</li>
-                <li className="flex gap-3"><span className="text-ember">▸</span> Mega Estação Kids liberada</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Bebidas vendidas à parte</li>
                 <li className="flex gap-3"><span className="text-muted-foreground/70">✕</span> <span className="text-muted-foreground/70">Sem Open Bar</span></li>
               </ul>
-              <p className="text-[11px] leading-relaxed text-muted-foreground/80 mb-6">
-                Menores de idade não têm acesso às áreas de Open Bar. Este é o ingresso indicado para quem vai levar crianças.
-              </p>
               <a href={TICKET_URL} target="_blank" rel="noreferrer" className="w-full text-center py-4 bg-ember text-background text-sm tracking-[0.2em] uppercase font-semibold hover:bg-ember/90 transition mt-auto rounded-md">
                 Garantir agora
               </a>
@@ -950,6 +946,9 @@ function Index() {
               </a>
             </div>
           </div>
+          <p className="mt-10 text-xs md:text-sm leading-relaxed text-muted-foreground/80 max-w-3xl">
+            Em todos os ingressos a <span className="text-ember">Mega Estação Kids</span> é liberada. Lembrando que menores de idade não têm acesso às áreas de Open Bar — o ingresso <span className="text-bone">Standard</span> é o indicado para quem vai levar crianças.
+          </p>
         </div>
       </section>
 
