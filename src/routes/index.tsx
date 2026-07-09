@@ -179,8 +179,8 @@ function HeroHeadline({ play }: { play: boolean }) {
           key={li}
           className={`block overflow-hidden ${
             line.accent
-              ? "text-[16vw] md:text-[8.5vw] text-ember"
-              : "text-[11vw] md:text-[5.8vw]"
+              ? "text-[16vw] md:text-[clamp(3.5rem,7.5vw,8.5rem)] text-ember"
+              : "text-[11vw] md:text-[clamp(2.25rem,5vw,5.75rem)]"
           } leading-[0.92] md:leading-[0.82]`}
         >
           <span className="inline-block" style={{ transformStyle: "preserve-3d" }}>
