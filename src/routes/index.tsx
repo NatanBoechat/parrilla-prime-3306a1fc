@@ -320,7 +320,7 @@ function PhotoStrip() {
 }
 
 function PhotoStripNew() {
-  const photos = [gallery1.url, gallery2.url, gallery3.url, gallery4.url, gallery5.url];
+  const photos = [gallery1.url, gallery2.url, gallery3.url, gallery4.url];
   const ref = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
 
