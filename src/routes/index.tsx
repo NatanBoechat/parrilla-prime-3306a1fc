@@ -18,10 +18,10 @@ import showSertanejoImg from "@/assets/shows-real.png";
 import kidsZoneImg from "@/assets/kids-zone.png";
 import showsFlyerImg from "@/assets/shows-flyer.png";
 import rodaCarneImg from "@/assets/roda-carne.png";
-import gallery1 from "@/assets/roda.png.asset.json";
-import gallery2 from "@/assets/palco.png.asset.json";
-import gallery3 from "@/assets/divisa.png.asset.json";
-import gallery4 from "@/assets/brinquedos.png.asset.json";
+const gallery1 = { url: "/gallery/roda.png" };
+const gallery2 = { url: "/gallery/palco.png" };
+const gallery3 = { url: "/gallery/divisa.png" };
+const gallery4 = { url: "/gallery/brinquedos.png" };
 const edicaoPhotos = [
   { url: "/gallery/edicao/img-4120.jpg", caption: "A festa" },
   { url: "/gallery/edicao/img-4117.jpg", caption: "Roda de fogo" },
@@ -891,7 +891,7 @@ function Index() {
                 <span className="text-display text-6xl md:text-7xl text-bone">R$249</span>
                 <span className="text-muted-foreground">+ taxa</span>
               </div>
-              <div className="text-[11px] tracking-[0.2em] uppercase text-ember/90 mt-2">Ideal para famílias com crianças</div>
+              
               <ul className="space-y-3 mt-8 mb-10 text-sm text-muted-foreground">
                 <li className="flex gap-3"><span className="text-ember">▸</span> Open Churrasco Premium</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Acesso a todas as áreas de entretenimento</li>
@@ -957,7 +957,7 @@ function Index() {
             </div>
           </div>
           <p className="mt-10 text-xs md:text-sm leading-relaxed text-muted-foreground/80 max-w-3xl">
-            Em todos os ingressos a <span className="text-ember">Mega Estação Kids</span> é liberada. Lembrando que menores de idade não pode acessar às áreas de Open Bar. O ingresso <span className="text-bone">Standard</span> é o indicado para quem vai levar crianças.
+            Em todos os ingressos a <span className="text-ember">Mega Estação Kids</span> é liberada. Lembrando que menores de idade não pode acessar às áreas de Open Bar.
           </p>
         </div>
       </section>
