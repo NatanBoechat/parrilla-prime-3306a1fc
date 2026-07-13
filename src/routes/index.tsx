@@ -18,11 +18,10 @@ import showSertanejoImg from "@/assets/shows-real.png";
 import kidsZoneImg from "@/assets/kids-zone.png";
 import showsFlyerImg from "@/assets/shows-flyer.png";
 import rodaCarneImg from "@/assets/roda-carne.png";
-const gallery1 = { url: "/gallery/gallery-35.jpg" };
-const gallery2 = { url: "/gallery/gallery-36.jpg" };
-const gallery3 = { url: "/gallery/gallery-37.jpg" };
-const gallery4 = { url: "/gallery/gallery-38.jpg" };
-const gallery5 = { url: "/gallery/gallery-39.jpg" };
+import gallery1 from "@/assets/roda.png.asset.json";
+import gallery2 from "@/assets/palco.png.asset.json";
+import gallery3 from "@/assets/divisa.png.asset.json";
+import gallery4 from "@/assets/brinquedos.png.asset.json";
 const edicaoPhotos = [
   { url: "/gallery/edicao/img-4120.jpg", caption: "A festa" },
   { url: "/gallery/edicao/img-4117.jpg", caption: "Roda de fogo" },
@@ -884,7 +883,7 @@ function Index() {
           <p data-reveal data-reveal-delay="150" className="text-serif-italic text-xl text-muted-foreground mb-16 max-w-2xl">
             05 de setembro · Escolha a experiência ideal para o seu dia
           </p>
-          <div className="grid md:grid-cols-3 gap-6 items-stretch">
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 items-stretch">
             {/* STANDARD */}
             <div className="p-8 md:p-10 border border-border/60 bg-card/60 backdrop-blur flex flex-col">
               <div className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">Standard · Dia 05</div>
@@ -895,9 +894,7 @@ function Index() {
               <div className="text-[11px] tracking-[0.2em] uppercase text-ember/90 mt-2">Ideal para famílias com crianças</div>
               <ul className="space-y-3 mt-8 mb-10 text-sm text-muted-foreground">
                 <li className="flex gap-3"><span className="text-ember">▸</span> Open Churrasco Premium</li>
-                <li className="flex gap-3"><span className="text-ember">▸</span> Acesso a todos os shows e atrações</li>
-                <li className="flex gap-3"><span className="text-ember">▸</span> Bebidas vendidas à parte</li>
-                <li className="flex gap-3"><span className="text-muted-foreground/70">✕</span> <span className="text-muted-foreground/70">Sem Open Bar</span></li>
+                <li className="flex gap-3"><span className="text-ember">▸</span> Acesso a todas as áreas de entretenimento</li>
               </ul>
               <a href={TICKET_URL} target="_blank" rel="noreferrer" className="w-full text-center py-4 bg-ember text-background text-sm tracking-[0.2em] uppercase font-semibold hover:bg-ember/90 transition mt-auto rounded-md">
                 Garantir agora
@@ -912,9 +909,26 @@ function Index() {
                 <span className="text-muted-foreground">+ taxa</span>
               </div>
               <ul className="space-y-3 mt-8 mb-10 text-sm text-muted-foreground">
-                <li className="flex gap-3"><span className="text-ember">▸</span> Open Bar Premium</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Open Churrasco Premium</li>
-                <li className="flex gap-3"><span className="text-ember">▸</span> Acesso a todos os shows e atrações</li>
+                <li className="flex gap-3"><span className="text-ember">▸</span> Open Bar Cerveja, Água, Suco e Refrigerante</li>
+                <li className="flex gap-3"><span className="text-ember">▸</span> Acesso a todas as áreas de entretenimento</li>
+              </ul>
+              <a href={TICKET_URL} target="_blank" rel="noreferrer" className="w-full text-center py-4 bg-ember text-background text-sm tracking-[0.2em] uppercase font-semibold hover:bg-ember/90 transition mt-auto rounded-md">
+                Garantir agora
+              </a>
+            </div>
+
+            {/* VIP PREMIUM */}
+            <div className="p-8 md:p-10 border border-border/60 bg-card/60 backdrop-blur flex flex-col">
+              <div className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">VIP Premium · Dia 05</div>
+              <div className="flex items-baseline gap-2 mb-2 flex-wrap">
+                <span className="text-display text-6xl md:text-7xl text-bone">R$499</span>
+                <span className="text-muted-foreground">+ taxa</span>
+              </div>
+              <ul className="space-y-3 mt-8 mb-10 text-sm text-muted-foreground">
+                <li className="flex gap-3"><span className="text-ember">▸</span> Open Churrasco Premium</li>
+                <li className="flex gap-3"><span className="text-ember">▸</span> Acesso exclusivo ao Wchik</li>
+                <li className="flex gap-3"><span className="text-ember">▸</span> Acesso a todas as áreas de entretenimento</li>
               </ul>
               <a href={TICKET_URL} target="_blank" rel="noreferrer" className="w-full text-center py-4 bg-ember text-background text-sm tracking-[0.2em] uppercase font-semibold hover:bg-ember/90 transition mt-auto rounded-md">
                 Garantir agora
@@ -922,9 +936,8 @@ function Index() {
             </div>
 
             {/* CAMAROTE */}
-            <div className="p-8 md:p-10 border border-ember bg-gradient-to-br from-blood/40 to-card/60 backdrop-blur relative flex flex-col">
-              <div className="absolute top-6 right-6 text-[10px] tracking-[0.3em] uppercase text-ember">★ Premium</div>
-              <div className="text-xs tracking-[0.3em] uppercase text-ember mb-4">Camarote · Dia 05</div>
+            <div className="p-8 md:p-10 border border-border/60 bg-card/60 backdrop-blur flex flex-col">
+              <div className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">Camarote · Dia 05</div>
               <div className="flex items-baseline gap-2 mb-1 flex-wrap">
                 <span className="text-display text-5xl md:text-6xl text-bone">R$629</span>
                 <span className="text-muted-foreground text-sm tracking-wide uppercase">por pessoa + taxa</span>
@@ -932,12 +945,11 @@ function Index() {
               <div className="text-sm text-bone/70 mb-2">
                 Camarote fechado para <span className="text-ember font-semibold">10 pessoas</span> · <span className="text-muted-foreground">R$6.290 + taxa no total</span>
               </div>
-              <ul className="space-y-3 mt-8 mb-10 text-sm text-bone/80">
-                <li className="flex gap-3"><span className="text-ember">▸</span> Tenda exclusiva com vista privilegiada</li>
-                <li className="flex gap-3"><span className="text-ember">▸</span> Cortes Premium exclusivos do Camarote</li>
-                <li className="flex gap-3"><span className="text-ember">▸</span> Open Churrasco · Open Bar Premium</li>
-                <li className="flex gap-3"><span className="text-ember">▸</span> Garçons exclusivos</li>
-                <li className="flex gap-3"><span className="text-ember">▸</span> Banheiros e móveis diferenciados</li>
+              <ul className="space-y-3 mt-8 mb-10 text-sm text-muted-foreground">
+                <li className="flex gap-3"><span className="text-ember">▸</span> Open Churrasco Premium</li>
+                <li className="flex gap-3"><span className="text-ember">▸</span> Acesso exclusivo ao Wchik</li>
+                <li className="flex gap-3"><span className="text-ember">▸</span> Mesa exclusiva</li>
+                <li className="flex gap-3"><span className="text-ember">▸</span> Acesso a todas as áreas de entretenimento</li>
               </ul>
               <a href={TICKET_URL} target="_blank" rel="noreferrer" className="w-full text-center py-4 bg-ember text-background text-sm tracking-[0.2em] uppercase font-semibold hover:bg-ember/90 transition mt-auto rounded-md">
                 Reservar Camarote
