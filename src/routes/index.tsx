@@ -948,6 +948,7 @@ function Index() {
               </div>
               <ul className="space-y-3 mt-8 mb-10 text-sm text-muted-foreground">
                 <li className="flex gap-3"><span className="text-ember">▸</span> Open Churrasco Premium</li>
+                <li className="flex gap-3"><span className="text-ember">▸</span> Open Bar Premium (whisky, gin, vodka e cerveja)</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Acesso exclusivo ao Wchik</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Mesa exclusiva</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Acesso a todas as áreas de entretenimento</li>
