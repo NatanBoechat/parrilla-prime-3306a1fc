@@ -837,19 +837,19 @@ function Index() {
       </section>
 
       {/* MAPA DO FESTIVAL */}
-      <section id="mapa" className="py-20 md:py-24 px-6 bg-card/30 border-y border-border/40">
-        <div className="max-w-7xl mx-auto">
+      <section id="mapa" className="py-20 md:py-24 bg-card/30 border-y border-border/40">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Mapa do Festival</div>
           <h2 data-reveal className="text-display text-5xl md:text-7xl text-bone mb-12">
             Parrilla Day <span className="text-ember">Caraguá Beach</span>
           </h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="relative overflow-hidden border border-border/40">
-              <img src={eventMapAsset.url} alt="Mapa do Parrilla Day Caraguá Beach" className="w-full h-auto" loading="lazy" />
-            </div>
-            <div className="relative overflow-hidden border border-border/40">
-              <img src={eventMapAsset2.url} alt="Mapa aéreo do Parrilla Day Caraguá Beach" className="w-full h-auto" loading="lazy" />
-            </div>
+        </div>
+        <div className="grid md:grid-cols-2 gap-0 w-full">
+          <div className="relative overflow-hidden">
+            <img src={eventMapAsset.url} alt="Mapa do Parrilla Day Caraguá Beach" className="w-full h-auto" loading="lazy" />
+          </div>
+          <div className="relative overflow-hidden">
+            <img src={eventMapAsset2.url} alt="Mapa aéreo do Parrilla Day Caraguá Beach" className="w-full h-auto" loading="lazy" />
           </div>
         </div>
       </section>
