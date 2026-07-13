@@ -441,7 +441,7 @@ const ATRACOES = [
   { t: "Robô Gigante", d: "Performance interativa com LEDs e fumaça que para o festival.", img: roboGiganteImg, tag: "Dia 05" },
   { t: "Roda Gigante", d: "Vista panorâmica do festival e da praia de Caraguatatuba.", img: rodaGiganteImg, tag: "Dia 05" },
   { t: "Touro Mecânico", d: "O clássico desafio sertanejo. Quem aguenta os 8 segundos?", img: touroMecanicoImg, tag: "Dia 05" },
-  { t: "Mega Estação Kids", d: "Brinquedos, monitores e diversão para os pequenos.", img: kidsZoneImg, tag: "Dia 05" },
+  { t: "Mega Estação Kids", d: "Brinquedos, monitores e diversão para os pequenos. Diversão garantida com monitoramento.", img: kidsZoneImg, tag: "Dia 05" },
 ];
 
 function StickyBuyBar({ visible }: { visible: boolean }) {
@@ -695,7 +695,7 @@ function Index() {
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
             { t: "Open Churrasco Premium", d: "Estações premium à vontade" },
-            { t: "Open Bar Premium", d: "Cervejas & refrigerantes" },
+            { t: "Open Bar Premium", d: "Cervejas, refrigerantes & destilados" },
             { t: "Música ao Vivo", d: "Sertanejo & shows" },
             { t: "Mega Estação Kids", d: "Diversão garantida" },
           ].map((x) => (
