@@ -83,7 +83,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: "Parrilla Day" },
       { name: "theme-color", content: "#0a0a0a" },
       { property: "og:title", content: "Parrilla Day 2026 — Caraguatatuba" },
-      { property: "og:description", content: "O maior festival gastronômico sertanejo à beira-mar do litoral. 5 de setembro de 2026." },
+      { property: "og:description", content: "O maior festival de churrasco do litoral norte. 5 de setembro de 2026." },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Parrilla Day 2026" },
       { property: "og:image", content: "/og-image.jpg" },
