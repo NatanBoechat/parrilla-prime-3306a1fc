@@ -9,6 +9,7 @@ import coupleAsset from "@/assets/couple.jpg";
 const heroDesktopAsset = { url: "/hero/hero-desktop.png" };
 const heroMobileAsset = { url: "/hero/hero-mobile.png" };
 const eventMapAsset = { url: "/gallery/event-map-aerial.jpg" };
+const eventMapAsset2 = { url: "/gallery/event-map-aerial-2.jpg" };
 import rodaGiganteImg from "@/assets/roda-gigante-real.png";
 import touroMecanicoImg from "@/assets/touro-real.png";
 import roboGiganteImg from "@/assets/robo-real.png";
@@ -842,8 +843,13 @@ function Index() {
           <h2 data-reveal className="text-display text-5xl md:text-7xl text-bone mb-12">
             Parrilla Day <span className="text-ember">Caraguá Beach</span>
           </h2>
-          <div className="relative overflow-hidden border border-border/40">
-            <img src={eventMapAsset.url} alt="Mapa do Parrilla Day Caraguá Beach" className="w-full h-auto" loading="lazy" />
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="relative overflow-hidden border border-border/40">
+              <img src={eventMapAsset.url} alt="Mapa do Parrilla Day Caraguá Beach" className="w-full h-auto" loading="lazy" />
+            </div>
+            <div className="relative overflow-hidden border border-border/40">
+              <img src={eventMapAsset2.url} alt="Mapa aéreo do Parrilla Day Caraguá Beach" className="w-full h-auto" loading="lazy" />
+            </div>
           </div>
         </div>
       </section>
