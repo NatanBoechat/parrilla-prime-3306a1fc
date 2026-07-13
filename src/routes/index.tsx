@@ -18,10 +18,10 @@ import showSertanejoImg from "@/assets/shows-real.png";
 import kidsZoneImg from "@/assets/kids-zone.png";
 import showsFlyerImg from "@/assets/shows-flyer.png";
 import rodaCarneImg from "@/assets/roda-carne.png";
-import gallery1 from "@/assets/roda.png.asset.json";
-import gallery2 from "@/assets/palco.png.asset.json";
-import gallery3 from "@/assets/divisa.png.asset.json";
-import gallery4 from "@/assets/brinquedos.png.asset.json";
+const gallery1 = { url: "/gallery/roda.png" };
+const gallery2 = { url: "/gallery/palco.png" };
+const gallery3 = { url: "/gallery/divisa.png" };
+const gallery4 = { url: "/gallery/brinquedos.png" };
 const edicaoPhotos = [
   { url: "/gallery/edicao/img-4120.jpg", caption: "A festa" },
   { url: "/gallery/edicao/img-4117.jpg", caption: "Roda de fogo" },
