@@ -436,7 +436,7 @@ function EdicaoGallery() {
 
 const ATRACOES = [
   { t: "Shows Sertanejos", d: "Guilherme & Vinícius, Naessa, Peddro Henrique & Luciano no palco principal.", img: showSertanejoImg, tag: "Dia 05" },
-  { t: "Balonismo", d: "Subida de balão de ar quente sobre o litoral ao nascer do sol.", img: balonismoImg, tag: "Dia 05" },
+  { t: "Balonismo", d: "Subida de balão de ar quente sobre o litoral ao pôr do sol.", img: balonismoImg, tag: "Dia 05" },
   { t: "Robô Gigante", d: "Performance interativa com LEDs e fumaça que para o festival.", img: roboGiganteImg, tag: "Dia 05" },
   { t: "Roda Gigante", d: "Vista panorâmica do festival e da praia de Caraguatatuba.", img: rodaGiganteImg, tag: "Dia 05" },
   { t: "Touro Mecânico", d: "O clássico desafio sertanejo. Quem aguenta os 8 segundos?", img: touroMecanicoImg, tag: "Dia 05" },
