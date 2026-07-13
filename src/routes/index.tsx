@@ -957,7 +957,7 @@ function Index() {
             </div>
           </div>
           <p className="mt-10 text-xs md:text-sm leading-relaxed text-muted-foreground/80 max-w-3xl">
-            Em todos os ingressos a <span className="text-ember">Mega Estação Kids</span> é liberada. Lembrando que menores de idade não pode acessar às áreas de Open Bar. O ingresso <span className="text-bone">Standard</span> é o indicado para quem vai levar crianças.
+            Em todos os ingressos a <span className="text-ember">Mega Estação Kids</span> é liberada. Lembrando que menores de idade não pode acessar às áreas de Open Bar.
           </p>
         </div>
       </section>
