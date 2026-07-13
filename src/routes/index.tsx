@@ -436,7 +436,7 @@ function EdicaoGallery() {
 
 const ATRACOES = [
   { t: "Shows Sertanejos", d: "Guilherme & Vinícius, Naessa, Peddro Henrique & Luciano no palco principal.", img: showSertanejoImg, tag: "Dia 05" },
-  { t: "Balonismo", d: "Subida de balão de ar quente sobre o litoral ao nascer do sol.", img: balonismoImg, tag: "Dia 05" },
+  { t: "Balonismo", d: "Subida de balão de ar quente sobre o litoral ao pôr do sol.", img: balonismoImg, tag: "Dia 05" },
   { t: "Robô Gigante", d: "Performance interativa com LEDs e fumaça que para o festival.", img: roboGiganteImg, tag: "Dia 05" },
   { t: "Roda Gigante", d: "Vista panorâmica do festival e da praia de Caraguatatuba.", img: rodaGiganteImg, tag: "Dia 05" },
   { t: "Touro Mecânico", d: "O clássico desafio sertanejo. Quem aguenta os 8 segundos?", img: touroMecanicoImg, tag: "Dia 05" },
@@ -888,7 +888,7 @@ function Index() {
             <div className="p-8 md:p-10 border border-border/60 bg-card/60 backdrop-blur flex flex-col">
               <div className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">Standard · Dia 05</div>
               <div className="flex items-baseline gap-2 mb-2 flex-wrap">
-                <span className="text-display text-6xl md:text-7xl text-bone">R$249</span>
+                <span className="text-display text-6xl md:text-7xl text-bone">R$199,90</span>
                 <span className="text-muted-foreground">+ taxa</span>
               </div>
               
@@ -922,11 +922,12 @@ function Index() {
             <div className="p-8 md:p-10 border border-border/60 bg-card/60 backdrop-blur flex flex-col">
               <div className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">VIP Premium · Dia 05</div>
               <div className="flex items-baseline gap-2 mb-2 flex-wrap">
-                <span className="text-display text-6xl md:text-7xl text-bone">R$499</span>
+                <span className="text-display text-6xl md:text-7xl text-bone">R$590</span>
                 <span className="text-muted-foreground">+ taxa</span>
               </div>
               <ul className="space-y-3 mt-8 mb-10 text-sm text-muted-foreground">
                 <li className="flex gap-3"><span className="text-ember">▸</span> Open Churrasco Premium</li>
+                <li className="flex gap-3"><span className="text-ember">▸</span> Open Bar Premium (whisky, gin, vodka e cerveja)</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Acesso exclusivo ao Wchik</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Acesso a todas as áreas de entretenimento</li>
               </ul>
@@ -947,6 +948,7 @@ function Index() {
               </div>
               <ul className="space-y-3 mt-8 mb-10 text-sm text-muted-foreground">
                 <li className="flex gap-3"><span className="text-ember">▸</span> Open Churrasco Premium</li>
+                <li className="flex gap-3"><span className="text-ember">▸</span> Open Bar Premium (whisky, gin, vodka e cerveja)</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Acesso exclusivo ao Wchik</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Mesa exclusiva</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Acesso a todas as áreas de entretenimento</li>
