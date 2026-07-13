@@ -922,11 +922,12 @@ function Index() {
             <div className="p-8 md:p-10 border border-border/60 bg-card/60 backdrop-blur flex flex-col">
               <div className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">VIP Premium · Dia 05</div>
               <div className="flex items-baseline gap-2 mb-2 flex-wrap">
-                <span className="text-display text-6xl md:text-7xl text-bone">R$499</span>
+                <span className="text-display text-6xl md:text-7xl text-bone">R$590</span>
                 <span className="text-muted-foreground">+ taxa</span>
               </div>
               <ul className="space-y-3 mt-8 mb-10 text-sm text-muted-foreground">
                 <li className="flex gap-3"><span className="text-ember">▸</span> Open Churrasco Premium</li>
+                <li className="flex gap-3"><span className="text-ember">▸</span> Open Bar Premium (whisky, gin, vodka e cerveja)</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Acesso exclusivo ao Wchik</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Acesso a todas as áreas de entretenimento</li>
               </ul>
