@@ -890,16 +890,17 @@ function Index() {
             05 de setembro · Escolha a experiência ideal para o seu dia
           </p>
           <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 items-stretch">
-            {/* STANDARD */}
+            {/* VIP PREMIUM */}
             <div className="p-8 md:p-10 border border-border/60 bg-card/60 backdrop-blur flex flex-col">
-              <div className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">Standard · Dia 05</div>
+              <div className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">VIP Premium · Dia 05</div>
               <div className="flex items-baseline gap-2 mb-2 flex-wrap">
-                <span className="text-display text-6xl md:text-7xl text-bone">R$199,90</span>
+                <span className="text-display text-6xl md:text-7xl text-bone">R$590</span>
                 <span className="text-muted-foreground">+ taxa</span>
               </div>
-              
               <ul className="space-y-3 mt-8 mb-10 text-sm text-muted-foreground">
                 <li className="flex gap-3"><span className="text-ember">▸</span> Open Churrasco Premium</li>
+                <li className="flex gap-3"><span className="text-ember">▸</span> Open Bar Premium (whisky, gin, vodka e cerveja)</li>
+                <li className="flex gap-3"><span className="text-ember">▸</span> Acesso exclusivo ao Wchik</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Acesso a todas as áreas de entretenimento</li>
               </ul>
               <a href={TICKET_URL} target="_blank" rel="noreferrer" className="w-full text-center py-4 bg-ember text-background text-sm tracking-[0.2em] uppercase font-semibold hover:bg-ember/90 transition mt-auto rounded-md">
@@ -917,24 +918,6 @@ function Index() {
               <ul className="space-y-3 mt-8 mb-10 text-sm text-muted-foreground">
                 <li className="flex gap-3"><span className="text-ember">▸</span> Open Churrasco Premium</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Open Bar Cerveja, Água, Suco e Refrigerante</li>
-                <li className="flex gap-3"><span className="text-ember">▸</span> Acesso a todas as áreas de entretenimento</li>
-              </ul>
-              <a href={TICKET_URL} target="_blank" rel="noreferrer" className="w-full text-center py-4 bg-ember text-background text-sm tracking-[0.2em] uppercase font-semibold hover:bg-ember/90 transition mt-auto rounded-md">
-                Garantir agora
-              </a>
-            </div>
-
-            {/* VIP PREMIUM */}
-            <div className="p-8 md:p-10 border border-border/60 bg-card/60 backdrop-blur flex flex-col">
-              <div className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">VIP Premium · Dia 05</div>
-              <div className="flex items-baseline gap-2 mb-2 flex-wrap">
-                <span className="text-display text-6xl md:text-7xl text-bone">R$590</span>
-                <span className="text-muted-foreground">+ taxa</span>
-              </div>
-              <ul className="space-y-3 mt-8 mb-10 text-sm text-muted-foreground">
-                <li className="flex gap-3"><span className="text-ember">▸</span> Open Churrasco Premium</li>
-                <li className="flex gap-3"><span className="text-ember">▸</span> Open Bar Premium (whisky, gin, vodka e cerveja)</li>
-                <li className="flex gap-3"><span className="text-ember">▸</span> Acesso exclusivo ao Wchik</li>
                 <li className="flex gap-3"><span className="text-ember">▸</span> Acesso a todas as áreas de entretenimento</li>
               </ul>
               <a href={TICKET_URL} target="_blank" rel="noreferrer" className="w-full text-center py-4 bg-ember text-background text-sm tracking-[0.2em] uppercase font-semibold hover:bg-ember/90 transition mt-auto rounded-md">
@@ -961,6 +944,23 @@ function Index() {
               </ul>
               <a href={TICKET_URL} target="_blank" rel="noreferrer" className="w-full text-center py-4 bg-ember text-background text-sm tracking-[0.2em] uppercase font-semibold hover:bg-ember/90 transition mt-auto rounded-md">
                 Reservar Camarote
+              </a>
+            </div>
+
+            {/* STANDARD */}
+            <div className="p-8 md:p-10 border border-border/60 bg-card/60 backdrop-blur flex flex-col">
+              <div className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">Standard · Dia 05</div>
+              <div className="flex items-baseline gap-2 mb-2 flex-wrap">
+                <span className="text-display text-6xl md:text-7xl text-bone">R$199,90</span>
+                <span className="text-muted-foreground">+ taxa</span>
+              </div>
+              
+              <ul className="space-y-3 mt-8 mb-10 text-sm text-muted-foreground">
+                <li className="flex gap-3"><span className="text-ember">▸</span> Open Churrasco Premium</li>
+                <li className="flex gap-3"><span className="text-ember">▸</span> Acesso a todas as áreas de entretenimento</li>
+              </ul>
+              <a href={TICKET_URL} target="_blank" rel="noreferrer" className="w-full text-center py-4 bg-ember text-background text-sm tracking-[0.2em] uppercase font-semibold hover:bg-ember/90 transition mt-auto rounded-md">
+                Garantir agora
               </a>
             </div>
           </div>
