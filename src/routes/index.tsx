@@ -33,7 +33,7 @@ const edicaoPhotos = [
   { url: "/gallery/edicao/img-4124.jpg", caption: "Torresmo" },
   { url: "/gallery/edicao/img-4123.jpg", caption: "Peixe na brasa" },
 ];
-const TICKET_URL = "https://www.bilheteriadigital.com/parrilla-day-05-de-setembro?c=148592";
+const TICKET_URL = "https://www.bilheteriadigital.com/parrilla-day-05-de-setembro";
 
 import caraguafmLogo from "@/assets/sponsors/caraguafm.jpg";
 import tncLogo from "@/assets/sponsors/tnc.png";
@@ -664,7 +664,7 @@ function Index() {
                 textShadow: "0 2px 16px rgba(0,0,0,0.9), 0 0 6px rgba(0,0,0,0.7)",
               }}
             >
-              Uma <span className="text-ember">experiência premium e única</span>, pensada para quem entende de churrasco e vive intensamente cada momento. Alta gastronomia, open bar premium e um lineup selecionado para um dia memorável.
+            Uma <span className="text-ember">experiência premium e única</span>, pensada para quem entende de churrasco e vive intensamente cada momento. Alta gastronomia, open bar premium e grandes artistas para um dia memorável.
             </p>
             <div
               className="mt-8 md:mt-10 flex flex-wrap gap-4"
