@@ -951,7 +951,7 @@ function Index() {
             <div className="p-8 md:p-10 border border-border/60 bg-card/60 backdrop-blur flex flex-col">
               <div className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">Standard · Dia 05</div>
               <div className="flex items-baseline gap-2 mb-2 flex-wrap">
-                <span className="text-display text-6xl md:text-7xl text-bone">R$199,90</span>
+                <span className="text-display text-6xl md:text-7xl text-bone">R$229,90</span>
                 <span className="text-muted-foreground">+ taxa</span>
               </div>
               
