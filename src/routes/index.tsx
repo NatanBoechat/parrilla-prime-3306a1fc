@@ -165,7 +165,7 @@ function HeroHeadline({ play }: { play: boolean }) {
     { text: "O MAIOR", accent: false },
     { text: "FESTIVAL DE", accent: false },
     { text: "CHURRASCO", accent: true },
-    { text: "A BEIRA MAR", accent: false },
+    { text: "À BEIRA-MAR", accent: false },
   ];
 
   let charIndex = 0;
