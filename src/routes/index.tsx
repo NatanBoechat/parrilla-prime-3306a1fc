@@ -165,7 +165,7 @@ function HeroHeadline({ play }: { play: boolean }) {
     { text: "O MAIOR", accent: false },
     { text: "FESTIVAL DE", accent: false },
     { text: "CHURRASCO", accent: true },
-    { text: "DO LITORAL NORTE", accent: false },
+    { text: "A BEIRA MAR", accent: false },
   ];
 
   let charIndex = 0;
@@ -726,7 +726,7 @@ function Index() {
         <div className="flex gap-12 animate-marquee whitespace-nowrap text-display text-4xl md:text-6xl text-ember/70">
           {Array.from({ length: 2 }).map((_, k) => (
             <div key={k} className="flex gap-12 shrink-0">
-              {["Open Churrasco Premium", "✦", "Open Bar Premium", "✦", "Estação de Churrasco Premium", "✦", "Sertanejo ao Vivo", "✦", "Roda Gigante", "✦", "Beira-Mar", "✦"].map((w, i) => (
+              {["Open Churrasco Premium", "✦", "Open Bar Premium", "✦", "Estação de Churrasco Premium", "✦", "Sertanejo ao Vivo", "✦", "Roda Gigante", "✦", "Litoral Norte", "✦"].map((w, i) => (
                 <span key={i}>{w}</span>
               ))}
             </div>
@@ -1011,7 +1011,7 @@ function Index() {
             </div>
             <div className="flex flex-col items-center md:items-end gap-8">
               <p className="text-sm text-muted-foreground text-center md:text-right max-w-sm leading-relaxed">
-                Garanta sua presença no maior festival de churrasco à beira-mar. Ingressos limitados para o dia 05.
+                Garanta sua presença no maior festival de churrasco do litoral norte. Ingressos limitados para o dia 05.
               </p>
               <div className="flex flex-wrap justify-center md:justify-end gap-4">
                 <a href="#ingressos" className="px-8 py-4 bg-ember text-background text-sm tracking-[0.2em] uppercase font-semibold hover:bg-ember/90 transition">
@@ -1025,7 +1025,7 @@ function Index() {
           </div>
           <div className="mt-24 pt-10 border-t border-border/40 flex flex-col md:flex-row items-center justify-between gap-4 text-xs tracking-[0.2em] uppercase text-muted-foreground">
             <span>© 2026 Parrilla Day · Caraguá Beach · Caraguatatuba/SP</span>
-            <span>3ª Edição · O maior festival de churrasco à beira-mar</span>
+            <span>3ª Edição · O maior festival de churrasco do litoral norte</span>
           </div>
         </div>
       </footer>
