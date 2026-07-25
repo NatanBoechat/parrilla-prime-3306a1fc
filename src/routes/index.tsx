@@ -181,7 +181,7 @@ function HeroHeadline({ play }: { play: boolean }) {
             line.accent
               ? "text-[16vw] md:text-[clamp(3.5rem,7.5vw,8.5rem)] text-ember"
               : "text-[11vw] md:text-[clamp(2.25rem,5vw,5.75rem)]"
-          } leading-[0.92] md:leading-[0.82]`}
+          } leading-[1.05] md:leading-[0.95] pt-[0.18em]`}
         >
           <span className="inline-block" style={{ transformStyle: "preserve-3d" }}>
             {line.text.split("").map((ch, i) => {
