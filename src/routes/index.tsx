@@ -8,7 +8,7 @@ import chefAsset from "@/assets/chef.jpg";
 import coupleAsset from "@/assets/couple.jpg";
 const heroDesktopAsset = { url: "/hero/hero-desktop.png" };
 const heroMobileAsset = { url: "/hero/hero-mobile.png" };
-const eventMapAsset = { url: "/gallery/event-map-aerial.jpg" };
+const eventMapAsset = { url: "/gallery/event-map-aerial.png" };
 const eventMapAsset2 = { url: "/gallery/event-map-aerial-2.jpg" };
 import rodaGiganteImg from "@/assets/roda-gigante-real.png";
 import touroMecanicoImg from "@/assets/touro-real.png";
@@ -23,6 +23,10 @@ const gallery1 = { url: "/gallery/roda.png" };
 const gallery2 = { url: "/gallery/palco.png" };
 const gallery3 = { url: "/gallery/divisa.png" };
 const gallery4 = { url: "/gallery/brinquedos.png" };
+const gallery5 = { url: "/gallery/novo-53.png" };
+const gallery6 = { url: "/gallery/novo-54.png" };
+const gallery7 = { url: "/gallery/novo-55.png" };
+const gallery8 = { url: "/gallery/novo-56.png" };
 const edicaoPhotos = [
   { url: "/gallery/edicao/img-4120.jpg", caption: "A festa" },
   { url: "/gallery/edicao/img-4117.jpg", caption: "Roda de fogo" },
