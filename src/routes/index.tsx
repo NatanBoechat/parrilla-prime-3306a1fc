@@ -984,26 +984,21 @@ function Index() {
       </section>
 
       {/* PATROCINADORES */}
-      <section id="patrocinadores" className="py-20 md:py-24 px-6 border-t border-border/40">
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Patrocínio</div>
-          <h2 data-reveal className="text-display text-5xl md:text-7xl text-bone mb-16">
-            Quem faz o festival <span className="text-ember">acontecer</span>
-          </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 md:gap-10 items-center">
-            {sponsorLogos.map((l) => (
-              <div key={l.name} className="flex items-center justify-center aspect-square p-2 overflow-visible">
-                <img
-                  src={l.src}
-                  alt={l.name}
-                  loading="lazy"
-                  className="w-full h-full object-contain transition duration-300 hover:scale-105"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+      <section id="patrocinadores" className="border-t border-border/40">
+        <img
+          src="/gallery/patrocinadores-desktop.webp"
+          alt="Patrocinadores do Parrilla Day"
+          loading="lazy"
+          className="hidden md:block w-full h-auto"
+        />
+        <img
+          src="/gallery/patrocinadores-mobile.webp"
+          alt="Patrocinadores do Parrilla Day"
+          loading="lazy"
+          className="block md:hidden w-full h-auto"
+        />
       </section>
+
 
       {/* DISCLAIMERS */}
       <section className="px-6 pt-12 pb-6 border-t border-border/40">
