@@ -8,7 +8,7 @@ import chefAsset from "@/assets/chef.jpg";
 import coupleAsset from "@/assets/couple.jpg";
 const heroDesktopAsset = { url: "/hero/hero-desktop.png" };
 const heroMobileAsset = { url: "/hero/hero-mobile.png" };
-const eventMapAsset = { url: "/gallery/event-map-aerial.png" };
+const eventMapAsset = { url: "/gallery/event-map-aerial.jpg" };
 const eventMapAsset2 = { url: "/gallery/event-map-aerial-2.jpg" };
 import rodaGiganteImg from "@/assets/roda-gigante-real.png";
 import touroMecanicoImg from "@/assets/touro-real.png";
@@ -23,10 +23,10 @@ const gallery1 = { url: "/gallery/roda.png" };
 const gallery2 = { url: "/gallery/palco.png" };
 const gallery3 = { url: "/gallery/divisa.png" };
 const gallery4 = { url: "/gallery/brinquedos.png" };
-const gallery5 = { url: "/gallery/novo-53.png" };
-const gallery6 = { url: "/gallery/novo-54.png" };
-const gallery7 = { url: "/gallery/novo-55.png" };
-const gallery8 = { url: "/gallery/novo-56.png" };
+const gallery5 = { url: "/gallery/novo-53.jpg" };
+const gallery6 = { url: "/gallery/novo-54.jpg" };
+const gallery7 = { url: "/gallery/novo-55.jpg" };
+const gallery8 = { url: "/gallery/novo-56.jpg" };
 const edicaoPhotos = [
   { url: "/gallery/edicao/img-4120.jpg", caption: "A festa" },
   { url: "/gallery/edicao/img-4117.jpg", caption: "Roda de fogo" },
@@ -39,32 +39,6 @@ const edicaoPhotos = [
 ];
 const TICKET_URL = "https://www.bilheteriadigital.com/parrilla-day-05-de-setembro";
 
-import caraguafmLogo from "@/assets/sponsors/caraguafm.jpg";
-import tncLogo from "@/assets/sponsors/tnc.png";
-import fordLogo from "@/assets/sponsors/ford.png";
-import redbullLogo from "@/assets/sponsors/redbull.png";
-import trombiniLogo from "@/assets/sponsors/trombini.png";
-import ambevLogo from "@/assets/sponsors/ambev.png";
-import realezaLogo from "@/assets/sponsors/realeza.png";
-import selvaLogo from "@/assets/sponsors/selva.png";
-import hamptonLogo from "@/assets/sponsors/hampton.png";
-import bandLogo from "@/assets/sponsors/band.png";
-import qbLogo from "@/assets/sponsors/qb.png";
-import bigjhonLogo from "@/assets/sponsors/bigjhon.png";
-const sponsorLogos = [
-  { src: tncLogo, name: "TNC" },
-  { src: fordLogo, name: "Ford" },
-  { src: redbullLogo, name: "Red Bull" },
-  { src: trombiniLogo, name: "Diversões Trombini" },
-  { src: ambevLogo, name: "Ambev" },
-  { src: realezaLogo, name: "Realeza" },
-  { src: selvaLogo, name: "Selva Zeladoria" },
-  { src: hamptonLogo, name: "Hampton by Hilton" },
-  { src: bandLogo, name: "Band" },
-  { src: qbLogo, name: "QB Construções" },
-  { src: caraguafmLogo, name: "Caraguá FM 89.5" },
-  { src: bigjhonLogo, name: "Big Jhon" },
-];
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -984,26 +958,21 @@ function Index() {
       </section>
 
       {/* PATROCINADORES */}
-      <section id="patrocinadores" className="py-20 md:py-24 px-6 border-t border-border/40">
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="text-xs tracking-[0.4em] uppercase text-ember mb-4">Patrocínio</div>
-          <h2 data-reveal className="text-display text-5xl md:text-7xl text-bone mb-16">
-            Quem faz o festival <span className="text-ember">acontecer</span>
-          </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 md:gap-10 items-center">
-            {sponsorLogos.map((l) => (
-              <div key={l.name} className="flex items-center justify-center aspect-square p-2 overflow-visible">
-                <img
-                  src={l.src}
-                  alt={l.name}
-                  loading="lazy"
-                  className="w-full h-full object-contain transition duration-300 hover:scale-105"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+      <section id="patrocinadores" className="border-t border-border/40">
+        <img
+          src="/gallery/patrocinadores-desktop.webp"
+          alt="Patrocinadores do Parrilla Day"
+          loading="lazy"
+          className="hidden md:block w-full h-auto"
+        />
+        <img
+          src="/gallery/patrocinadores-mobile.webp"
+          alt="Patrocinadores do Parrilla Day"
+          loading="lazy"
+          className="block md:hidden w-full h-auto"
+        />
       </section>
+
 
       {/* DISCLAIMERS */}
       <section className="px-6 pt-12 pb-6 border-t border-border/40">
