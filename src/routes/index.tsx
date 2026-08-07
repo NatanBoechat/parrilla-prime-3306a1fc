@@ -39,32 +39,6 @@ const edicaoPhotos = [
 ];
 const TICKET_URL = "https://www.bilheteriadigital.com/parrilla-day-05-de-setembro";
 
-import caraguafmLogo from "@/assets/sponsors/caraguafm.jpg";
-import tncLogo from "@/assets/sponsors/tnc.png";
-import fordLogo from "@/assets/sponsors/ford.png";
-import redbullLogo from "@/assets/sponsors/redbull.png";
-import trombiniLogo from "@/assets/sponsors/trombini.png";
-import ambevLogo from "@/assets/sponsors/ambev.png";
-import realezaLogo from "@/assets/sponsors/realeza.png";
-import selvaLogo from "@/assets/sponsors/selva.png";
-import hamptonLogo from "@/assets/sponsors/hampton.png";
-import bandLogo from "@/assets/sponsors/band.png";
-import qbLogo from "@/assets/sponsors/qb.png";
-import bigjhonLogo from "@/assets/sponsors/bigjhon.png";
-const sponsorLogos = [
-  { src: tncLogo, name: "TNC" },
-  { src: fordLogo, name: "Ford" },
-  { src: redbullLogo, name: "Red Bull" },
-  { src: trombiniLogo, name: "Diversões Trombini" },
-  { src: ambevLogo, name: "Ambev" },
-  { src: realezaLogo, name: "Realeza" },
-  { src: selvaLogo, name: "Selva Zeladoria" },
-  { src: hamptonLogo, name: "Hampton by Hilton" },
-  { src: bandLogo, name: "Band" },
-  { src: qbLogo, name: "QB Construções" },
-  { src: caraguafmLogo, name: "Caraguá FM 89.5" },
-  { src: bigjhonLogo, name: "Big Jhon" },
-];
 
 export const Route = createFileRoute("/")({
   component: Index,
